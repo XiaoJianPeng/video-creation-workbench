@@ -12,6 +12,34 @@ node_modules/
 *.log
 data/ops.log
 
+# ===== 生成素材与产出文件（二进制，不入代码仓库）=====
+# 仅保留源代码(prototype/scripts)与实例过程文档(md/json/jsonl)
+# 以下二进制媒体一律排除：图片/音频/视频/合成产物
+# 说明：03_asset/04_output/05_review 等目录内的 json/md 过程文档(清单/质检报告)
+#       属于实例相关文件，予以保留；仅排除其中的二进制媒体。
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
+*.bmp
+*.tif
+*.tiff
+*.mp4
+*.mov
+*.webm
+*.mkv
+*.mp3
+*.wav
+*.m4a
+*.aac
+*.flac
+*.ogg
+
+# TTS 引擎能力探测的音频产物（data/tts_probe/*.mp3，纯测试音频，不入仓）
+# 注意：该目录下的 probe-result.json（文本）仍保留
+data/tts_probe/*.mp3
+
 # 代理/IDE 内部数据（WorkBuddy 项目记忆，非源码）
 .workbuddy/
 
