@@ -39,12 +39,23 @@ const TASK_RESULT_INDEX = 'tasks.result.jsonl';
 /* 凭据只从 process.env 读取是否配置；绝不回显值、不写日志、不落盘、不进入项目文件 */
 const CREDENTIAL_ENV = ['WORKBUDDY_MODEL_API_KEY', 'MODEL_API_KEY', 'LLM_API_KEY', 'IMAGE_API_KEY', 'VIDEO_API_KEY'];
 const ENDPOINT_ENV = ['MODEL_API_BASE_URL', 'LLM_ENDPOINT', 'IMAGE_ENDPOINT', 'VIDEO_ENDPOINT'];
+/* 模型提供商注册表（全局自定义配置，参考 WorkBuddy 模型自定义配置能力） */
+const PROVIDERS_FILE = path.join(DATA_DIR, 'model-providers.json');
+const PROVIDER_TYPES = ['openai-compatible', 'custom-http', 'local'];
+const SLOT_KEYS = ['llm', 'image', 'video', 'voice'];
 
 /* ---------- 通用工具 ---------- */
 function ensureDirs() {
   [DATA_DIR, PROJECTS_ROOT].forEach(function (d) { fs.mkdirSync(d, { recursive: true }); });
 }
 function nowISO() { return new Date().toISOString(); }
+/* 读取模型提供商注册表（损坏/缺失时返回空数组，不抛错） */
+function loadProviders() {
+  try {
+    const a = JSON.parse(fs.readFileSync(PROVIDERS_FILE, 'utf8'));
+    return Array.isArray(a) ? a : [];
+  } catch (e) { return []; }
+}
 function audit(action, detail) {
   try {
     fs.appendFileSync(OPS_LOG, JSON.stringify(Object.assign({ ts: nowISO(), action: action }, detail || {})) + '\n', 'utf8');
@@ -593,11 +604,67 @@ async function handleAPI(req, res, u) {
     const configured = {}, endpoints = {};
     CREDENTIAL_ENV.forEach(function (k) { configured[k] = !!process.env[k]; });
     ENDPOINT_ENV.forEach(function (k) { endpoints[k] = !!process.env[k]; });
+    /* 聚合注册表里出现过的 apiKeyEnv，逐个回报是否已配置（不回显值） */
+    const prov = loadProviders();
+    const seen = {};
+    prov.forEach(function (x) { if (x && x.apiKeyEnv) seen[x.apiKeyEnv] = !!process.env[x.apiKeyEnv]; });
     return send(res, 200, {
       ok: true, readonly: true, wroteFiles: 0, echo: 'never', source: 'process.env',
-      configured: configured, endpoints: endpoints,
-      note: '仅返回「是否已配置」的布尔值；不回显凭据内容、不写入日志、不落地、不进入项目文件。自定义 HTTP 直连还需要 endpoint 与官方接口文档（当前未提供）。'
+      configured: configured, endpoints: endpoints, providerEnv: seen,
+      note: '仅返回「是否已配置」的布尔值；不回显凭据内容、不写入日志、不落地、不进入项目文件。'
     });
+  }
+
+  /* 只读：模型提供商注册表 */
+  if (p === '/api/model/providers' && method === 'GET') {
+    return send(res, 200, { ok: true, providers: loadProviders() });
+  }
+
+  /* 写：保存模型提供商注册表（全局配置；需 confirmed 权限确认，写 data/model-providers.json + 审计） */
+  if (p === '/api/model/providers' && method === 'PUT') {
+    const body = await readBody(req);
+    if (!Array.isArray(body.providers)) return send(res, 400, { ok: false, error: 'providers 必须是数组' });
+    /* 逐项校验：name 必填、type 合法、capabilities 为槽位子集、models 为字符串数组 */
+    for (let i = 0; i < body.providers.length; i++) {
+      const x = body.providers[i] || {};
+      if (!x.name || typeof x.name !== 'string') return send(res, 400, { ok: false, error: '第 ' + (i + 1) + ' 项缺少名称' });
+      if (PROVIDER_TYPES.indexOf(x.type) < 0) return send(res, 400, { ok: false, error: '第 ' + (i + 1) + ' 项类型非法：' + x.type });
+      const caps = Array.isArray(x.capabilities) ? x.capabilities : [];
+      if (caps.some(function (c) { return SLOT_KEYS.indexOf(c) < 0; }))
+        return send(res, 400, { ok: false, error: '第 ' + (i + 1) + ' 项能力标签含非法槽位' });
+      if (!Array.isArray(x.models)) return send(res, 400, { ok: false, error: '第 ' + (i + 1) + ' 项 models 必须是数组' });
+    }
+    /* 权限确认：全局配置写入同样走确认门槛（默认最严，需 confirmed） */
+    const perm = checkPermission({ permissionLevel: 3 }, 'create', body.confirmed === true);
+    if (!perm.ok) return send(res, 403, { ok: false, error: perm.reason, needConfirm: true, permissionLevel: 3 });
+    try { fs.writeFileSync(PROVIDERS_FILE, JSON.stringify(body.providers, null, 2), 'utf8'); }
+    catch (e) { return send(res, 500, { ok: false, error: '写入失败：' + e.message }); }
+    audit('model-providers-save', { count: body.providers.length, confirmed: true });
+    return send(res, 200, { ok: true, count: body.providers.length });
+  }
+
+  /* 写：测试单个提供商连接（只读探测：env 是否配置 + baseUrl 是否可达；不发送 key、不回显值） */
+  if (p === '/api/model/providers/test' && method === 'POST') {
+    const body = await readBody(req);
+    const apiKeyEnv = String(body.apiKeyEnv || '');
+    const baseUrl = String(body.baseUrl || '').trim();
+    const keyConfigured = apiKeyEnv ? !!process.env[apiKeyEnv] : false;
+    let reachable = false, reachError = '';
+    if (baseUrl && /^https?:\/\//i.test(baseUrl)) {
+      try {
+        const ctrl = new AbortController();
+        const t = setTimeout(function () { ctrl.abort(); }, 6000);
+        /* 仅做连通性探测，不附带 key，避免泄露；401/403/404 也算「可达」（主机有响应） */
+        const r = await fetch(baseUrl, { method: 'GET', signal: ctrl.signal, headers: { 'user-agent': 'vcworkbench-probe/1.0' } });
+        clearTimeout(t);
+        reachable = true; reachError = 'HTTP ' + r.status;
+      } catch (e) {
+        if (e && e.name === 'AbortError') { reachError = '探测超时（6s）'; }
+        else { reachError = (e && e.message) ? e.message : '连接失败'; }
+      }
+    } else if (baseUrl) { reachError = 'baseUrl 格式非法（需 http/https）'; }
+    else { reachError = '未填写 baseUrl（本地能力无需探测）'; }
+    return send(res, 200, { ok: true, keyConfigured: keyConfigured, reachable: reachable, reachError: reachError, sentKey: false });
   }
 
   /* 写：生成 WorkBuddy 桥接任务包（半自动；本接口本身不调用模型、不消耗积分） */

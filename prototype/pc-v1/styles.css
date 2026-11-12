@@ -190,6 +190,9 @@ select.ctl:focus, .ctl-select:focus, textarea.ctl:focus { outline: 2px solid var
 .chip:hover { border-color: #b9c8ec; }
 .chip.on { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); font-weight: 600; }
 .chip.on::before { content: "✓ "; }
+.chk-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 4px; }
+.chk { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--ink-2); cursor: pointer; }
+.chk input { width: 15px; height: 15px; accent-color: var(--accent); }
 .switch { display: inline-flex; align-items: center; gap: 8px; font-size: 12.5px; color: var(--ink-2); }
 .switch input { appearance: none; width: 34px; height: 19px; border-radius: 12px; background: #d6dce8; position: relative; transition: .15s; cursor: pointer; }
 .switch input::after { content: ""; position: absolute; top: 2px; left: 2px; width: 15px; height: 15px; border-radius: 50%; background: #fff; transition: .15s; box-shadow: 0 1px 3px rgba(0,0,0,.15); }

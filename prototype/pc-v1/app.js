@@ -97,6 +97,21 @@
     modelVideo: ['WorkBuddy 视频（桥接）', '自定义视频（需核实接口）'],
     modelVoice: ['本地 TTS（免费）', '自定义 TTS（需核实接口）']
   };
+  /* 模型提供商类型（参考 WorkBuddy 模型自定义配置：OpenAI 兼容 / 自定义 HTTP / 本地） */
+  var PROVIDER_TYPE_LABEL = {
+    'openai-compatible': 'OpenAI 兼容',
+    'custom-http': '自定义 HTTP',
+    'local': '本地能力'
+  };
+  var SLOT_KEYS = ['llm', 'image', 'video', 'voice'];
+  var SLOT_LABEL = { llm: 'LLM', image: '生图', video: '视频', voice: 'TTS' };
+  var PROVIDER_DEFAULT_MODELS = {
+    'openai-compatible': 'gpt-4o-mini, gpt-4o',
+    'custom-http': '',
+    'local': 'edge-tts-XiaoxiaoNeural'
+  };
+  /* 当前工作台「模型提供商注册表」（全局；从服务端 data/model-providers.json 加载，离线降级 localStorage） */
+  var modelProviders = [];
   var MODEL_SLOTS = [
     { key: 'llm', label: '脚本 / LLM', nodes: 'N02 · N05', dict: 'modelLlm', billable: false },
     { key: 'image', label: '分镜图 / 生图', nodes: 'N06', dict: 'modelImage', billable: true },
@@ -519,7 +534,17 @@
     if (!serviceOnline) { modelCredentials = null; modelTasks = null; return Promise.resolve(); }
     return Promise.all([
       api('GET', '/api/model/credentials').then(function (r) { modelCredentials = r.status === 200 ? r.body : null; }).catch(function () { modelCredentials = null; }),
-      api('GET', '/api/model/tasks').then(function (r) { modelTasks = r.status === 200 ? r.body : null; }).catch(function () { modelTasks = null; })
+      api('GET', '/api/model/tasks').then(function (r) { modelTasks = r.status === 200 ? r.body : null; }).catch(function () { modelTasks = null; }),
+      api('GET', '/api/model/providers').then(function (r) {
+        if (r.status === 200 && Array.isArray(r.body.providers)) {
+          modelProviders = r.body.providers;
+          /* 服务端为准，回写 localStorage 做离线降级副本 */
+          try { localStorage.setItem('vcworkbench.providers', JSON.stringify(modelProviders)); } catch (e) {}
+        }
+      }).catch(function () {
+        /* 离线降级：读 localStorage 副本 */
+        try { var c = JSON.parse(localStorage.getItem('vcworkbench.providers') || '[]'); if (Array.isArray(c)) modelProviders = c; } catch (e) {}
+      })
     ]);
   }
   /* P2：当前项目是否已有服务端真实目录 */
@@ -1569,11 +1594,12 @@
         var r = c.modelRoute[s.key] || {};
         return '<tr><td>' + esc(s.label) + '</td><td><span class="mono">' + esc(s.nodes) + '</span></td>' +
           '<td><select class="ctl" data-model-route="' + s.key + '" data-kind="channel">' + opts(dict('modelChannel'), r.channel) + '</select></td>' +
-          '<td><select class="ctl" data-model-route="' + s.key + '" data-kind="model">' + opts(dict(s.dict), r.model) + '</select></td>' +
+          '<td><select class="ctl" data-model-route="' + s.key + '" data-kind="model">' + modelOptionsForSlot(s.key, r.channel, r.model) + '</select></td>' +
           '<td>' + (s.billable ? '<span class="badge s-warn">计费</span>' : '<span class="badge s-ok">免费</span>') + '</td></tr>';
       }).join('') + '</tbody></table>' +
       '<div class="small muted mt-12">协作顺序：脚本 / LLM → 分镜图 / 生图 → 配音 / TTS → 片段 / 视频 → 剪辑合成。具体型号可在「枚举字典 → 新增选项」补充（Q09），项目表单不开放自由文本。</div>' +
       '</div></div>' +
+      renderProviderRegistry() +
       '<div class="grid grid-2 mt-16">' +
       '<div class="card"><div class="card-head"><h2>凭据状态（只读）</h2></div><div class="card-body">' + credsHtml() + '</div></div>' +
       '<div class="card"><div class="card-head"><h2>计费确认（项目级）</h2></div><div class="card-body">' +
@@ -1588,9 +1614,94 @@
       '<div class="card mt-16"><div class="card-head"><h2>仍需你提供（不编造平台能力）</h2></div><div class="card-body">' +
       '<table class="tbl"><thead><tr><th>项</th><th>说明</th><th>影响</th></tr></thead><tbody>' +
       '<tr><td>WorkBuddy 模型 HTTP 接口文档</td><td>endpoint、鉴权方式、请求/响应结构，需以官方一手资料核实</td><td>拿到后才能做「工作台自动直连」，否则只能走任务包桥接</td></tr>' +
-      '<tr><td>自定义 endpoint</td><td>用户自建 / 第三方 OpenAI 兼容服务地址与 Key（放本地环境变量）</td><td>拿到后可启用「自定义 HTTP 接口」通道</td></tr>' +
+      '<tr><td>自定义 endpoint</td><td>现已可在上方「模型提供商」登记（Base URL + API Key 环境变量名 + 模型名 + 能力标签），登记后即在路由「自定义 HTTP 接口」通道的模型下拉中可选</td><td>登记即可选模型；真实直连仍需官方接口文档 + 鉴权实现，否则继续走任务包桥接</td></tr>' +
       '<tr><td>计费口径</td><td>每次确认已实现；「本项目不再提示」已实现</td><td>真实积分消耗发生在 WorkBuddy 会话执行任务包时，不在本地服务</td></tr>' +
       '</tbody></table></div></div>';
+  }
+
+  /* 按能力槽位生成「模型」下拉项：自定义 HTTP 通道时从提供商注册表拉取（按提供商分组） */
+  function modelOptionsForSlot(slotKey, channel, selected) {
+    var chCustom = DICT.modelChannel[1]; /* 自定义 HTTP 接口（需配置 endpoint） */
+    if (channel === chCustom) {
+      var provs = (modelProviders || []).filter(function (x) { return (x.capabilities || []).indexOf(slotKey) >= 0; });
+      if (!provs.length) return '<option value="" disabled>— 请先在下方「模型提供商」新增支持「' + esc(SLOT_LABEL[slotKey]) + '」的提供商 —</option>';
+      return provs.map(function (x) {
+        var inner = (x.models || []).map(function (m) {
+          var v = x.id + '::' + m;
+          return '<option value="' + esc(v) + '"' + (v === selected ? ' selected' : '') + '>' + esc(m) + '</option>';
+        }).join('');
+        return '<optgroup label="' + esc(x.name) + '">' + inner + '</optgroup>';
+      }).join('');
+    }
+    /* 桥接 / 本地通道：沿用内置字典选项 */
+    var slot = MODEL_SLOTS.filter(function (s) { return s.key === slotKey; })[0];
+    return opts(dict(slot.dict), selected);
+  }
+
+  /* 「模型提供商（自定义配置）」卡片：列表 + 新增入口，参考 WorkBuddy 模型自定义配置 */
+  function renderProviderRegistry() {
+    var provs = modelProviders || [];
+    var cred = modelCredentials;
+    function keyBadge(env) {
+      if (!env) return '<span class="badge s-ok">无需 Key</span>';
+      var ok = cred && cred.providerEnv && cred.providerEnv[env];
+      return ok ? '<span class="badge s-ok">Key 已配置</span>' : '<span class="badge s-warn">Key 未配置</span>';
+    }
+    var body = provs.length ? (
+      '<table class="tbl"><thead><tr><th>名称</th><th>类型</th><th>Base URL</th><th>能力</th><th>模型数</th><th>Key</th><th>操作</th></tr></thead><tbody>' +
+      provs.map(function (x) {
+        var caps = (x.capabilities || []).map(function (c) { return '<span class="chip">' + esc(SLOT_LABEL[c] || c) + '</span>'; }).join('');
+        return '<tr>' +
+          '<td>' + esc(x.name) + '</td>' +
+          '<td>' + esc(PROVIDER_TYPE_LABEL[x.type] || x.type) + '</td>' +
+          '<td class="mono small">' + (x.baseUrl ? esc(x.baseUrl) : '<span class="muted">—</span>') + '</td>' +
+          '<td>' + (caps || '<span class="muted">—</span>') + '</td>' +
+          '<td>' + (x.models ? x.models.length : 0) + '</td>' +
+          '<td>' + keyBadge(x.apiKeyEnv) + '</td>' +
+          '<td class="row">' +
+            '<button class="btn btn-sm" data-act="provider-edit" data-id="' + esc(x.id) + '">编辑</button>' +
+            '<button class="btn btn-sm" data-act="provider-test" data-id="' + esc(x.id) + '">测试</button>' +
+            '<button class="btn btn-sm btn-danger" data-act="provider-delete" data-id="' + esc(x.id) + '">删除</button>' +
+          '</td></tr>';
+      }).join('') + '</tbody></table>'
+    ) : '<div class="reg-empty">尚未配置任何模型提供商。点击下方「新增提供商」，按 WorkBuddy 模型自定义配置的方式登记 OpenAI 兼容 / 自定义 HTTP / 本地能力（含 Base URL、API Key 环境变量名、能力标签与模型清单）。</div>';
+    return '<div class="card mt-16"><div class="card-head"><h2>模型提供商（自定义配置）</h2>' +
+      '<span class="sub">参考 WorkBuddy 模型自定义配置 · 全局 · ' + provs.length + ' 个</span>' +
+      '<div class="spacer"></div><button class="btn btn-sm btn-primary" data-act="provider-add">+ 新增提供商</button></div>' +
+      '<div class="card-body">' + body + '</div></div>';
+  }
+
+  /* 新增 / 编辑提供商弹层 */
+  function providerFormModal(editId) {
+    var x = editId ? (modelProviders.filter(function (p) { return p.id === editId; })[0]) : null;
+    var types = ['openai-compatible', 'custom-http', 'local'];
+    var capOpts = SLOT_KEYS.map(function (c) {
+      var on = x && (x.capabilities || []).indexOf(c) >= 0;
+      return '<label class="chk"><input type="checkbox" name="provCap" value="' + c + '"' + (on ? ' checked' : '') + '> ' + esc(SLOT_LABEL[c]) + '</label>';
+    }).join('');
+    var body =
+      '<div class="field"><label>名称 *</label><input class="ctl" id="provName" maxlength="40" value="' + esc(x ? x.name : '') + '" placeholder="如：我的 DeepSeek / MiniMax TTS"></div>' +
+      '<div class="field"><label>类型</label><select class="ctl" id="provType">' + types.map(function (t) { return '<option value="' + t + '"' + (x && x.type === t ? ' selected' : '') + '>' + esc(PROVIDER_TYPE_LABEL[t]) + '</option>'; }).join('') + '</select></div>' +
+      '<div class="field"><label>Base URL（可选）</label><input class="ctl" id="provBase" value="' + esc(x ? (x.baseUrl || '') : '') + '" placeholder="https://api.xxx.com/v1"></div>' +
+      '<div class="field"><label>API Key 环境变量名</label><input class="ctl" id="provKeyEnv" value="' + esc(x ? (x.apiKeyEnv || '') : '') + '" placeholder="如 MINIMAX_API_KEY（仅填变量名，不存 key 值）"><div class="small muted">凭据只从本地环境变量读取；不落地、不回显、不进入项目文件。</div></div>' +
+      '<div class="field"><label>能力标签（可多选）</label><div class="chk-row">' + capOpts + '</div></div>' +
+      '<div class="field"><label>模型名清单（每行一个）</label><textarea class="ctl" id="provModels" rows="4" placeholder="deepseek-chat\ndeepseek-reasoner">' + esc(x ? (x.models || []).join('\n') : PROVIDER_DEFAULT_MODELS['openai-compatible']) + '</textarea></div>' +
+      '<div class="field"><label>备注</label><input class="ctl" id="provNote" value="' + esc(x ? (x.note || '') : '') + '" placeholder="可选"></div>';
+    var foot = '<button class="btn" data-act="close-modal">取消</button><button class="btn btn-primary" data-act="provider-save" data-id="' + (editId || '') + '">保存</button>';
+    modal(x ? '编辑模型提供商' : '新增模型提供商', body, foot, true);
+  }
+
+  /* 持久化提供商注册表：本地缓存 + 服务端 PUT（confirmed=用户显式保存即确认） */
+  function persistProviders() {
+    try { localStorage.setItem('vcworkbench.providers', JSON.stringify(modelProviders)); } catch (e) {}
+    if (!serviceOnline) { render(); toast('服务离线，已存本地；恢复服务后自动同步', 'ok'); return; }
+    api('PUT', '/api/model/providers', { providers: modelProviders, confirmed: true })
+      .then(function (r) {
+        if (r.status === 200) { loadModelState().then(function () { render(); }); toast('模型提供商已保存并同步', 'ok'); }
+        else if (r.status === 403) { toast('需权限确认：' + ((r.body && r.body.error) || ''), 'err'); render(); }
+        else { toast('保存失败：' + ((r.body && r.body.error) || r.status), 'err'); }
+      })
+      .catch(function () { toast('保存请求失败（服务可能离线）', 'err'); });
   }
 
   /* ============ 视图切换 ============ */
@@ -2443,6 +2554,65 @@
             '<b>风险：</b>后续点击计费执行会直接进入流程，请确认本项目由你本人操作。<br><b>线上数据：</b>零写入。',
             applyBilling, true);
         } else applyBilling();
+        break;
+      }
+      /* ===== 模型提供商（自定义配置）===== */
+      case 'provider-add': providerFormModal(null); break;
+      case 'provider-edit': providerFormModal(t.dataset.id); break;
+      case 'provider-delete': {
+        var delId = t.dataset.id;
+        var dp = (modelProviders || []).filter(function (x) { return x.id === delId; })[0];
+        if (!dp) break;
+        confirmModal('删除模型提供商',
+          '<b>名称：</b>' + esc(dp.name) + '<br><b>影响范围：</b>移除该提供商及其模型选项；已存项目里引用它的路由将回到空选。<br><b>可逆性：</b>删除后需重新添加；不删除任何项目文件。<br><b>线上数据：</b>零写入。',
+          function () {
+            modelProviders = (modelProviders || []).filter(function (x) { return x.id !== delId; });
+            persistProviders();
+            toast('已删除提供商：' + dp.name, 'ok');
+          }, true);
+        break;
+      }
+      case 'provider-test': {
+        var tp = (modelProviders || []).filter(function (x) { return x.id === t.dataset.id; })[0];
+        if (!tp) break;
+        if (!serviceOnline) { toast('服务离线，无法测试连接', 'err'); break; }
+        toast('正在测试连接：' + tp.name + ' …', '');
+        api('POST', '/api/model/providers/test', { baseUrl: tp.baseUrl || '', apiKeyEnv: tp.apiKeyEnv || '' })
+          .then(function (r) {
+            if (r.status !== 200 || !r.body) { toast('测试失败', 'err'); return; }
+            var b = r.body;
+            var msg = 'Key ' + (b.keyConfigured ? '已配置' : '未配置') + ' · 连接 ' + (b.reachable ? ('可达（' + b.reachError + '）') : ('不可达：' + b.reachError));
+            modal('连接测试：' + tp.name,
+              '<div class="notice ' + (b.reachable ? 'notice-info' : 'notice-warn') + '">' + msg + '</div>' +
+              '<div class="small muted">仅探测 env 是否配置与 Base URL 连通性，不发送、不回显 Key。</div>',
+              '<button class="btn btn-primary" data-act="close-modal">知道了</button>');
+          })
+          .catch(function () { toast('测试请求失败', 'err'); });
+        break;
+      }
+      case 'provider-save': {
+        var editId = t.dataset.id || '';
+        var name = ($('#provName') || {}).value;
+        if (!name || !name.trim()) { toast('请填写名称', 'err'); break; }
+        var caps = Array.prototype.slice.call(document.querySelectorAll('input[name="provCap"]:checked')).map(function (c) { return c.value; });
+        if (!caps.length) { toast('请至少选择一个能力标签', 'err'); break; }
+        var models = ($('#provModels') || {}).value.split('\n').map(function (s) { return s.trim(); }).filter(Boolean);
+        if (!models.length) { toast('请至少填写一个模型名', 'err'); break; }
+        var rec = {
+          id: editId || ('mp_' + Date.now().toString(36) + Math.random().toString(36).slice(2, 5)),
+          name: name.trim(),
+          type: ($('#provType') || {}).value,
+          baseUrl: ($('#provBase') || {}).value.trim(),
+          apiKeyEnv: ($('#provKeyEnv') || {}).value.trim(),
+          capabilities: caps,
+          models: models,
+          note: ($('#provNote') || {}).value.trim()
+        };
+        if (editId) modelProviders = (modelProviders || []).map(function (x) { return x.id === editId ? rec : x; });
+        else modelProviders = (modelProviders || []).concat([rec]);
+        closeModal();
+        persistProviders();
+        toast(editId ? '已更新提供商' : '已新增提供商', 'ok');
         break;
       }
       case 'btn-help': break;

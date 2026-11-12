@@ -40,6 +40,9 @@ data/ops.log
 # 注意：该目录下的 probe-result.json（文本）仍保留
 data/tts_probe/*.mp3
 
+# 模型提供商注册表（本地用户配置，含私有 endpoint/环境变量名引用，不入库）
+data/model-providers.json
+
 # 代理/IDE 内部数据（WorkBuddy 项目记忆，非源码）
 .workbuddy/
 
