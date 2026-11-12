@@ -1,0 +1,115 @@
+{
+  "deliveryId": "DELIVERY_DJ04_N12_20261111014000",
+  "projectId": "P_20261110_004",
+  "code": "DJ04",
+  "nodeId": "N12",
+  "at": "2026-11-11T02:22:52.565Z",
+  "tool": "本地 Node 文件索引（零积分）",
+  "policy": "只生成清单，不复制/移动/删除既有产物；路径全相对；新版本不覆盖旧版（Q06）",
+  "master": "v1/04_output/master/DJ04_v1_N10_master_final_r02_20261111012500.mp4",
+  "masterBytes": 9681347,
+  "totalFilesInV1": 99,
+  "deliverableCount": 23,
+  "deliverables": [
+    {
+      "rel": "v1/02_prompt/image/DJ04_v1_N06_prompt-01_final_r02_20261110234500.md",
+      "bytes": 6003
+    },
+    {
+      "rel": "v1/03_asset/image/DJ04_v1_N06_image-01_final_r02_20261110234500.png",
+      "bytes": 3104766
+    },
+    {
+      "rel": "v1/03_asset/image/DJ04_v1_N06_image-02_final_r02_20261110234500.png",
+      "bytes": 2888027
+    },
+    {
+      "rel": "v1/03_asset/image/DJ04_v1_N06_image-03_final_r02_20261110234500.png",
+      "bytes": 3081538
+    },
+    {
+      "rel": "v1/03_asset/image/DJ04_v1_N06_image-04_final_r02_20261110234500.png",
+      "bytes": 1814974
+    },
+    {
+      "rel": "v1/04_output/audio_v2/DJ04_v1_N08_voice-L01_final_r02_20261111012000.mp3",
+      "bytes": 36000
+    },
+    {
+      "rel": "v1/04_output/audio_v2/DJ04_v1_N08_voice-L02_final_r02_20261111012000.mp3",
+      "bytes": 22464
+    },
+    {
+      "rel": "v1/04_output/audio_v2/DJ04_v1_N08_voice-L03_final_r02_20261111012000.mp3",
+      "bytes": 26496
+    },
+    {
+      "rel": "v1/04_output/audio_v2/DJ04_v1_N08_voice-L04_final_r02_20261111012000.mp3",
+      "bytes": 27072
+    },
+    {
+      "rel": "v1/04_output/audio_v2/DJ04_v1_N08_voice-L05_final_r02_20261111012000.mp3",
+      "bytes": 88128
+    },
+    {
+      "rel": "v1/04_output/audio_v2/DJ04_v1_N08_voice-L06_final_r02_20261111012000.mp3",
+      "bytes": 44064
+    },
+    {
+      "rel": "v1/04_output/audio_v2/DJ04_v1_N08_voice-L07_final_r02_20261111012000.mp3",
+      "bytes": 30816
+    },
+    {
+      "rel": "v1/04_output/audio_v2/DJ04_v1_N08_voice-L08_final_r02_20261111012000.mp3",
+      "bytes": 42048
+    },
+    {
+      "rel": "v1/04_output/audio_v2/DJ04_v1_N08_voice-L09_final_r02_20261111012000.mp3",
+      "bytes": 23328
+    },
+    {
+      "rel": "v1/04_output/audio_v2/DJ04_v1_N08_voice-manifest_final_r02_20261111012000.json",
+      "bytes": 6340
+    },
+    {
+      "rel": "v1/04_output/audio_v2_trim/DJ04_v1_N08_voice-manifest-trimmed_final_r02_20261111012000.json",
+      "bytes": 6735
+    },
+    {
+      "rel": "v1/04_output/clip/DJ04_v1_N09_clip-01_final_r02_20261111000600.mp4",
+      "bytes": 1288131
+    },
+    {
+      "rel": "v1/04_output/clip/DJ04_v1_N09_clip-02_final_r02_20261111000600.mp4",
+      "bytes": 1120306
+    },
+    {
+      "rel": "v1/04_output/clip/DJ04_v1_N09_clip-03_final_r02_20261111000600.mp4",
+      "bytes": 1548037
+    },
+    {
+      "rel": "v1/04_output/clip/DJ04_v1_N09_clip-04_final_r02_20261111000600.mp4",
+      "bytes": 1354169
+    },
+    {
+      "rel": "v1/04_output/master/DJ04_v1_N10_compose-params_final_r02_20261111012500.json",
+      "bytes": 6206
+    },
+    {
+      "rel": "v1/04_output/master/DJ04_v1_N10_master_final_r02_20261111012500.mp4",
+      "bytes": 9681347
+    },
+    {
+      "rel": "v1/04_output/qc/DJ04_v1_N11_qc-report_final_r01_20261111013500.json",
+      "bytes": 2579
+    }
+  ],
+  "changelogPath": "changelog.jsonl",
+  "assetsIndexPath": "assets.index.json",
+  "qcReport": "v1/04_output/qc/DJ04_v1_N11_qc-report_final_r01_20261111013500.json",
+  "unverified": [
+    "真实浏览器肉眼播放验证未做",
+    "C04 墙面表格纸纹理 / 妈妈未出画待人工复核",
+    "音素级口型同步以 D 批 A/B 验证结论为准"
+  ]
+}

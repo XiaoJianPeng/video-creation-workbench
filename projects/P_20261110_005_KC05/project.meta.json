@@ -1,0 +1,16 @@
+{
+  "projectId": "P_20261110_005",
+  "code": "KC05",
+  "name": "知识科普",
+  "type": "口播科普",
+  "titleMode": "custom",
+  "description": "面向【成年人】，用 1 个真实场景讲清 1 个概念：先说痛点，再拆成 3 步，每步给一个可照抄的例子，结尾给一条可复用模板。口播出镜 + 屏幕演示，避免堆术语。",
+  "permissionLevel": 2,
+  "permissionName": "仅读写（禁删除）",
+  "version": "v1",
+  "status": "进行中",
+  "workDir": "D:\\WorkBuddy_space\\WorkBuddy全流程短视频创作空间\\projects\\P_20261110_005_KC05",
+  "createdAt": "2026-11-10T08:32:04.372Z",
+  "updatedAt": "2026-11-10T08:32:04.372Z",
+  "source": "PC 网页工作台 · 本地 Node 服务"
+}

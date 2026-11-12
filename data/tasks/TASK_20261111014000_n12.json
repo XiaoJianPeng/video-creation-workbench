@@ -1,0 +1,16 @@
+{
+  "id": "TASK_20261111014000_n12",
+  "createdAt": "2026-11-11T02:22:52.568Z",
+  "status": "succeeded",
+  "projectId": "P_20261110_004",
+  "nodeId": "N12",
+  "slot": "archive",
+  "channel": "本地文件索引（零积分）",
+  "model": "无（本地 fs）",
+  "billable": false,
+  "params": {
+    "deliverableCount": 23,
+    "totalFilesInV1": 99
+  },
+  "note": "N12 归档只生成清单与任务包，不改动既有产物；本接口不调用模型、不消耗积分。"
+}

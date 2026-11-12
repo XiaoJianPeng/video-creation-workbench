@@ -1,0 +1,14 @@
+{
+  "id": "TASK_20261111030447_s4hf",
+  "createdAt": "2026-11-11T03:04:47.824Z",
+  "status": "pending",
+  "projectId": "P_20261110_RCPT",
+  "nodeId": "N06",
+  "slot": "image",
+  "channel": "WorkBuddy 桥接（默认）",
+  "model": "WorkBuddy 生图（桥接）",
+  "billable": true,
+  "prompt": "# 回执验收提示词",
+  "params": {},
+  "note": "WorkBuddy 桥接任务包：由 WorkBuddy 会话读取后用真实模型能力执行，产物回写项目目录；本接口不调用模型、不消耗积分。"
+}

@@ -1,0 +1,5025 @@
+{
+  "generatedAt": "2026-11-11T03:03:11.220Z",
+  "source": "D:\\WorkBuddy_space\\WorkBuddy全流程短视频创作空间\\短剧实测",
+  "readonly": true,
+  "total": 627,
+  "totalBytes": 217921541,
+  "files": [
+    {
+      "rel": "audio/voice01.mp3",
+      "name": "voice01.mp3",
+      "ext": "mp3",
+      "size": 51552,
+      "mtime": "2026-11-09T15:05:26.843Z",
+      "category": "配音"
+    },
+    {
+      "rel": "audio/voice02.mp3",
+      "name": "voice02.mp3",
+      "ext": "mp3",
+      "size": 46368,
+      "mtime": "2026-11-09T15:05:26.836Z",
+      "category": "配音"
+    },
+    {
+      "rel": "audio/voice03.mp3",
+      "name": "voice03.mp3",
+      "ext": "mp3",
+      "size": 56160,
+      "mtime": "2026-11-09T15:05:26.839Z",
+      "category": "配音"
+    },
+    {
+      "rel": "audio/voice04.mp3",
+      "name": "voice04.mp3",
+      "ext": "mp3",
+      "size": 40320,
+      "mtime": "2026-11-09T15:05:26.841Z",
+      "category": "配音"
+    },
+    {
+      "rel": "font.ttf",
+      "name": "font.ttf",
+      "ext": "ttf",
+      "size": 9745792,
+      "mtime": "2026-11-09T15:05:26.984Z",
+      "category": "字体"
+    },
+    {
+      "rel": "_build/redraw/font.ttf",
+      "name": "font.ttf",
+      "ext": "ttf",
+      "size": 9745792,
+      "mtime": "2026-11-09T15:05:24.633Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/redraw/Image_to_image_edit_with_TWO_r_2026-11-09T09-07-46.png",
+      "name": "Image_to_image_edit_with_TWO_r_2026-11-09T09-07-46.png",
+      "ext": "png",
+      "size": 1922992,
+      "mtime": "2026-11-09T15:05:24.604Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/redraw/panel_new.png",
+      "name": "panel_new.png",
+      "ext": "png",
+      "size": 847950,
+      "mtime": "2026-11-09T15:05:24.609Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/redraw/panel_old.png",
+      "name": "panel_old.png",
+      "ext": "png",
+      "size": 914583,
+      "mtime": "2026-11-09T15:05:24.597Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/.package-lock.json",
+      "name": ".package-lock.json",
+      "ext": "json",
+      "size": 17822,
+      "mtime": "2026-11-09T15:05:24.875Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/agent-base/dist/src/index.d.ts",
+      "name": "index.d.ts",
+      "ext": "ts",
+      "size": 3197,
+      "mtime": "2026-11-09T15:05:24.646Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/agent-base/dist/src/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 7910,
+      "mtime": "2026-11-09T15:05:24.653Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/agent-base/dist/src/index.js.map",
+      "name": "index.js.map",
+      "ext": "map",
+      "size": 5824,
+      "mtime": "2026-11-09T15:05:24.655Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/agent-base/dist/src/promisify.d.ts",
+      "name": "promisify.d.ts",
+      "ext": "ts",
+      "size": 299,
+      "mtime": "2026-11-09T15:05:24.650Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/agent-base/dist/src/promisify.js",
+      "name": "promisify.js",
+      "ext": "js",
+      "size": 495,
+      "mtime": "2026-11-09T15:05:24.648Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/agent-base/dist/src/promisify.js.map",
+      "name": "promisify.js.map",
+      "ext": "map",
+      "size": 499,
+      "mtime": "2026-11-09T15:05:24.644Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/agent-base/package.json",
+      "name": "package.json",
+      "ext": "json",
+      "size": 1635,
+      "mtime": "2026-11-09T15:05:24.639Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/agent-base/README.md",
+      "name": "README.md",
+      "ext": "md",
+      "size": 5056,
+      "mtime": "2026-11-09T15:05:24.664Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/agent-base/src/index.ts",
+      "name": "index.ts",
+      "ext": "ts",
+      "size": 9018,
+      "mtime": "2026-11-09T15:05:24.659Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/agent-base/src/promisify.ts",
+      "name": "promisify.ts",
+      "ext": "ts",
+      "size": 649,
+      "mtime": "2026-11-09T15:05:24.661Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/asynckit/bench.js",
+      "name": "bench.js",
+      "ext": "js",
+      "size": 1256,
+      "mtime": "2026-11-09T15:05:25.304Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/asynckit/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 156,
+      "mtime": "2026-11-09T15:05:25.310Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/asynckit/lib/abort.js",
+      "name": "abort.js",
+      "ext": "js",
+      "size": 497,
+      "mtime": "2026-11-09T15:05:25.258Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/asynckit/lib/async.js",
+      "name": "async.js",
+      "ext": "js",
+      "size": 599,
+      "mtime": "2026-11-09T15:05:25.256Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/asynckit/lib/defer.js",
+      "name": "defer.js",
+      "ext": "js",
+      "size": 441,
+      "mtime": "2026-11-09T15:05:25.275Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/asynckit/lib/iterate.js",
+      "name": "iterate.js",
+      "ext": "js",
+      "size": 1794,
+      "mtime": "2026-11-09T15:05:25.269Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/asynckit/lib/readable_asynckit.js",
+      "name": "readable_asynckit.js",
+      "ext": "js",
+      "size": 1611,
+      "mtime": "2026-11-09T15:05:25.266Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/asynckit/lib/readable_parallel.js",
+      "name": "readable_parallel.js",
+      "ext": "js",
+      "size": 673,
+      "mtime": "2026-11-09T15:05:25.272Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/asynckit/lib/readable_serial.js",
+      "name": "readable_serial.js",
+      "ext": "js",
+      "size": 655,
+      "mtime": "2026-11-09T15:05:25.262Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/asynckit/lib/readable_serial_ordered.js",
+      "name": "readable_serial_ordered.js",
+      "ext": "js",
+      "size": 941,
+      "mtime": "2026-11-09T15:05:25.264Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/asynckit/lib/state.js",
+      "name": "state.js",
+      "ext": "js",
+      "size": 941,
+      "mtime": "2026-11-09T15:05:25.260Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/asynckit/lib/streamify.js",
+      "name": "streamify.js",
+      "ext": "js",
+      "size": 2964,
+      "mtime": "2026-11-09T15:05:25.279Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/asynckit/lib/terminator.js",
+      "name": "terminator.js",
+      "ext": "js",
+      "size": 533,
+      "mtime": "2026-11-09T15:05:25.282Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/asynckit/LICENSE",
+      "name": "LICENSE",
+      "ext": "",
+      "size": 1078,
+      "mtime": "2026-11-09T15:05:25.302Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/asynckit/package.json",
+      "name": "package.json",
+      "ext": "json",
+      "size": 1611,
+      "mtime": "2026-11-09T15:05:25.308Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/asynckit/parallel.js",
+      "name": "parallel.js",
+      "ext": "js",
+      "size": 1017,
+      "mtime": "2026-11-09T15:05:25.287Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/asynckit/README.md",
+      "name": "README.md",
+      "ext": "md",
+      "size": 7640,
+      "mtime": "2026-11-09T15:05:25.291Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/asynckit/serial.js",
+      "name": "serial.js",
+      "ext": "js",
+      "size": 501,
+      "mtime": "2026-11-09T15:05:25.251Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/asynckit/serialOrdered.js",
+      "name": "serialOrdered.js",
+      "ext": "js",
+      "size": 1751,
+      "mtime": "2026-11-09T15:05:25.284Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/asynckit/stream.js",
+      "name": "stream.js",
+      "ext": "js",
+      "size": 703,
+      "mtime": "2026-11-09T15:05:25.313Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/CHANGELOG.md",
+      "name": "CHANGELOG.md",
+      "ext": "md",
+      "size": 141105,
+      "mtime": "2026-11-09T15:05:25.913Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/dist/axios.js",
+      "name": "axios.js",
+      "ext": "js",
+      "size": 235473,
+      "mtime": "2026-11-09T15:05:25.934Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/dist/axios.min.js",
+      "name": "axios.min.js",
+      "ext": "js",
+      "size": 76870,
+      "mtime": "2026-11-09T15:05:25.945Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/dist/axios.min.js.map",
+      "name": "axios.min.js.map",
+      "ext": "map",
+      "size": 307453,
+      "mtime": "2026-11-09T15:05:25.939Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/dist/browser/axios.cjs",
+      "name": "axios.cjs",
+      "ext": "cjs",
+      "size": 185933,
+      "mtime": "2026-11-09T15:05:25.953Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/dist/esm/axios.js",
+      "name": "axios.js",
+      "ext": "js",
+      "size": 186937,
+      "mtime": "2026-11-09T15:05:25.929Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/dist/esm/axios.min.js",
+      "name": "axios.min.js",
+      "ext": "js",
+      "size": 58920,
+      "mtime": "2026-11-09T15:05:25.931Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/dist/esm/axios.min.js.map",
+      "name": "axios.min.js.map",
+      "ext": "map",
+      "size": 294620,
+      "mtime": "2026-11-09T15:05:25.926Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/dist/node/axios.cjs",
+      "name": "axios.cjs",
+      "ext": "cjs",
+      "size": 260798,
+      "mtime": "2026-11-09T15:05:25.943Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/index.d.cts",
+      "name": "index.d.cts",
+      "ext": "cts",
+      "size": 24611,
+      "mtime": "2026-11-09T15:05:25.955Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/index.d.ts",
+      "name": "index.d.ts",
+      "ext": "ts",
+      "size": 24189,
+      "mtime": "2026-11-09T15:05:25.958Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 704,
+      "mtime": "2026-11-09T15:05:25.918Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/adapters/adapters.js",
+      "name": "adapters.js",
+      "ext": "js",
+      "size": 3505,
+      "mtime": "2026-11-09T15:05:26.075Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/adapters/fetch.js",
+      "name": "fetch.js",
+      "ext": "js",
+      "size": 24079,
+      "mtime": "2026-11-09T15:05:26.070Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/adapters/http.js",
+      "name": "http.js",
+      "ext": "js",
+      "size": 56092,
+      "mtime": "2026-11-09T15:05:26.058Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/adapters/README.md",
+      "name": "README.md",
+      "ext": "md",
+      "size": 911,
+      "mtime": "2026-11-09T15:05:26.062Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/adapters/xhr.js",
+      "name": "xhr.js",
+      "ext": "js",
+      "size": 13477,
+      "mtime": "2026-11-09T15:05:26.055Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/axios.js",
+      "name": "axios.js",
+      "ext": "js",
+      "size": 2558,
+      "mtime": "2026-11-09T15:05:26.049Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/cancel/CanceledError.js",
+      "name": "CanceledError.js",
+      "ext": "js",
+      "size": 618,
+      "mtime": "2026-11-09T15:05:26.302Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/cancel/CancelToken.js",
+      "name": "CancelToken.js",
+      "ext": "js",
+      "size": 2796,
+      "mtime": "2026-11-09T15:05:26.300Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/cancel/isCancel.js",
+      "name": "isCancel.js",
+      "ext": "js",
+      "size": 99,
+      "mtime": "2026-11-09T15:05:26.298Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/core/assertParamsAcyclic.js",
+      "name": "assertParamsAcyclic.js",
+      "ext": "js",
+      "size": 1622,
+      "mtime": "2026-11-09T15:05:26.251Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/core/Axios.js",
+      "name": "Axios.js",
+      "ext": "js",
+      "size": 11262,
+      "mtime": "2026-11-09T15:05:26.258Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/core/AxiosError.js",
+      "name": "AxiosError.js",
+      "ext": "js",
+      "size": 9283,
+      "mtime": "2026-11-09T15:05:26.275Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/core/AxiosHeaders.js",
+      "name": "AxiosHeaders.js",
+      "ext": "js",
+      "size": 11187,
+      "mtime": "2026-11-09T15:05:26.263Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/core/buildFullPath.js",
+      "name": "buildFullPath.js",
+      "ext": "js",
+      "size": 2899,
+      "mtime": "2026-11-09T15:05:26.274Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/core/createMultipartBody.js",
+      "name": "createMultipartBody.js",
+      "ext": "js",
+      "size": 1408,
+      "mtime": "2026-11-09T15:05:26.284Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/core/dispatchRequest.js",
+      "name": "dispatchRequest.js",
+      "ext": "js",
+      "size": 3597,
+      "mtime": "2026-11-09T15:05:26.243Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/core/InterceptorManager.js",
+      "name": "InterceptorManager.js",
+      "ext": "js",
+      "size": 4546,
+      "mtime": "2026-11-09T15:05:26.291Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/core/mergeConfig.js",
+      "name": "mergeConfig.js",
+      "ext": "js",
+      "size": 7871,
+      "mtime": "2026-11-09T15:05:26.278Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/core/methodList.js",
+      "name": "methodList.js",
+      "ext": "js",
+      "size": 200,
+      "mtime": "2026-11-09T15:05:26.269Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/core/README.md",
+      "name": "README.md",
+      "ext": "md",
+      "size": 399,
+      "mtime": "2026-11-09T15:05:26.260Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/core/setFormDataHeaders.js",
+      "name": "setFormDataHeaders.js",
+      "ext": "js",
+      "size": 907,
+      "mtime": "2026-11-09T15:05:26.289Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/core/settle.js",
+      "name": "settle.js",
+      "ext": "js",
+      "size": 846,
+      "mtime": "2026-11-09T15:05:26.246Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/core/transformData.js",
+      "name": "transformData.js",
+      "ext": "js",
+      "size": 776,
+      "mtime": "2026-11-09T15:05:26.271Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/defaults/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 4977,
+      "mtime": "2026-11-09T15:05:26.040Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/defaults/transitional.js",
+      "name": "transitional.js",
+      "ext": "js",
+      "size": 273,
+      "mtime": "2026-11-09T15:05:26.046Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/env/classes/FormData.js",
+      "name": "FormData.js",
+      "ext": "js",
+      "size": 106,
+      "mtime": "2026-11-09T15:05:25.991Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/env/data.js",
+      "name": "data.js",
+      "ext": "js",
+      "size": 32,
+      "mtime": "2026-11-09T15:05:25.999Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/env/README.md",
+      "name": "README.md",
+      "ext": "md",
+      "size": 131,
+      "mtime": "2026-11-09T15:05:25.993Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/helpers/AxiosTransformStream.js",
+      "name": "AxiosTransformStream.js",
+      "ext": "js",
+      "size": 4129,
+      "mtime": "2026-11-09T15:05:26.188Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/helpers/AxiosURLSearchParams.js",
+      "name": "AxiosURLSearchParams.js",
+      "ext": "js",
+      "size": 1416,
+      "mtime": "2026-11-09T15:05:26.156Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/helpers/bind.js",
+      "name": "bind.js",
+      "ext": "js",
+      "size": 444,
+      "mtime": "2026-11-09T15:05:26.133Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/helpers/buildURL.js",
+      "name": "buildURL.js",
+      "ext": "js",
+      "size": 1819,
+      "mtime": "2026-11-09T15:05:26.224Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/helpers/callbackify.js",
+      "name": "callbackify.js",
+      "ext": "js",
+      "size": 417,
+      "mtime": "2026-11-09T15:05:26.214Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/helpers/combineURLs.js",
+      "name": "combineURLs.js",
+      "ext": "js",
+      "size": 492,
+      "mtime": "2026-11-09T15:05:26.206Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/helpers/composeSignals.js",
+      "name": "composeSignals.js",
+      "ext": "js",
+      "size": 1644,
+      "mtime": "2026-11-09T15:05:26.145Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/helpers/cookies.js",
+      "name": "cookies.js",
+      "ext": "js",
+      "size": 2861,
+      "mtime": "2026-11-09T15:05:26.191Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/helpers/deprecatedMethod.js",
+      "name": "deprecatedMethod.js",
+      "ext": "js",
+      "size": 777,
+      "mtime": "2026-11-09T15:05:26.202Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/helpers/estimateDataURLDecodedBytes.js",
+      "name": "estimateDataURLDecodedBytes.js",
+      "ext": "js",
+      "size": 5761,
+      "mtime": "2026-11-09T15:05:26.181Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/helpers/formDataToBlob.js",
+      "name": "formDataToBlob.js",
+      "ext": "js",
+      "size": 3627,
+      "mtime": "2026-11-09T15:05:26.209Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/helpers/formDataToJSON.js",
+      "name": "formDataToJSON.js",
+      "ext": "js",
+      "size": 4161,
+      "mtime": "2026-11-09T15:05:26.131Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/helpers/formDataToStream.js",
+      "name": "formDataToStream.js",
+      "ext": "js",
+      "size": 3100,
+      "mtime": "2026-11-09T15:05:26.137Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/helpers/fromDataURI.js",
+      "name": "fromDataURI.js",
+      "ext": "js",
+      "size": 2258,
+      "mtime": "2026-11-09T15:05:26.234Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/helpers/Http2Sessions.js",
+      "name": "Http2Sessions.js",
+      "ext": "js",
+      "size": 2746,
+      "mtime": "2026-11-09T15:05:26.084Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/helpers/HttpStatusCode.js",
+      "name": "HttpStatusCode.js",
+      "ext": "js",
+      "size": 2028,
+      "mtime": "2026-11-09T15:05:26.237Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/helpers/isAbsoluteURL.js",
+      "name": "isAbsoluteURL.js",
+      "ext": "js",
+      "size": 617,
+      "mtime": "2026-11-09T15:05:26.149Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/helpers/isAxiosError.js",
+      "name": "isAxiosError.js",
+      "ext": "js",
+      "size": 369,
+      "mtime": "2026-11-09T15:05:26.239Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/helpers/isURLSameOrigin.js",
+      "name": "isURLSameOrigin.js",
+      "ext": "js",
+      "size": 354,
+      "mtime": "2026-11-09T15:05:26.090Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/helpers/normalizeURLForProtocolCheck.js",
+      "name": "normalizeURLForProtocolCheck.js",
+      "ext": "js",
+      "size": 473,
+      "mtime": "2026-11-09T15:05:26.140Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/helpers/null.js",
+      "name": "null.js",
+      "ext": "js",
+      "size": 56,
+      "mtime": "2026-11-09T15:05:26.095Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/helpers/parseHeaders.js",
+      "name": "parseHeaders.js",
+      "ext": "js",
+      "size": 1592,
+      "mtime": "2026-11-09T15:05:26.100Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/helpers/parseProtocol.js",
+      "name": "parseProtocol.js",
+      "ext": "js",
+      "size": 167,
+      "mtime": "2026-11-09T15:05:26.107Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/helpers/progressEventReducer.js",
+      "name": "progressEventReducer.js",
+      "ext": "js",
+      "size": 1449,
+      "mtime": "2026-11-09T15:05:26.111Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/helpers/readBlob.js",
+      "name": "readBlob.js",
+      "ext": "js",
+      "size": 323,
+      "mtime": "2026-11-09T15:05:26.114Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/helpers/README.md",
+      "name": "README.md",
+      "ext": "md",
+      "size": 351,
+      "mtime": "2026-11-09T15:05:26.229Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/helpers/resolveConfig.js",
+      "name": "resolveConfig.js",
+      "ext": "js",
+      "size": 4056,
+      "mtime": "2026-11-09T15:05:26.116Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/helpers/sanitizeHeaderValue.js",
+      "name": "sanitizeHeaderValue.js",
+      "ext": "js",
+      "size": 1589,
+      "mtime": "2026-11-09T15:05:26.119Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/helpers/shouldBypassProxy.js",
+      "name": "shouldBypassProxy.js",
+      "ext": "js",
+      "size": 14655,
+      "mtime": "2026-11-09T15:05:26.228Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/helpers/speedometer.js",
+      "name": "speedometer.js",
+      "ext": "js",
+      "size": 1094,
+      "mtime": "2026-11-09T15:05:26.183Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/helpers/spread.js",
+      "name": "spread.js",
+      "ext": "js",
+      "size": 566,
+      "mtime": "2026-11-09T15:05:26.125Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/helpers/throttle.js",
+      "name": "throttle.js",
+      "ext": "js",
+      "size": 919,
+      "mtime": "2026-11-09T15:05:26.166Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/helpers/toFormData.js",
+      "name": "toFormData.js",
+      "ext": "js",
+      "size": 7732,
+      "mtime": "2026-11-09T15:05:26.199Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/helpers/toURLEncodedForm.js",
+      "name": "toURLEncodedForm.js",
+      "ext": "js",
+      "size": 542,
+      "mtime": "2026-11-09T15:05:26.158Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/helpers/trackStream.js",
+      "name": "trackStream.js",
+      "ext": "js",
+      "size": 1764,
+      "mtime": "2026-11-09T15:05:26.153Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/helpers/validator.js",
+      "name": "validator.js",
+      "ext": "js",
+      "size": 3083,
+      "mtime": "2026-11-09T15:05:26.175Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/helpers/ZlibHeaderTransformStream.js",
+      "name": "ZlibHeaderTransformStream.js",
+      "ext": "js",
+      "size": 688,
+      "mtime": "2026-11-09T15:05:26.087Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/platform/browser/classes/Blob.js",
+      "name": "Blob.js",
+      "ext": "js",
+      "size": 73,
+      "mtime": "2026-11-09T15:05:26.009Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/platform/browser/classes/FormData.js",
+      "name": "FormData.js",
+      "ext": "js",
+      "size": 81,
+      "mtime": "2026-11-09T15:05:26.012Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/platform/browser/classes/URLSearchParams.js",
+      "name": "URLSearchParams.js",
+      "ext": "js",
+      "size": 188,
+      "mtime": "2026-11-09T15:05:26.014Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/platform/browser/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 310,
+      "mtime": "2026-11-09T15:05:26.017Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/platform/common/utils.js",
+      "name": "utils.js",
+      "ext": "js",
+      "size": 1603,
+      "mtime": "2026-11-09T15:05:26.037Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/platform/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 132,
+      "mtime": "2026-11-09T15:05:26.004Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/platform/node/classes/Buffer.js",
+      "name": "Buffer.js",
+      "ext": "js",
+      "size": 158,
+      "mtime": "2026-11-09T15:05:26.029Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/platform/node/classes/FormData.js",
+      "name": "FormData.js",
+      "ext": "js",
+      "size": 60,
+      "mtime": "2026-11-09T15:05:26.024Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/platform/node/classes/URLSearchParams.js",
+      "name": "URLSearchParams.js",
+      "ext": "js",
+      "size": 74,
+      "mtime": "2026-11-09T15:05:26.031Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/platform/node/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 837,
+      "mtime": "2026-11-09T15:05:26.021Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/lib/utils.js",
+      "name": "utils.js",
+      "ext": "js",
+      "size": 33095,
+      "mtime": "2026-11-09T15:05:26.050Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/LICENSE",
+      "name": "LICENSE",
+      "ext": "",
+      "size": 1084,
+      "mtime": "2026-11-09T15:05:25.972Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/MIGRATION_GUIDE.md",
+      "name": "MIGRATION_GUIDE.md",
+      "ext": "md",
+      "size": 21742,
+      "mtime": "2026-11-09T15:05:25.984Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/package.json",
+      "name": "package.json",
+      "ext": "json",
+      "size": 6658,
+      "mtime": "2026-11-09T15:05:25.920Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/axios/README.md",
+      "name": "README.md",
+      "ext": "md",
+      "size": 104939,
+      "mtime": "2026-11-09T15:05:25.922Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/base64-js/base64js.min.js",
+      "name": "base64js.min.js",
+      "ext": "js",
+      "size": 2192,
+      "mtime": "2026-11-09T15:05:25.754Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/base64-js/index.d.ts",
+      "name": "index.d.ts",
+      "ext": "ts",
+      "size": 161,
+      "mtime": "2026-11-09T15:05:25.752Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/base64-js/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 3932,
+      "mtime": "2026-11-09T15:05:25.763Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/base64-js/LICENSE",
+      "name": "LICENSE",
+      "ext": "",
+      "size": 1081,
+      "mtime": "2026-11-09T15:05:25.759Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/base64-js/package.json",
+      "name": "package.json",
+      "ext": "json",
+      "size": 1115,
+      "mtime": "2026-11-09T15:05:25.757Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/base64-js/README.md",
+      "name": "README.md",
+      "ext": "md",
+      "size": 1143,
+      "mtime": "2026-11-09T15:05:25.767Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/buffer/AUTHORS.md",
+      "name": "AUTHORS.md",
+      "ext": "md",
+      "size": 2788,
+      "mtime": "2026-11-09T15:05:25.738Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/buffer/index.d.ts",
+      "name": "index.d.ts",
+      "ext": "ts",
+      "size": 9191,
+      "mtime": "2026-11-09T15:05:25.743Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/buffer/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 58353,
+      "mtime": "2026-11-09T15:05:25.740Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/buffer/LICENSE",
+      "name": "LICENSE",
+      "ext": "",
+      "size": 1106,
+      "mtime": "2026-11-09T15:05:25.736Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/buffer/package.json",
+      "name": "package.json",
+      "ext": "json",
+      "size": 2546,
+      "mtime": "2026-11-09T15:05:25.746Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/buffer/README.md",
+      "name": "README.md",
+      "ext": "md",
+      "size": 17295,
+      "mtime": "2026-11-09T15:05:25.749Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/call-bind-apply-helpers/.eslintrc",
+      "name": ".eslintrc",
+      "ext": "",
+      "size": 232,
+      "mtime": "2026-11-09T15:05:25.543Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/call-bind-apply-helpers/.github/FUNDING.yml",
+      "name": "FUNDING.yml",
+      "ext": "yml",
+      "size": 594,
+      "mtime": "2026-11-09T15:05:25.570Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/call-bind-apply-helpers/.nycrc",
+      "name": ".nycrc",
+      "ext": "",
+      "size": 139,
+      "mtime": "2026-11-09T15:05:25.582Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/call-bind-apply-helpers/actualApply.d.ts",
+      "name": "actualApply.d.ts",
+      "ext": "ts",
+      "size": 23,
+      "mtime": "2026-11-09T15:05:25.564Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/call-bind-apply-helpers/actualApply.js",
+      "name": "actualApply.js",
+      "ext": "js",
+      "size": 280,
+      "mtime": "2026-11-09T15:05:25.587Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/call-bind-apply-helpers/applyBind.d.ts",
+      "name": "applyBind.d.ts",
+      "ext": "ts",
+      "size": 614,
+      "mtime": "2026-11-09T15:05:25.536Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/call-bind-apply-helpers/applyBind.js",
+      "name": "applyBind.js",
+      "ext": "js",
+      "size": 264,
+      "mtime": "2026-11-09T15:05:25.556Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/call-bind-apply-helpers/CHANGELOG.md",
+      "name": "CHANGELOG.md",
+      "ext": "md",
+      "size": 1938,
+      "mtime": "2026-11-09T15:05:25.554Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/call-bind-apply-helpers/functionApply.d.ts",
+      "name": "functionApply.d.ts",
+      "ext": "ts",
+      "size": 34,
+      "mtime": "2026-11-09T15:05:25.580Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/call-bind-apply-helpers/functionApply.js",
+      "name": "functionApply.js",
+      "ext": "js",
+      "size": 99,
+      "mtime": "2026-11-09T15:05:25.534Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/call-bind-apply-helpers/functionCall.d.ts",
+      "name": "functionCall.d.ts",
+      "ext": "ts",
+      "size": 33,
+      "mtime": "2026-11-09T15:05:25.585Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/call-bind-apply-helpers/functionCall.js",
+      "name": "functionCall.js",
+      "ext": "js",
+      "size": 97,
+      "mtime": "2026-11-09T15:05:25.578Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/call-bind-apply-helpers/index.d.ts",
+      "name": "index.d.ts",
+      "ext": "ts",
+      "size": 2226,
+      "mtime": "2026-11-09T15:05:25.559Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/call-bind-apply-helpers/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 511,
+      "mtime": "2026-11-09T15:05:25.539Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/call-bind-apply-helpers/LICENSE",
+      "name": "LICENSE",
+      "ext": "",
+      "size": 1071,
+      "mtime": "2026-11-09T15:05:25.547Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/call-bind-apply-helpers/package.json",
+      "name": "package.json",
+      "ext": "json",
+      "size": 2480,
+      "mtime": "2026-11-09T15:05:25.590Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/call-bind-apply-helpers/README.md",
+      "name": "README.md",
+      "ext": "md",
+      "size": 2330,
+      "mtime": "2026-11-09T15:05:25.561Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/call-bind-apply-helpers/reflectApply.d.ts",
+      "name": "reflectApply.d.ts",
+      "ext": "ts",
+      "size": 82,
+      "mtime": "2026-11-09T15:05:25.566Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/call-bind-apply-helpers/reflectApply.js",
+      "name": "reflectApply.js",
+      "ext": "js",
+      "size": 132,
+      "mtime": "2026-11-09T15:05:25.549Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/call-bind-apply-helpers/test/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 2658,
+      "mtime": "2026-11-09T15:05:25.575Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/call-bind-apply-helpers/tsconfig.json",
+      "name": "tsconfig.json",
+      "ext": "json",
+      "size": 115,
+      "mtime": "2026-11-09T15:05:25.551Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/combined-stream/lib/combined_stream.js",
+      "name": "combined_stream.js",
+      "ext": "js",
+      "size": 4687,
+      "mtime": "2026-11-09T15:05:24.717Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/combined-stream/License",
+      "name": "License",
+      "ext": "",
+      "size": 1085,
+      "mtime": "2026-11-09T15:05:24.712Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/combined-stream/package.json",
+      "name": "package.json",
+      "ext": "json",
+      "size": 640,
+      "mtime": "2026-11-09T15:05:24.710Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/combined-stream/Readme.md",
+      "name": "Readme.md",
+      "ext": "md",
+      "size": 4551,
+      "mtime": "2026-11-09T15:05:24.705Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/combined-stream/yarn.lock",
+      "name": "yarn.lock",
+      "ext": "lock",
+      "size": 551,
+      "mtime": "2026-11-09T15:05:24.707Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/debug/LICENSE",
+      "name": "LICENSE",
+      "ext": "",
+      "size": 1139,
+      "mtime": "2026-11-09T15:05:25.615Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/debug/package.json",
+      "name": "package.json",
+      "ext": "json",
+      "size": 1479,
+      "mtime": "2026-11-09T15:05:25.611Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/debug/README.md",
+      "name": "README.md",
+      "ext": "md",
+      "size": 22115,
+      "mtime": "2026-11-09T15:05:25.608Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/debug/src/browser.js",
+      "name": "browser.js",
+      "ext": "js",
+      "size": 6103,
+      "mtime": "2026-11-09T15:05:25.595Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/debug/src/common.js",
+      "name": "common.js",
+      "ext": "js",
+      "size": 6915,
+      "mtime": "2026-11-09T15:05:25.598Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/debug/src/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 314,
+      "mtime": "2026-11-09T15:05:25.603Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/debug/src/node.js",
+      "name": "node.js",
+      "ext": "js",
+      "size": 4728,
+      "mtime": "2026-11-09T15:05:25.600Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/delayed-stream/.npmignore",
+      "name": ".npmignore",
+      "ext": "",
+      "size": 5,
+      "mtime": "2026-11-09T15:05:24.784Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/delayed-stream/lib/delayed_stream.js",
+      "name": "delayed_stream.js",
+      "ext": "js",
+      "size": 2319,
+      "mtime": "2026-11-09T15:05:24.780Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/delayed-stream/License",
+      "name": "License",
+      "ext": "",
+      "size": 1085,
+      "mtime": "2026-11-09T15:05:24.775Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/delayed-stream/Makefile",
+      "name": "Makefile",
+      "ext": "",
+      "size": 57,
+      "mtime": "2026-11-09T15:05:24.788Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/delayed-stream/package.json",
+      "name": "package.json",
+      "ext": "json",
+      "size": 684,
+      "mtime": "2026-11-09T15:05:24.781Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/delayed-stream/Readme.md",
+      "name": "Readme.md",
+      "ext": "md",
+      "size": 3871,
+      "mtime": "2026-11-09T15:05:24.787Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/dunder-proto/.eslintrc",
+      "name": ".eslintrc",
+      "ext": "",
+      "size": 43,
+      "mtime": "2026-11-09T15:05:24.904Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/dunder-proto/.github/FUNDING.yml",
+      "name": "FUNDING.yml",
+      "ext": "yml",
+      "size": 583,
+      "mtime": "2026-11-09T15:05:24.916Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/dunder-proto/.nycrc",
+      "name": ".nycrc",
+      "ext": "",
+      "size": 216,
+      "mtime": "2026-11-09T15:05:24.900Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/dunder-proto/CHANGELOG.md",
+      "name": "CHANGELOG.md",
+      "ext": "md",
+      "size": 1547,
+      "mtime": "2026-11-09T15:05:24.887Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/dunder-proto/get.d.ts",
+      "name": "get.d.ts",
+      "ext": "ts",
+      "size": 121,
+      "mtime": "2026-11-09T15:05:24.895Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/dunder-proto/get.js",
+      "name": "get.js",
+      "ext": "js",
+      "size": 980,
+      "mtime": "2026-11-09T15:05:24.897Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/dunder-proto/LICENSE",
+      "name": "LICENSE",
+      "ext": "",
+      "size": 1073,
+      "mtime": "2026-11-09T15:05:24.884Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/dunder-proto/package.json",
+      "name": "package.json",
+      "ext": "json",
+      "size": 2108,
+      "mtime": "2026-11-09T15:05:24.879Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/dunder-proto/README.md",
+      "name": "README.md",
+      "ext": "md",
+      "size": 1907,
+      "mtime": "2026-11-09T15:05:24.881Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/dunder-proto/set.d.ts",
+      "name": "set.d.ts",
+      "ext": "ts",
+      "size": 144,
+      "mtime": "2026-11-09T15:05:24.893Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/dunder-proto/set.js",
+      "name": "set.js",
+      "ext": "js",
+      "size": 1276,
+      "mtime": "2026-11-09T15:05:24.902Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/dunder-proto/test/get.js",
+      "name": "get.js",
+      "ext": "js",
+      "size": 1143,
+      "mtime": "2026-11-09T15:05:24.907Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/dunder-proto/test/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 51,
+      "mtime": "2026-11-09T15:05:24.912Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/dunder-proto/test/set.js",
+      "name": "set.js",
+      "ext": "js",
+      "size": 1695,
+      "mtime": "2026-11-09T15:05:24.909Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/dunder-proto/tsconfig.json",
+      "name": "tsconfig.json",
+      "ext": "json",
+      "size": 116,
+      "mtime": "2026-11-09T15:05:24.890Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-define-property/.eslintrc",
+      "name": ".eslintrc",
+      "ext": "",
+      "size": 144,
+      "mtime": "2026-11-09T15:05:25.323Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-define-property/.github/FUNDING.yml",
+      "name": "FUNDING.yml",
+      "ext": "yml",
+      "size": 564,
+      "mtime": "2026-11-09T15:05:25.346Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-define-property/.nycrc",
+      "name": ".nycrc",
+      "ext": "",
+      "size": 139,
+      "mtime": "2026-11-09T15:05:25.327Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-define-property/CHANGELOG.md",
+      "name": "CHANGELOG.md",
+      "ext": "md",
+      "size": 2296,
+      "mtime": "2026-11-09T15:05:25.339Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-define-property/index.d.ts",
+      "name": "index.d.ts",
+      "ext": "ts",
+      "size": 93,
+      "mtime": "2026-11-09T15:05:25.332Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-define-property/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 288,
+      "mtime": "2026-11-09T15:05:25.320Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-define-property/LICENSE",
+      "name": "LICENSE",
+      "ext": "",
+      "size": 1071,
+      "mtime": "2026-11-09T15:05:25.335Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-define-property/package.json",
+      "name": "package.json",
+      "ext": "json",
+      "size": 2129,
+      "mtime": "2026-11-09T15:05:25.342Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-define-property/README.md",
+      "name": "README.md",
+      "ext": "md",
+      "size": 2056,
+      "mtime": "2026-11-09T15:05:25.318Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-define-property/test/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 1299,
+      "mtime": "2026-11-09T15:05:25.330Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-define-property/tsconfig.json",
+      "name": "tsconfig.json",
+      "ext": "json",
+      "size": 138,
+      "mtime": "2026-11-09T15:05:25.337Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-errors/.eslintrc",
+      "name": ".eslintrc",
+      "ext": "",
+      "size": 43,
+      "mtime": "2026-11-09T15:05:24.727Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-errors/.github/FUNDING.yml",
+      "name": "FUNDING.yml",
+      "ext": "yml",
+      "size": 555,
+      "mtime": "2026-11-09T15:05:24.737Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-errors/CHANGELOG.md",
+      "name": "CHANGELOG.md",
+      "ext": "md",
+      "size": 1833,
+      "mtime": "2026-11-09T15:05:24.757Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-errors/eval.d.ts",
+      "name": "eval.d.ts",
+      "ext": "ts",
+      "size": 68,
+      "mtime": "2026-11-09T15:05:24.751Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-errors/eval.js",
+      "name": "eval.js",
+      "ext": "js",
+      "size": 75,
+      "mtime": "2026-11-09T15:05:24.768Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-errors/index.d.ts",
+      "name": "index.d.ts",
+      "ext": "ts",
+      "size": 56,
+      "mtime": "2026-11-09T15:05:24.770Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-errors/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 66,
+      "mtime": "2026-11-09T15:05:24.750Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-errors/LICENSE",
+      "name": "LICENSE",
+      "ext": "",
+      "size": 1071,
+      "mtime": "2026-11-09T15:05:24.762Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-errors/package.json",
+      "name": "package.json",
+      "ext": "json",
+      "size": 2174,
+      "mtime": "2026-11-09T15:05:24.739Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-errors/range.d.ts",
+      "name": "range.d.ts",
+      "ext": "ts",
+      "size": 71,
+      "mtime": "2026-11-09T15:05:24.741Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-errors/range.js",
+      "name": "range.js",
+      "ext": "js",
+      "size": 77,
+      "mtime": "2026-11-09T15:05:24.766Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-errors/README.md",
+      "name": "README.md",
+      "ext": "md",
+      "size": 2114,
+      "mtime": "2026-11-09T15:05:24.745Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-errors/ref.d.ts",
+      "name": "ref.d.ts",
+      "ext": "ts",
+      "size": 83,
+      "mtime": "2026-11-09T15:05:24.732Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-errors/ref.js",
+      "name": "ref.js",
+      "ext": "js",
+      "size": 79,
+      "mtime": "2026-11-09T15:05:24.754Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-errors/syntax.d.ts",
+      "name": "syntax.d.ts",
+      "ext": "ts",
+      "size": 74,
+      "mtime": "2026-11-09T15:05:24.759Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-errors/syntax.js",
+      "name": "syntax.js",
+      "ext": "js",
+      "size": 79,
+      "mtime": "2026-11-09T15:05:24.722Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-errors/test/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 356,
+      "mtime": "2026-11-09T15:05:24.731Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-errors/tsconfig.json",
+      "name": "tsconfig.json",
+      "ext": "json",
+      "size": 3170,
+      "mtime": "2026-11-09T15:05:24.772Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-errors/type.d.ts",
+      "name": "type.d.ts",
+      "ext": "ts",
+      "size": 67,
+      "mtime": "2026-11-09T15:05:24.747Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-errors/type.js",
+      "name": "type.js",
+      "ext": "js",
+      "size": 75,
+      "mtime": "2026-11-09T15:05:24.721Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-errors/uri.d.ts",
+      "name": "uri.d.ts",
+      "ext": "ts",
+      "size": 65,
+      "mtime": "2026-11-09T15:05:24.764Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-errors/uri.js",
+      "name": "uri.js",
+      "ext": "js",
+      "size": 73,
+      "mtime": "2026-11-09T15:05:24.724Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-object-atoms/.eslintrc",
+      "name": ".eslintrc",
+      "ext": "",
+      "size": 229,
+      "mtime": "2026-11-09T15:05:24.991Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-object-atoms/.github/FUNDING.yml",
+      "name": "FUNDING.yml",
+      "ext": "yml",
+      "size": 555,
+      "mtime": "2026-11-09T15:05:24.972Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-object-atoms/CHANGELOG.md",
+      "name": "CHANGELOG.md",
+      "ext": "md",
+      "size": 2622,
+      "mtime": "2026-11-09T15:05:24.976Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-object-atoms/index.d.ts",
+      "name": "index.d.ts",
+      "ext": "ts",
+      "size": 59,
+      "mtime": "2026-11-09T15:05:24.974Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-object-atoms/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 67,
+      "mtime": "2026-11-09T15:05:24.968Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-object-atoms/isObject.d.ts",
+      "name": "isObject.d.ts",
+      "ext": "ts",
+      "size": 104,
+      "mtime": "2026-11-09T15:05:24.965Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-object-atoms/isObject.js",
+      "name": "isObject.js",
+      "ext": "js",
+      "size": 161,
+      "mtime": "2026-11-09T15:05:24.983Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-object-atoms/LICENSE",
+      "name": "LICENSE",
+      "ext": "",
+      "size": 1071,
+      "mtime": "2026-11-09T15:05:24.959Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-object-atoms/package.json",
+      "name": "package.json",
+      "ext": "json",
+      "size": 2249,
+      "mtime": "2026-11-09T15:05:24.960Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-object-atoms/README.md",
+      "name": "README.md",
+      "ext": "md",
+      "size": 2603,
+      "mtime": "2026-11-09T15:05:24.963Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-object-atoms/RequireObjectCoercible.d.ts",
+      "name": "RequireObjectCoercible.d.ts",
+      "ext": "ts",
+      "size": 123,
+      "mtime": "2026-11-09T15:05:24.997Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-object-atoms/RequireObjectCoercible.js",
+      "name": "RequireObjectCoercible.js",
+      "ext": "js",
+      "size": 313,
+      "mtime": "2026-11-09T15:05:24.995Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-object-atoms/test/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 1097,
+      "mtime": "2026-11-09T15:05:24.988Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-object-atoms/ToObject.d.ts",
+      "name": "ToObject.d.ts",
+      "ext": "ts",
+      "size": 352,
+      "mtime": "2026-11-09T15:05:24.981Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-object-atoms/ToObject.js",
+      "name": "ToObject.js",
+      "ext": "js",
+      "size": 250,
+      "mtime": "2026-11-09T15:05:24.978Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-object-atoms/tsconfig.json",
+      "name": "tsconfig.json",
+      "ext": "json",
+      "size": 112,
+      "mtime": "2026-11-09T15:05:24.956Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-set-tostringtag/.eslintrc",
+      "name": ".eslintrc",
+      "ext": "",
+      "size": 138,
+      "mtime": "2026-11-09T15:05:25.069Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-set-tostringtag/.nycrc",
+      "name": ".nycrc",
+      "ext": "",
+      "size": 139,
+      "mtime": "2026-11-09T15:05:25.062Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-set-tostringtag/CHANGELOG.md",
+      "name": "CHANGELOG.md",
+      "ext": "md",
+      "size": 4968,
+      "mtime": "2026-11-09T15:05:25.050Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-set-tostringtag/index.d.ts",
+      "name": "index.d.ts",
+      "ext": "ts",
+      "size": 236,
+      "mtime": "2026-11-09T15:05:25.054Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-set-tostringtag/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 1213,
+      "mtime": "2026-11-09T15:05:25.048Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-set-tostringtag/LICENSE",
+      "name": "LICENSE",
+      "ext": "",
+      "size": 1073,
+      "mtime": "2026-11-09T15:05:25.060Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-set-tostringtag/package.json",
+      "name": "package.json",
+      "ext": "json",
+      "size": 2193,
+      "mtime": "2026-11-09T15:05:25.057Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-set-tostringtag/README.md",
+      "name": "README.md",
+      "ext": "md",
+      "size": 2233,
+      "mtime": "2026-11-09T15:05:25.053Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-set-tostringtag/test/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 2235,
+      "mtime": "2026-11-09T15:05:25.067Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/es-set-tostringtag/tsconfig.json",
+      "name": "tsconfig.json",
+      "ext": "json",
+      "size": 116,
+      "mtime": "2026-11-09T15:05:25.071Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/follow-redirects/debug.js",
+      "name": "debug.js",
+      "ext": "js",
+      "size": 315,
+      "mtime": "2026-11-09T15:05:24.683Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/follow-redirects/http.js",
+      "name": "http.js",
+      "ext": "js",
+      "size": 37,
+      "mtime": "2026-11-09T15:05:24.686Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/follow-redirects/https.js",
+      "name": "https.js",
+      "ext": "js",
+      "size": 38,
+      "mtime": "2026-11-09T15:05:24.691Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/follow-redirects/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 21561,
+      "mtime": "2026-11-09T15:05:24.700Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/follow-redirects/LICENSE",
+      "name": "LICENSE",
+      "ext": "",
+      "size": 1136,
+      "mtime": "2026-11-09T15:05:24.694Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/follow-redirects/package.json",
+      "name": "package.json",
+      "ext": "json",
+      "size": 1289,
+      "mtime": "2026-11-09T15:05:24.702Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/follow-redirects/README.md",
+      "name": "README.md",
+      "ext": "md",
+      "size": 7734,
+      "mtime": "2026-11-09T15:05:24.689Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/form-data/CHANGELOG.md",
+      "name": "CHANGELOG.md",
+      "ext": "md",
+      "size": 50480,
+      "mtime": "2026-11-09T15:05:26.323Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/form-data/index.d.ts",
+      "name": "index.d.ts",
+      "ext": "ts",
+      "size": 1825,
+      "mtime": "2026-11-09T15:05:26.326Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/form-data/lib/browser.js",
+      "name": "browser.js",
+      "ext": "js",
+      "size": 117,
+      "mtime": "2026-11-09T15:05:26.332Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/form-data/lib/form_data.js",
+      "name": "form_data.js",
+      "ext": "js",
+      "size": 15086,
+      "mtime": "2026-11-09T15:05:26.334Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/form-data/lib/populate.js",
+      "name": "populate.js",
+      "ext": "js",
+      "size": 232,
+      "mtime": "2026-11-09T15:05:26.336Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/form-data/License",
+      "name": "License",
+      "ext": "",
+      "size": 1118,
+      "mtime": "2026-11-09T15:05:26.339Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/form-data/package.json",
+      "name": "package.json",
+      "ext": "json",
+      "size": 3009,
+      "mtime": "2026-11-09T15:05:26.347Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/form-data/README.md",
+      "name": "README.md",
+      "ext": "md",
+      "size": 12034,
+      "mtime": "2026-11-09T15:05:26.328Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/function-bind/.eslintrc",
+      "name": ".eslintrc",
+      "ext": "",
+      "size": 253,
+      "mtime": "2026-11-09T15:05:25.871Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/function-bind/.github/FUNDING.yml",
+      "name": "FUNDING.yml",
+      "ext": "yml",
+      "size": 584,
+      "mtime": "2026-11-09T15:05:25.858Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/function-bind/.github/SECURITY.md",
+      "name": "SECURITY.md",
+      "ext": "md",
+      "size": 157,
+      "mtime": "2026-11-09T15:05:25.856Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/function-bind/.nycrc",
+      "name": ".nycrc",
+      "ext": "",
+      "size": 216,
+      "mtime": "2026-11-09T15:05:25.874Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/function-bind/CHANGELOG.md",
+      "name": "CHANGELOG.md",
+      "ext": "md",
+      "size": 13812,
+      "mtime": "2026-11-09T15:05:25.844Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/function-bind/implementation.js",
+      "name": "implementation.js",
+      "ext": "js",
+      "size": 2043,
+      "mtime": "2026-11-09T15:05:25.860Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/function-bind/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 126,
+      "mtime": "2026-11-09T15:05:25.850Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/function-bind/LICENSE",
+      "name": "LICENSE",
+      "ext": "",
+      "size": 1052,
+      "mtime": "2026-11-09T15:05:25.864Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/function-bind/package.json",
+      "name": "package.json",
+      "ext": "json",
+      "size": 2262,
+      "mtime": "2026-11-09T15:05:25.867Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/function-bind/README.md",
+      "name": "README.md",
+      "ext": "md",
+      "size": 1755,
+      "mtime": "2026-11-09T15:05:25.848Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/function-bind/test/.eslintrc",
+      "name": ".eslintrc",
+      "ext": "",
+      "size": 176,
+      "mtime": "2026-11-09T15:05:25.881Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/function-bind/test/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 8991,
+      "mtime": "2026-11-09T15:05:25.878Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/get-intrinsic/.eslintrc",
+      "name": ".eslintrc",
+      "ext": "",
+      "size": 647,
+      "mtime": "2026-11-09T15:05:24.838Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/get-intrinsic/.github/FUNDING.yml",
+      "name": "FUNDING.yml",
+      "ext": "yml",
+      "size": 584,
+      "mtime": "2026-11-09T15:05:24.847Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/get-intrinsic/.nycrc",
+      "name": ".nycrc",
+      "ext": "",
+      "size": 139,
+      "mtime": "2026-11-09T15:05:24.849Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/get-intrinsic/CHANGELOG.md",
+      "name": "CHANGELOG.md",
+      "ext": "md",
+      "size": 15537,
+      "mtime": "2026-11-09T15:05:24.854Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/get-intrinsic/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 14439,
+      "mtime": "2026-11-09T15:05:24.842Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/get-intrinsic/LICENSE",
+      "name": "LICENSE",
+      "ext": "",
+      "size": 1071,
+      "mtime": "2026-11-09T15:05:24.836Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/get-intrinsic/package.json",
+      "name": "package.json",
+      "ext": "json",
+      "size": 2576,
+      "mtime": "2026-11-09T15:05:24.840Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/get-intrinsic/README.md",
+      "name": "README.md",
+      "ext": "md",
+      "size": 2791,
+      "mtime": "2026-11-09T15:05:24.834Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/get-intrinsic/test/GetIntrinsic.js",
+      "name": "GetIntrinsic.js",
+      "ext": "js",
+      "size": 8758,
+      "mtime": "2026-11-09T15:05:24.853Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/get-proto/.eslintrc",
+      "name": ".eslintrc",
+      "ext": "",
+      "size": 104,
+      "mtime": "2026-11-09T15:05:24.938Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/get-proto/.github/FUNDING.yml",
+      "name": "FUNDING.yml",
+      "ext": "yml",
+      "size": 580,
+      "mtime": "2026-11-09T15:05:24.950Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/get-proto/.nycrc",
+      "name": ".nycrc",
+      "ext": "",
+      "size": 139,
+      "mtime": "2026-11-09T15:05:24.919Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/get-proto/CHANGELOG.md",
+      "name": "CHANGELOG.md",
+      "ext": "md",
+      "size": 1054,
+      "mtime": "2026-11-09T15:05:24.934Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/get-proto/index.d.ts",
+      "name": "index.d.ts",
+      "ext": "ts",
+      "size": 126,
+      "mtime": "2026-11-09T15:05:24.929Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/get-proto/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 821,
+      "mtime": "2026-11-09T15:05:24.928Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/get-proto/LICENSE",
+      "name": "LICENSE",
+      "ext": "",
+      "size": 1071,
+      "mtime": "2026-11-09T15:05:24.925Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/get-proto/Object.getPrototypeOf.d.ts",
+      "name": "Object.getPrototypeOf.d.ts",
+      "ext": "ts",
+      "size": 125,
+      "mtime": "2026-11-09T15:05:24.923Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/get-proto/Object.getPrototypeOf.js",
+      "name": "Object.getPrototypeOf.js",
+      "ext": "js",
+      "size": 156,
+      "mtime": "2026-11-09T15:05:24.952Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/get-proto/package.json",
+      "name": "package.json",
+      "ext": "json",
+      "size": 2176,
+      "mtime": "2026-11-09T15:05:24.921Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/get-proto/README.md",
+      "name": "README.md",
+      "ext": "md",
+      "size": 1794,
+      "mtime": "2026-11-09T15:05:24.954Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/get-proto/Reflect.getPrototypeOf.d.ts",
+      "name": "Reflect.getPrototypeOf.d.ts",
+      "ext": "ts",
+      "size": 67,
+      "mtime": "2026-11-09T15:05:24.936Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/get-proto/Reflect.getPrototypeOf.js",
+      "name": "Reflect.getPrototypeOf.js",
+      "ext": "js",
+      "size": 150,
+      "mtime": "2026-11-09T15:05:24.947Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/get-proto/test/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 2359,
+      "mtime": "2026-11-09T15:05:24.944Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/get-proto/tsconfig.json",
+      "name": "tsconfig.json",
+      "ext": "json",
+      "size": 118,
+      "mtime": "2026-11-09T15:05:24.940Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/gopd/.eslintrc",
+      "name": ".eslintrc",
+      "ext": "",
+      "size": 224,
+      "mtime": "2026-11-09T15:05:25.806Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/gopd/.github/FUNDING.yml",
+      "name": "FUNDING.yml",
+      "ext": "yml",
+      "size": 575,
+      "mtime": "2026-11-09T15:05:25.815Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/gopd/CHANGELOG.md",
+      "name": "CHANGELOG.md",
+      "ext": "md",
+      "size": 3077,
+      "mtime": "2026-11-09T15:05:25.826Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/gopd/gOPD.d.ts",
+      "name": "gOPD.d.ts",
+      "ext": "ts",
+      "size": 42,
+      "mtime": "2026-11-09T15:05:25.811Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/gopd/gOPD.js",
+      "name": "gOPD.js",
+      "ext": "js",
+      "size": 97,
+      "mtime": "2026-11-09T15:05:25.817Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/gopd/index.d.ts",
+      "name": "index.d.ts",
+      "ext": "ts",
+      "size": 173,
+      "mtime": "2026-11-09T15:05:25.834Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/gopd/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 206,
+      "mtime": "2026-11-09T15:05:25.822Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/gopd/LICENSE",
+      "name": "LICENSE",
+      "ext": "",
+      "size": 1071,
+      "mtime": "2026-11-09T15:05:25.840Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/gopd/package.json",
+      "name": "package.json",
+      "ext": "json",
+      "size": 2070,
+      "mtime": "2026-11-09T15:05:25.804Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/gopd/README.md",
+      "name": "README.md",
+      "ext": "md",
+      "size": 1562,
+      "mtime": "2026-11-09T15:05:25.837Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/gopd/test/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 656,
+      "mtime": "2026-11-09T15:05:25.831Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/gopd/tsconfig.json",
+      "name": "tsconfig.json",
+      "ext": "json",
+      "size": 116,
+      "mtime": "2026-11-09T15:05:25.820Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/has-symbols/.eslintrc",
+      "name": ".eslintrc",
+      "ext": "",
+      "size": 164,
+      "mtime": "2026-11-09T15:05:25.102Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/has-symbols/.github/FUNDING.yml",
+      "name": "FUNDING.yml",
+      "ext": "yml",
+      "size": 582,
+      "mtime": "2026-11-09T15:05:25.098Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/has-symbols/.nycrc",
+      "name": ".nycrc",
+      "ext": "",
+      "size": 139,
+      "mtime": "2026-11-09T15:05:25.117Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/has-symbols/CHANGELOG.md",
+      "name": "CHANGELOG.md",
+      "ext": "md",
+      "size": 9431,
+      "mtime": "2026-11-09T15:05:25.075Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/has-symbols/index.d.ts",
+      "name": "index.d.ts",
+      "ext": "ts",
+      "size": 73,
+      "mtime": "2026-11-09T15:05:25.100Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/has-symbols/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 447,
+      "mtime": "2026-11-09T15:05:25.114Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/has-symbols/LICENSE",
+      "name": "LICENSE",
+      "ext": "",
+      "size": 1071,
+      "mtime": "2026-11-09T15:05:25.119Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/has-symbols/package.json",
+      "name": "package.json",
+      "ext": "json",
+      "size": 2974,
+      "mtime": "2026-11-09T15:05:25.079Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/has-symbols/README.md",
+      "name": "README.md",
+      "ext": "md",
+      "size": 2044,
+      "mtime": "2026-11-09T15:05:25.110Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/has-symbols/shams.d.ts",
+      "name": "shams.d.ts",
+      "ext": "ts",
+      "size": 69,
+      "mtime": "2026-11-09T15:05:25.107Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/has-symbols/shams.js",
+      "name": "shams.js",
+      "ext": "js",
+      "size": 1922,
+      "mtime": "2026-11-09T15:05:25.077Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/has-symbols/test/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 654,
+      "mtime": "2026-11-09T15:05:25.090Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/has-symbols/test/shams/core-js.js",
+      "name": "core-js.js",
+      "ext": "js",
+      "size": 797,
+      "mtime": "2026-11-09T15:05:25.083Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/has-symbols/test/shams/get-own-property-symbols.js",
+      "name": "get-own-property-symbols.js",
+      "ext": "js",
+      "size": 760,
+      "mtime": "2026-11-09T15:05:25.086Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/has-symbols/test/tests.js",
+      "name": "tests.js",
+      "ext": "js",
+      "size": 2139,
+      "mtime": "2026-11-09T15:05:25.092Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/has-symbols/tsconfig.json",
+      "name": "tsconfig.json",
+      "ext": "json",
+      "size": 143,
+      "mtime": "2026-11-09T15:05:25.112Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/has-tostringtag/.eslintrc",
+      "name": ".eslintrc",
+      "ext": "",
+      "size": 43,
+      "mtime": "2026-11-09T15:05:25.231Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/has-tostringtag/.github/FUNDING.yml",
+      "name": "FUNDING.yml",
+      "ext": "yml",
+      "size": 586,
+      "mtime": "2026-11-09T15:05:25.206Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/has-tostringtag/.nycrc",
+      "name": ".nycrc",
+      "ext": "",
+      "size": 216,
+      "mtime": "2026-11-09T15:05:25.202Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/has-tostringtag/CHANGELOG.md",
+      "name": "CHANGELOG.md",
+      "ext": "md",
+      "size": 3543,
+      "mtime": "2026-11-09T15:05:25.200Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/has-tostringtag/index.d.ts",
+      "name": "index.d.ts",
+      "ext": "ts",
+      "size": 70,
+      "mtime": "2026-11-09T15:05:25.196Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/has-tostringtag/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 196,
+      "mtime": "2026-11-09T15:05:25.208Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/has-tostringtag/LICENSE",
+      "name": "LICENSE",
+      "ext": "",
+      "size": 1067,
+      "mtime": "2026-11-09T15:05:25.210Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/has-tostringtag/package.json",
+      "name": "package.json",
+      "ext": "json",
+      "size": 2838,
+      "mtime": "2026-11-09T15:05:25.217Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/has-tostringtag/README.md",
+      "name": "README.md",
+      "ext": "md",
+      "size": 2190,
+      "mtime": "2026-11-09T15:05:25.192Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/has-tostringtag/shams.d.ts",
+      "name": "shams.d.ts",
+      "ext": "ts",
+      "size": 80,
+      "mtime": "2026-11-09T15:05:25.214Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/has-tostringtag/shams.js",
+      "name": "shams.js",
+      "ext": "js",
+      "size": 189,
+      "mtime": "2026-11-09T15:05:25.195Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/has-tostringtag/test/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 679,
+      "mtime": "2026-11-09T15:05:25.223Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/has-tostringtag/test/shams/core-js.js",
+      "name": "core-js.js",
+      "ext": "js",
+      "size": 935,
+      "mtime": "2026-11-09T15:05:25.226Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/has-tostringtag/test/shams/get-own-property-symbols.js",
+      "name": "get-own-property-symbols.js",
+      "ext": "js",
+      "size": 828,
+      "mtime": "2026-11-09T15:05:25.228Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/has-tostringtag/test/tests.js",
+      "name": "tests.js",
+      "ext": "js",
+      "size": 532,
+      "mtime": "2026-11-09T15:05:25.220Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/has-tostringtag/tsconfig.json",
+      "name": "tsconfig.json",
+      "ext": "json",
+      "size": 3611,
+      "mtime": "2026-11-09T15:05:25.212Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/hasown/.github/FUNDING.yml",
+      "name": "FUNDING.yml",
+      "ext": "yml",
+      "size": 552,
+      "mtime": "2026-11-09T15:05:24.816Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/hasown/.nycrc",
+      "name": ".nycrc",
+      "ext": "",
+      "size": 216,
+      "mtime": "2026-11-09T15:05:24.826Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/hasown/CHANGELOG.md",
+      "name": "CHANGELOG.md",
+      "ext": "md",
+      "size": 4078,
+      "mtime": "2026-11-09T15:05:24.808Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/hasown/eslint.config.mjs",
+      "name": "eslint.config.mjs",
+      "ext": "mjs",
+      "size": 136,
+      "mtime": "2026-11-09T15:05:24.824Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/hasown/index.d.ts",
+      "name": "index.d.ts",
+      "ext": "ts",
+      "size": 117,
+      "mtime": "2026-11-09T15:05:24.821Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/hasown/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 206,
+      "mtime": "2026-11-09T15:05:24.812Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/hasown/LICENSE",
+      "name": "LICENSE",
+      "ext": "",
+      "size": 1083,
+      "mtime": "2026-11-09T15:05:24.810Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/hasown/package.json",
+      "name": "package.json",
+      "ext": "json",
+      "size": 2258,
+      "mtime": "2026-11-09T15:05:24.819Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/hasown/README.md",
+      "name": "README.md",
+      "ext": "md",
+      "size": 1613,
+      "mtime": "2026-11-09T15:05:24.831Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/hasown/tsconfig.json",
+      "name": "tsconfig.json",
+      "ext": "json",
+      "size": 73,
+      "mtime": "2026-11-09T15:05:24.829Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/https-proxy-agent/dist/agent.d.ts",
+      "name": "agent.d.ts",
+      "ext": "ts",
+      "size": 1126,
+      "mtime": "2026-11-09T15:05:25.786Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/https-proxy-agent/dist/agent.js",
+      "name": "agent.js",
+      "ext": "js",
+      "size": 7841,
+      "mtime": "2026-11-09T15:05:25.795Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/https-proxy-agent/dist/agent.js.map",
+      "name": "agent.js.map",
+      "ext": "map",
+      "size": 4367,
+      "mtime": "2026-11-09T15:05:25.777Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/https-proxy-agent/dist/index.d.ts",
+      "name": "index.d.ts",
+      "ext": "ts",
+      "size": 970,
+      "mtime": "2026-11-09T15:05:25.791Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/https-proxy-agent/dist/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 579,
+      "mtime": "2026-11-09T15:05:25.775Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/https-proxy-agent/dist/index.js.map",
+      "name": "index.js.map",
+      "ext": "map",
+      "size": 362,
+      "mtime": "2026-11-09T15:05:25.779Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/https-proxy-agent/dist/parse-proxy-response.d.ts",
+      "name": "parse-proxy-response.d.ts",
+      "ext": "ts",
+      "size": 233,
+      "mtime": "2026-11-09T15:05:25.784Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/https-proxy-agent/dist/parse-proxy-response.js",
+      "name": "parse-proxy-response.js",
+      "ext": "js",
+      "size": 2460,
+      "mtime": "2026-11-09T15:05:25.793Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/https-proxy-agent/dist/parse-proxy-response.js.map",
+      "name": "parse-proxy-response.js.map",
+      "ext": "map",
+      "size": 1904,
+      "mtime": "2026-11-09T15:05:25.781Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/https-proxy-agent/package.json",
+      "name": "package.json",
+      "ext": "json",
+      "size": 1405,
+      "mtime": "2026-11-09T15:05:25.797Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/https-proxy-agent/README.md",
+      "name": "README.md",
+      "ext": "md",
+      "size": 4761,
+      "mtime": "2026-11-09T15:05:25.800Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/ieee754/index.d.ts",
+      "name": "index.d.ts",
+      "ext": "ts",
+      "size": 332,
+      "mtime": "2026-11-09T15:05:25.894Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/ieee754/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 2154,
+      "mtime": "2026-11-09T15:05:25.887Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/ieee754/LICENSE",
+      "name": "LICENSE",
+      "ext": "",
+      "size": 1465,
+      "mtime": "2026-11-09T15:05:25.884Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/ieee754/package.json",
+      "name": "package.json",
+      "ext": "json",
+      "size": 1194,
+      "mtime": "2026-11-09T15:05:25.889Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/ieee754/README.md",
+      "name": "README.md",
+      "ext": "md",
+      "size": 1651,
+      "mtime": "2026-11-09T15:05:25.892Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/inherits/inherits.js",
+      "name": "inherits.js",
+      "ext": "js",
+      "size": 250,
+      "mtime": "2026-11-09T15:05:25.902Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/inherits/inherits_browser.js",
+      "name": "inherits_browser.js",
+      "ext": "js",
+      "size": 753,
+      "mtime": "2026-11-09T15:05:25.899Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/inherits/LICENSE",
+      "name": "LICENSE",
+      "ext": "",
+      "size": 749,
+      "mtime": "2026-11-09T15:05:25.907Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/inherits/package.json",
+      "name": "package.json",
+      "ext": "json",
+      "size": 581,
+      "mtime": "2026-11-09T15:05:25.909Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/inherits/README.md",
+      "name": "README.md",
+      "ext": "md",
+      "size": 1625,
+      "mtime": "2026-11-09T15:05:25.904Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/isomorphic-ws/browser.js",
+      "name": "browser.js",
+      "ext": "js",
+      "size": 540,
+      "mtime": "2026-11-09T15:05:24.797Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/isomorphic-ws/index.d.ts",
+      "name": "index.d.ts",
+      "ext": "ts",
+      "size": 256,
+      "mtime": "2026-11-09T15:05:24.803Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/isomorphic-ws/LICENSE",
+      "name": "LICENSE",
+      "ext": "",
+      "size": 1099,
+      "mtime": "2026-11-09T15:05:24.796Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/isomorphic-ws/node.js",
+      "name": "node.js",
+      "ext": "js",
+      "size": 46,
+      "mtime": "2026-11-09T15:05:24.794Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/isomorphic-ws/package.json",
+      "name": "package.json",
+      "ext": "json",
+      "size": 715,
+      "mtime": "2026-11-09T15:05:24.801Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/isomorphic-ws/README.md",
+      "name": "README.md",
+      "ext": "md",
+      "size": 1388,
+      "mtime": "2026-11-09T15:05:24.798Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/math-intrinsics/.eslintrc",
+      "name": ".eslintrc",
+      "ext": "",
+      "size": 229,
+      "mtime": "2026-11-09T15:05:25.665Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/math-intrinsics/.github/FUNDING.yml",
+      "name": "FUNDING.yml",
+      "ext": "yml",
+      "size": 561,
+      "mtime": "2026-11-09T15:05:25.712Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/math-intrinsics/abs.d.ts",
+      "name": "abs.d.ts",
+      "ext": "ts",
+      "size": 18,
+      "mtime": "2026-11-09T15:05:25.660Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/math-intrinsics/abs.js",
+      "name": "abs.js",
+      "ext": "js",
+      "size": 73,
+      "mtime": "2026-11-09T15:05:25.651Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/math-intrinsics/CHANGELOG.md",
+      "name": "CHANGELOG.md",
+      "ext": "md",
+      "size": 1466,
+      "mtime": "2026-11-09T15:05:25.673Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/math-intrinsics/constants/maxArrayLength.d.ts",
+      "name": "maxArrayLength.d.ts",
+      "ext": "ts",
+      "size": 71,
+      "mtime": "2026-11-09T15:05:25.639Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/math-intrinsics/constants/maxArrayLength.js",
+      "name": "maxArrayLength.js",
+      "ext": "js",
+      "size": 110,
+      "mtime": "2026-11-09T15:05:25.642Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/math-intrinsics/constants/maxSafeInteger.d.ts",
+      "name": "maxSafeInteger.d.ts",
+      "ext": "ts",
+      "size": 77,
+      "mtime": "2026-11-09T15:05:25.648Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/math-intrinsics/constants/maxSafeInteger.js",
+      "name": "maxSafeInteger.js",
+      "ext": "js",
+      "size": 231,
+      "mtime": "2026-11-09T15:05:25.635Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/math-intrinsics/constants/maxValue.d.ts",
+      "name": "maxValue.d.ts",
+      "ext": "ts",
+      "size": 71,
+      "mtime": "2026-11-09T15:05:25.645Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/math-intrinsics/constants/maxValue.js",
+      "name": "maxValue.js",
+      "ext": "js",
+      "size": 197,
+      "mtime": "2026-11-09T15:05:25.637Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/math-intrinsics/floor.d.ts",
+      "name": "floor.d.ts",
+      "ext": "ts",
+      "size": 20,
+      "mtime": "2026-11-09T15:05:25.675Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/math-intrinsics/floor.js",
+      "name": "floor.js",
+      "ext": "js",
+      "size": 77,
+      "mtime": "2026-11-09T15:05:25.694Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/math-intrinsics/isFinite.d.ts",
+      "name": "isFinite.d.ts",
+      "ext": "ts",
+      "size": 80,
+      "mtime": "2026-11-09T15:05:25.678Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/math-intrinsics/isFinite.js",
+      "name": "isFinite.js",
+      "ext": "js",
+      "size": 262,
+      "mtime": "2026-11-09T15:05:25.696Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/math-intrinsics/isInteger.d.ts",
+      "name": "isInteger.d.ts",
+      "ext": "ts",
+      "size": 87,
+      "mtime": "2026-11-09T15:05:25.692Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/math-intrinsics/isInteger.js",
+      "name": "isInteger.js",
+      "ext": "js",
+      "size": 410,
+      "mtime": "2026-11-09T15:05:25.682Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/math-intrinsics/isNaN.d.ts",
+      "name": "isNaN.d.ts",
+      "ext": "ts",
+      "size": 22,
+      "mtime": "2026-11-09T15:05:25.716Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/math-intrinsics/isNaN.js",
+      "name": "isNaN.js",
+      "ext": "js",
+      "size": 121,
+      "mtime": "2026-11-09T15:05:25.629Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/math-intrinsics/isNegativeZero.d.ts",
+      "name": "isNegativeZero.d.ts",
+      "ext": "ts",
+      "size": 79,
+      "mtime": "2026-11-09T15:05:25.719Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/math-intrinsics/isNegativeZero.js",
+      "name": "isNegativeZero.js",
+      "ext": "js",
+      "size": 143,
+      "mtime": "2026-11-09T15:05:25.698Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/math-intrinsics/LICENSE",
+      "name": "LICENSE",
+      "ext": "",
+      "size": 1073,
+      "mtime": "2026-11-09T15:05:25.662Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/math-intrinsics/max.d.ts",
+      "name": "max.d.ts",
+      "ext": "ts",
+      "size": 18,
+      "mtime": "2026-11-09T15:05:25.657Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/math-intrinsics/max.js",
+      "name": "max.js",
+      "ext": "js",
+      "size": 73,
+      "mtime": "2026-11-09T15:05:25.667Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/math-intrinsics/min.d.ts",
+      "name": "min.d.ts",
+      "ext": "ts",
+      "size": 18,
+      "mtime": "2026-11-09T15:05:25.700Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/math-intrinsics/min.js",
+      "name": "min.js",
+      "ext": "js",
+      "size": 73,
+      "mtime": "2026-11-09T15:05:25.669Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/math-intrinsics/mod.d.ts",
+      "name": "mod.d.ts",
+      "ext": "ts",
+      "size": 76,
+      "mtime": "2026-11-09T15:05:25.703Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/math-intrinsics/mod.js",
+      "name": "mod.js",
+      "ext": "js",
+      "size": 218,
+      "mtime": "2026-11-09T15:05:25.624Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/math-intrinsics/package.json",
+      "name": "package.json",
+      "ext": "json",
+      "size": 2670,
+      "mtime": "2026-11-09T15:05:25.672Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/math-intrinsics/pow.d.ts",
+      "name": "pow.d.ts",
+      "ext": "ts",
+      "size": 18,
+      "mtime": "2026-11-09T15:05:25.685Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/math-intrinsics/pow.js",
+      "name": "pow.js",
+      "ext": "js",
+      "size": 73,
+      "mtime": "2026-11-09T15:05:25.627Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/math-intrinsics/README.md",
+      "name": "README.md",
+      "ext": "md",
+      "size": 1884,
+      "mtime": "2026-11-09T15:05:25.655Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/math-intrinsics/round.d.ts",
+      "name": "round.d.ts",
+      "ext": "ts",
+      "size": 20,
+      "mtime": "2026-11-09T15:05:25.686Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/math-intrinsics/round.js",
+      "name": "round.js",
+      "ext": "js",
+      "size": 77,
+      "mtime": "2026-11-09T15:05:25.718Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/math-intrinsics/sign.d.ts",
+      "name": "sign.d.ts",
+      "ext": "ts",
+      "size": 57,
+      "mtime": "2026-11-09T15:05:25.680Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/math-intrinsics/sign.js",
+      "name": "sign.js",
+      "ext": "js",
+      "size": 214,
+      "mtime": "2026-11-09T15:05:25.690Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/math-intrinsics/test/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 6320,
+      "mtime": "2026-11-09T15:05:25.710Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/math-intrinsics/tsconfig.json",
+      "name": "tsconfig.json",
+      "ext": "json",
+      "size": 36,
+      "mtime": "2026-11-09T15:05:25.705Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/mime-db/db.json",
+      "name": "db.json",
+      "ext": "json",
+      "size": 185882,
+      "mtime": "2026-11-09T15:05:25.237Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/mime-db/HISTORY.md",
+      "name": "HISTORY.md",
+      "ext": "md",
+      "size": 12581,
+      "mtime": "2026-11-09T15:05:25.244Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/mime-db/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 189,
+      "mtime": "2026-11-09T15:05:25.247Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/mime-db/LICENSE",
+      "name": "LICENSE",
+      "ext": "",
+      "size": 1172,
+      "mtime": "2026-11-09T15:05:25.241Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/mime-db/package.json",
+      "name": "package.json",
+      "ext": "json",
+      "size": 1624,
+      "mtime": "2026-11-09T15:05:25.239Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/mime-db/README.md",
+      "name": "README.md",
+      "ext": "md",
+      "size": 4091,
+      "mtime": "2026-11-09T15:05:25.234Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/mime-types/HISTORY.md",
+      "name": "HISTORY.md",
+      "ext": "md",
+      "size": 8812,
+      "mtime": "2026-11-09T15:05:24.860Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/mime-types/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 3663,
+      "mtime": "2026-11-09T15:05:24.858Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/mime-types/LICENSE",
+      "name": "LICENSE",
+      "ext": "",
+      "size": 1167,
+      "mtime": "2026-11-09T15:05:24.867Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/mime-types/package.json",
+      "name": "package.json",
+      "ext": "json",
+      "size": 1149,
+      "mtime": "2026-11-09T15:05:24.863Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/mime-types/README.md",
+      "name": "README.md",
+      "ext": "md",
+      "size": 3481,
+      "mtime": "2026-11-09T15:05:24.865Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/ms/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 3024,
+      "mtime": "2026-11-09T15:05:25.723Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/ms/license.md",
+      "name": "license.md",
+      "ext": "md",
+      "size": 1079,
+      "mtime": "2026-11-09T15:05:25.728Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/ms/package.json",
+      "name": "package.json",
+      "ext": "json",
+      "size": 732,
+      "mtime": "2026-11-09T15:05:25.726Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/ms/readme.md",
+      "name": "readme.md",
+      "ext": "md",
+      "size": 1886,
+      "mtime": "2026-11-09T15:05:25.730Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/msedge-tts/dist/index.d.ts",
+      "name": "index.d.ts",
+      "ext": "ts",
+      "size": 82,
+      "mtime": "2026-11-09T15:05:25.033Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/msedge-tts/dist/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 893,
+      "mtime": "2026-11-09T15:05:25.009Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/msedge-tts/dist/MsEdgeTTS.d.ts",
+      "name": "MsEdgeTTS.d.ts",
+      "ext": "ts",
+      "size": 6702,
+      "mtime": "2026-11-09T15:05:25.012Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/msedge-tts/dist/MsEdgeTTS.js",
+      "name": "MsEdgeTTS.js",
+      "ext": "js",
+      "size": 29118,
+      "mtime": "2026-11-09T15:05:25.004Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/msedge-tts/dist/Output.d.ts",
+      "name": "Output.d.ts",
+      "ext": "ts",
+      "size": 597,
+      "mtime": "2026-11-09T15:05:25.027Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/msedge-tts/dist/Output.js",
+      "name": "Output.js",
+      "ext": "js",
+      "size": 3172,
+      "mtime": "2026-11-09T15:05:25.035Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/msedge-tts/dist/Prosody.d.ts",
+      "name": "Prosody.d.ts",
+      "ext": "ts",
+      "size": 2153,
+      "mtime": "2026-11-09T15:05:25.020Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/msedge-tts/dist/Prosody.js",
+      "name": "Prosody.js",
+      "ext": "js",
+      "size": 2598,
+      "mtime": "2026-11-09T15:05:25.040Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/msedge-tts/dist/SecMsGec.d.ts",
+      "name": "SecMsGec.d.ts",
+      "ext": "ts",
+      "size": 80,
+      "mtime": "2026-11-09T15:05:25.029Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/msedge-tts/dist/SecMsGec.js",
+      "name": "SecMsGec.js",
+      "ext": "js",
+      "size": 3147,
+      "mtime": "2026-11-09T15:05:25.017Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/msedge-tts/dist/utils.d.ts",
+      "name": "utils.d.ts",
+      "ext": "ts",
+      "size": 60,
+      "mtime": "2026-11-09T15:05:25.037Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/msedge-tts/dist/utils.js",
+      "name": "utils.js",
+      "ext": "js",
+      "size": 264,
+      "mtime": "2026-11-09T15:05:25.006Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/msedge-tts/LICENSE",
+      "name": "LICENSE",
+      "ext": "",
+      "size": 1069,
+      "mtime": "2026-11-09T15:05:25.042Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/msedge-tts/package.json",
+      "name": "package.json",
+      "ext": "json",
+      "size": 1644,
+      "mtime": "2026-11-09T15:05:25.044Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/msedge-tts/README.md",
+      "name": "README.md",
+      "ext": "md",
+      "size": 6034,
+      "mtime": "2026-11-09T15:05:25.000Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/proxy-from-env/index.cjs",
+      "name": "index.cjs",
+      "ext": "cjs",
+      "size": 3195,
+      "mtime": "2026-11-09T15:05:24.669Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/proxy-from-env/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 3160,
+      "mtime": "2026-11-09T15:05:24.672Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/proxy-from-env/LICENSE",
+      "name": "LICENSE",
+      "ext": "",
+      "size": 1087,
+      "mtime": "2026-11-09T15:05:24.676Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/proxy-from-env/package.json",
+      "name": "package.json",
+      "ext": "json",
+      "size": 1263,
+      "mtime": "2026-11-09T15:05:24.667Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/proxy-from-env/README.md",
+      "name": "README.md",
+      "ext": "md",
+      "size": 6938,
+      "mtime": "2026-11-09T15:05:24.674Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/readable-stream/CONTRIBUTING.md",
+      "name": "CONTRIBUTING.md",
+      "ext": "md",
+      "size": 1443,
+      "mtime": "2026-11-09T15:05:25.363Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/readable-stream/errors-browser.js",
+      "name": "errors-browser.js",
+      "ext": "js",
+      "size": 4197,
+      "mtime": "2026-11-09T15:05:25.359Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/readable-stream/errors.js",
+      "name": "errors.js",
+      "ext": "js",
+      "size": 3715,
+      "mtime": "2026-11-09T15:05:25.357Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/readable-stream/experimentalWarning.js",
+      "name": "experimentalWarning.js",
+      "ext": "js",
+      "size": 460,
+      "mtime": "2026-11-09T15:05:25.361Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/readable-stream/GOVERNANCE.md",
+      "name": "GOVERNANCE.md",
+      "ext": "md",
+      "size": 5550,
+      "mtime": "2026-11-09T15:05:25.370Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/readable-stream/lib/internal/streams/async_iterator.js",
+      "name": "async_iterator.js",
+      "ext": "js",
+      "size": 6468,
+      "mtime": "2026-11-09T15:05:25.409Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/readable-stream/lib/internal/streams/buffer_list.js",
+      "name": "buffer_list.js",
+      "ext": "js",
+      "size": 6905,
+      "mtime": "2026-11-09T15:05:25.404Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/readable-stream/lib/internal/streams/destroy.js",
+      "name": "destroy.js",
+      "ext": "js",
+      "size": 3109,
+      "mtime": "2026-11-09T15:05:25.389Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/readable-stream/lib/internal/streams/end-of-stream.js",
+      "name": "end-of-stream.js",
+      "ext": "js",
+      "size": 3084,
+      "mtime": "2026-11-09T15:05:25.419Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/readable-stream/lib/internal/streams/from-browser.js",
+      "name": "from-browser.js",
+      "ext": "js",
+      "size": 101,
+      "mtime": "2026-11-09T15:05:25.422Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/readable-stream/lib/internal/streams/from.js",
+      "name": "from.js",
+      "ext": "js",
+      "size": 3668,
+      "mtime": "2026-11-09T15:05:25.416Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/readable-stream/lib/internal/streams/pipeline.js",
+      "name": "pipeline.js",
+      "ext": "js",
+      "size": 2416,
+      "mtime": "2026-11-09T15:05:25.386Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/readable-stream/lib/internal/streams/state.js",
+      "name": "state.js",
+      "ext": "js",
+      "size": 745,
+      "mtime": "2026-11-09T15:05:25.395Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/readable-stream/lib/internal/streams/stream-browser.js",
+      "name": "stream-browser.js",
+      "ext": "js",
+      "size": 49,
+      "mtime": "2026-11-09T15:05:25.413Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/readable-stream/lib/internal/streams/stream.js",
+      "name": "stream.js",
+      "ext": "js",
+      "size": 36,
+      "mtime": "2026-11-09T15:05:25.391Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/readable-stream/lib/_stream_duplex.js",
+      "name": "_stream_duplex.js",
+      "ext": "js",
+      "size": 4381,
+      "mtime": "2026-11-09T15:05:25.374Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/readable-stream/lib/_stream_passthrough.js",
+      "name": "_stream_passthrough.js",
+      "ext": "js",
+      "size": 1628,
+      "mtime": "2026-11-09T15:05:25.424Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/readable-stream/lib/_stream_readable.js",
+      "name": "_stream_readable.js",
+      "ext": "js",
+      "size": 36023,
+      "mtime": "2026-11-09T15:05:25.428Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/readable-stream/lib/_stream_transform.js",
+      "name": "_stream_transform.js",
+      "ext": "js",
+      "size": 7936,
+      "mtime": "2026-11-09T15:05:25.380Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/readable-stream/lib/_stream_writable.js",
+      "name": "_stream_writable.js",
+      "ext": "js",
+      "size": 21907,
+      "mtime": "2026-11-09T15:05:25.378Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/readable-stream/LICENSE",
+      "name": "LICENSE",
+      "ext": "",
+      "size": 2337,
+      "mtime": "2026-11-09T15:05:25.432Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/readable-stream/package.json",
+      "name": "package.json",
+      "ext": "json",
+      "size": 1886,
+      "mtime": "2026-11-09T15:05:25.430Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/readable-stream/readable-browser.js",
+      "name": "readable-browser.js",
+      "ext": "js",
+      "size": 488,
+      "mtime": "2026-11-09T15:05:25.352Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/readable-stream/readable.js",
+      "name": "readable.js",
+      "ext": "js",
+      "size": 729,
+      "mtime": "2026-11-09T15:05:25.354Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/readable-stream/README.md",
+      "name": "README.md",
+      "ext": "md",
+      "size": 4710,
+      "mtime": "2026-11-09T15:05:25.350Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/safe-buffer/index.d.ts",
+      "name": "index.d.ts",
+      "ext": "ts",
+      "size": 8738,
+      "mtime": "2026-11-09T15:05:25.479Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/safe-buffer/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 1670,
+      "mtime": "2026-11-09T15:05:25.484Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/safe-buffer/LICENSE",
+      "name": "LICENSE",
+      "ext": "",
+      "size": 1081,
+      "mtime": "2026-11-09T15:05:25.481Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/safe-buffer/package.json",
+      "name": "package.json",
+      "ext": "json",
+      "size": 1057,
+      "mtime": "2026-11-09T15:05:25.475Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/safe-buffer/README.md",
+      "name": "README.md",
+      "ext": "md",
+      "size": 19555,
+      "mtime": "2026-11-09T15:05:25.486Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/stream-browserify/.airtap.yml",
+      "name": ".airtap.yml",
+      "ext": "yml",
+      "size": 426,
+      "mtime": "2026-11-09T15:05:25.510Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/stream-browserify/.github/FUNDING.yml",
+      "name": "FUNDING.yml",
+      "ext": "yml",
+      "size": 657,
+      "mtime": "2026-11-09T15:05:25.514Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/stream-browserify/.travis.yml",
+      "name": ".travis.yml",
+      "ext": "yml",
+      "size": 546,
+      "mtime": "2026-11-09T15:05:25.531Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/stream-browserify/CHANGELOG.md",
+      "name": "CHANGELOG.md",
+      "ext": "md",
+      "size": 323,
+      "mtime": "2026-11-09T15:05:25.495Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/stream-browserify/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 3848,
+      "mtime": "2026-11-09T15:05:25.492Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/stream-browserify/LICENSE",
+      "name": "LICENSE",
+      "ext": "",
+      "size": 1066,
+      "mtime": "2026-11-09T15:05:25.498Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/stream-browserify/package.json",
+      "name": "package.json",
+      "ext": "json",
+      "size": 1208,
+      "mtime": "2026-11-09T15:05:25.501Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/stream-browserify/readme.markdown",
+      "name": "readme.markdown",
+      "ext": "markdown",
+      "size": 1167,
+      "mtime": "2026-11-09T15:05:25.503Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/stream-browserify/security.md",
+      "name": "security.md",
+      "ext": "md",
+      "size": 294,
+      "mtime": "2026-11-09T15:05:25.517Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/stream-browserify/test/buf.js",
+      "name": "buf.js",
+      "ext": "js",
+      "size": 772,
+      "mtime": "2026-11-09T15:05:25.526Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/stream-browserify/test/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 41,
+      "mtime": "2026-11-09T15:05:25.529Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/stream-browserify/test/pipeline.js",
+      "name": "pipeline.js",
+      "ext": "js",
+      "size": 1003,
+      "mtime": "2026-11-09T15:05:25.523Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/stream-browserify/test/use-stream.js",
+      "name": "use-stream.js",
+      "ext": "js",
+      "size": 216,
+      "mtime": "2026-11-09T15:05:25.521Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/string_decoder/lib/string_decoder.js",
+      "name": "string_decoder.js",
+      "ext": "js",
+      "size": 9465,
+      "mtime": "2026-11-09T15:05:26.314Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/string_decoder/LICENSE",
+      "name": "LICENSE",
+      "ext": "",
+      "size": 2338,
+      "mtime": "2026-11-09T15:05:26.307Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/string_decoder/package.json",
+      "name": "package.json",
+      "ext": "json",
+      "size": 823,
+      "mtime": "2026-11-09T15:05:26.317Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/string_decoder/README.md",
+      "name": "README.md",
+      "ext": "md",
+      "size": 1801,
+      "mtime": "2026-11-09T15:05:26.310Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/util-deprecate/browser.js",
+      "name": "browser.js",
+      "ext": "js",
+      "size": 1614,
+      "mtime": "2026-11-09T15:05:25.472Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/util-deprecate/History.md",
+      "name": "History.md",
+      "ext": "md",
+      "size": 282,
+      "mtime": "2026-11-09T15:05:25.452Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/util-deprecate/LICENSE",
+      "name": "LICENSE",
+      "ext": "",
+      "size": 1102,
+      "mtime": "2026-11-09T15:05:25.456Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/util-deprecate/node.js",
+      "name": "node.js",
+      "ext": "js",
+      "size": 123,
+      "mtime": "2026-11-09T15:05:25.467Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/util-deprecate/package.json",
+      "name": "package.json",
+      "ext": "json",
+      "size": 694,
+      "mtime": "2026-11-09T15:05:25.454Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/util-deprecate/README.md",
+      "name": "README.md",
+      "ext": "md",
+      "size": 1666,
+      "mtime": "2026-11-09T15:05:25.469Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/ws/browser.js",
+      "name": "browser.js",
+      "ext": "js",
+      "size": 176,
+      "mtime": "2026-11-09T15:05:25.130Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/ws/index.js",
+      "name": "index.js",
+      "ext": "js",
+      "size": 796,
+      "mtime": "2026-11-09T15:05:25.177Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/ws/lib/buffer-util.js",
+      "name": "buffer-util.js",
+      "ext": "js",
+      "size": 3501,
+      "mtime": "2026-11-09T15:05:25.133Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/ws/lib/constants.js",
+      "name": "constants.js",
+      "ext": "js",
+      "size": 503,
+      "mtime": "2026-11-09T15:05:25.174Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/ws/lib/event-target.js",
+      "name": "event-target.js",
+      "ext": "js",
+      "size": 7321,
+      "mtime": "2026-11-09T15:05:25.134Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/ws/lib/extension.js",
+      "name": "extension.js",
+      "ext": "js",
+      "size": 6183,
+      "mtime": "2026-11-09T15:05:25.140Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/ws/lib/limiter.js",
+      "name": "limiter.js",
+      "ext": "js",
+      "size": 1034,
+      "mtime": "2026-11-09T15:05:25.142Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/ws/lib/permessage-deflate.js",
+      "name": "permessage-deflate.js",
+      "ext": "js",
+      "size": 14669,
+      "mtime": "2026-11-09T15:05:25.162Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/ws/lib/receiver.js",
+      "name": "receiver.js",
+      "ext": "js",
+      "size": 17778,
+      "mtime": "2026-11-09T15:05:25.145Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/ws/lib/sender.js",
+      "name": "sender.js",
+      "ext": "js",
+      "size": 16962,
+      "mtime": "2026-11-09T15:05:25.149Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/ws/lib/stream.js",
+      "name": "stream.js",
+      "ext": "js",
+      "size": 4204,
+      "mtime": "2026-11-09T15:05:25.172Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/ws/lib/subprotocol.js",
+      "name": "subprotocol.js",
+      "ext": "js",
+      "size": 1498,
+      "mtime": "2026-11-09T15:05:25.138Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/ws/lib/validation.js",
+      "name": "validation.js",
+      "ext": "js",
+      "size": 3903,
+      "mtime": "2026-11-09T15:05:25.164Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/ws/lib/websocket-server.js",
+      "name": "websocket-server.js",
+      "ext": "js",
+      "size": 17022,
+      "mtime": "2026-11-09T15:05:25.154Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/ws/lib/websocket.js",
+      "name": "websocket.js",
+      "ext": "js",
+      "size": 38555,
+      "mtime": "2026-11-09T15:05:25.160Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/ws/LICENSE",
+      "name": "LICENSE",
+      "ext": "",
+      "size": 1183,
+      "mtime": "2026-11-09T15:05:25.125Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/ws/package.json",
+      "name": "package.json",
+      "ext": "json",
+      "size": 1829,
+      "mtime": "2026-11-09T15:05:25.181Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/ws/README.md",
+      "name": "README.md",
+      "ext": "md",
+      "size": 15322,
+      "mtime": "2026-11-09T15:05:25.123Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/node_modules/ws/wrapper.mjs",
+      "name": "wrapper.mjs",
+      "ext": "mjs",
+      "size": 554,
+      "mtime": "2026-11-09T15:05:25.127Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/package-lock.json",
+      "name": "package-lock.json",
+      "ext": "json",
+      "size": 17902,
+      "mtime": "2026-11-09T15:05:26.349Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/package.json",
+      "name": "package.json",
+      "ext": "json",
+      "size": 55,
+      "mtime": "2026-11-09T15:05:26.354Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/tts/tts.js",
+      "name": "tts.js",
+      "ext": "js",
+      "size": 3582,
+      "mtime": "2026-11-09T15:07:47.522Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/video/3D_动画电影风格_皮克斯式卡通_竖屏构图_分镜1_夜晚厨房_2026-11-09T07-03-58.mp4",
+      "name": "3D_动画电影风格_皮克斯式卡通_竖屏构图_分镜1_夜晚厨房_2026-11-09T07-03-58.mp4",
+      "ext": "mp4",
+      "size": 1301995,
+      "mtime": "2026-11-09T15:05:26.764Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/video/3D_动画电影风格_皮克斯式卡通_竖屏构图_分镜1_夜晚厨房_2026-11-09T07-42-53.mp4",
+      "name": "3D_动画电影风格_皮克斯式卡通_竖屏构图_分镜1_夜晚厨房_2026-11-09T07-42-53.mp4",
+      "ext": "mp4",
+      "size": 1623717,
+      "mtime": "2026-11-09T15:05:26.771Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/video/3D_动画电影风格_皮克斯式卡通_竖屏构图_分镜2_厨房冲突_2026-11-09T08-31-39.mp4",
+      "name": "3D_动画电影风格_皮克斯式卡通_竖屏构图_分镜2_厨房冲突_2026-11-09T08-31-39.mp4",
+      "ext": "mp4",
+      "size": 956602,
+      "mtime": "2026-11-09T15:05:26.780Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/video/3D_动画电影风格_皮克斯式卡通_竖屏构图_分镜2_厨房冲突_2026-11-09T09-22-17.mp4",
+      "name": "3D_动画电影风格_皮克斯式卡通_竖屏构图_分镜2_厨房冲突_2026-11-09T09-22-17.mp4",
+      "ext": "mp4",
+      "size": 1030839,
+      "mtime": "2026-11-09T15:05:26.758Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/video/3D_动画电影风格_皮克斯式卡通_竖屏构图_分镜3_女生把腔_2026-11-09T08-39-13.mp4",
+      "name": "3D_动画电影风格_皮克斯式卡通_竖屏构图_分镜3_女生把腔_2026-11-09T08-39-13.mp4",
+      "ext": "mp4",
+      "size": 1455579,
+      "mtime": "2026-11-09T15:05:26.753Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/video/3D_动画电影风格_皮克斯式卡通_竖屏构图_分镜4_金黄鸡翅_2026-11-09T08-41-36.mp4",
+      "name": "3D_动画电影风格_皮克斯式卡通_竖屏构图_分镜4_金黄鸡翅_2026-11-09T08-41-36.mp4",
+      "ext": "mp4",
+      "size": 1177308,
+      "mtime": "2026-11-09T15:05:26.775Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/act_1.2.png",
+      "name": "act_1.2.png",
+      "ext": "png",
+      "size": 1533022,
+      "mtime": "2026-11-09T15:05:26.437Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/act_2.0.png",
+      "name": "act_2.0.png",
+      "ext": "png",
+      "size": 1512081,
+      "mtime": "2026-11-09T15:05:26.475Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/act_2.8.png",
+      "name": "act_2.8.png",
+      "ext": "png",
+      "size": 1432660,
+      "mtime": "2026-11-09T15:05:26.489Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/act_3.6.png",
+      "name": "act_3.6.png",
+      "ext": "png",
+      "size": 1418210,
+      "mtime": "2026-11-09T15:05:26.622Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/before_65.png",
+      "name": "before_65.png",
+      "ext": "png",
+      "size": 1441892,
+      "mtime": "2026-11-09T15:05:26.421Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/compact.mp4",
+      "name": "compact.mp4",
+      "ext": "mp4",
+      "size": 11879211,
+      "mtime": "2026-11-09T15:05:26.683Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/compact_slide.mp4",
+      "name": "compact_slide.mp4",
+      "ext": "mp4",
+      "size": 11476509,
+      "mtime": "2026-11-09T15:05:26.653Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/compact_slide_v2.mp4",
+      "name": "compact_slide_v2.mp4",
+      "ext": "mp4",
+      "size": 11729382,
+      "mtime": "2026-11-09T15:05:26.402Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/cp_1.5.png",
+      "name": "cp_1.5.png",
+      "ext": "png",
+      "size": 1525433,
+      "mtime": "2026-11-09T15:05:26.442Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/cp_11.5.png",
+      "name": "cp_11.5.png",
+      "ext": "png",
+      "size": 1489530,
+      "mtime": "2026-11-09T15:05:26.616Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/cp_14.20.png",
+      "name": "cp_14.20.png",
+      "ext": "png",
+      "size": 1303693,
+      "mtime": "2026-11-09T15:05:26.628Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/cp_16.0.png",
+      "name": "cp_16.0.png",
+      "ext": "png",
+      "size": 1771237,
+      "mtime": "2026-11-09T15:05:26.454Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/cp_18.0.png",
+      "name": "cp_18.0.png",
+      "ext": "png",
+      "size": 1777646,
+      "mtime": "2026-11-09T15:05:26.728Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/cp_4.80.png",
+      "name": "cp_4.80.png",
+      "ext": "png",
+      "size": 1280842,
+      "mtime": "2026-11-09T15:05:26.552Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/cp_6.5.png",
+      "name": "cp_6.5.png",
+      "ext": "png",
+      "size": 1433445,
+      "mtime": "2026-11-09T15:05:26.698Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/cp_9.10.png",
+      "name": "cp_9.10.png",
+      "ext": "png",
+      "size": 1488683,
+      "mtime": "2026-11-09T15:05:26.447Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/filter.txt",
+      "name": "filter.txt",
+      "ext": "txt",
+      "size": 1686,
+      "mtime": "2026-11-09T15:05:26.703Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/filter_compact.txt",
+      "name": "filter_compact.txt",
+      "ext": "txt",
+      "size": 1719,
+      "mtime": "2026-11-09T15:05:26.374Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/filter_rev.txt",
+      "name": "filter_rev.txt",
+      "ext": "txt",
+      "size": 431,
+      "mtime": "2026-11-09T15:05:26.700Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/filter_slide.txt",
+      "name": "filter_slide.txt",
+      "ext": "txt",
+      "size": 1734,
+      "mtime": "2026-11-09T15:05:26.662Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/font.ttf",
+      "name": "font.ttf",
+      "ext": "ttf",
+      "size": 9745792,
+      "mtime": "2026-11-09T15:05:26.541Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/img01.png",
+      "name": "img01.png",
+      "ext": "png",
+      "size": 2183284,
+      "mtime": "2026-11-09T15:05:26.607Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/img02.png",
+      "name": "img02.png",
+      "ext": "png",
+      "size": 2044143,
+      "mtime": "2026-11-09T15:05:26.557Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/img03.png",
+      "name": "img03.png",
+      "ext": "png",
+      "size": 2311761,
+      "mtime": "2026-11-09T15:05:26.498Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/img04.png",
+      "name": "img04.png",
+      "ext": "png",
+      "size": 2270933,
+      "mtime": "2026-11-09T15:05:26.582Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/m01.mp4",
+      "name": "m01.mp4",
+      "ext": "mp4",
+      "size": 1623717,
+      "mtime": "2026-11-09T15:05:26.459Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/m02.mp4",
+      "name": "m02.mp4",
+      "ext": "mp4",
+      "size": 1030839,
+      "mtime": "2026-11-09T15:05:26.480Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/m02_旧短发版备份.mp4",
+      "name": "m02_旧短发版备份.mp4",
+      "ext": "mp4",
+      "size": 956602,
+      "mtime": "2026-11-09T15:05:26.574Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/m03.mp4",
+      "name": "m03.mp4",
+      "ext": "mp4",
+      "size": 1455579,
+      "mtime": "2026-11-09T15:05:26.587Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/m04.mp4",
+      "name": "m04.mp4",
+      "ext": "mp4",
+      "size": 1177308,
+      "mtime": "2026-11-09T15:05:26.372Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/motion01_a.png",
+      "name": "motion01_a.png",
+      "ext": "png",
+      "size": 891831,
+      "mtime": "2026-11-09T15:05:26.687Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/motion01_b.png",
+      "name": "motion01_b.png",
+      "ext": "png",
+      "size": 932991,
+      "mtime": "2026-11-09T15:05:26.504Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/new02_a.png",
+      "name": "new02_a.png",
+      "ext": "png",
+      "size": 728417,
+      "mtime": "2026-11-09T15:05:26.633Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/new02_b.png",
+      "name": "new02_b.png",
+      "ext": "png",
+      "size": 843650,
+      "mtime": "2026-11-09T15:05:26.379Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/out.mp4",
+      "name": "out.mp4",
+      "ext": "mp4",
+      "size": 8515597,
+      "mtime": "2026-11-09T15:05:26.523Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/qc12.png",
+      "name": "qc12.png",
+      "ext": "png",
+      "size": 1889687,
+      "mtime": "2026-11-09T15:05:26.735Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/qc2.png",
+      "name": "qc2.png",
+      "ext": "png",
+      "size": 2083957,
+      "mtime": "2026-11-09T15:05:26.742Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/qc24.png",
+      "name": "qc24.png",
+      "ext": "png",
+      "size": 2082213,
+      "mtime": "2026-11-09T15:05:26.710Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/rev_0.2.png",
+      "name": "rev_0.2.png",
+      "ext": "png",
+      "size": 1524280,
+      "mtime": "2026-11-09T15:05:26.716Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/rev_0.6.png",
+      "name": "rev_0.6.png",
+      "ext": "png",
+      "size": 1524759,
+      "mtime": "2026-11-09T15:05:26.426Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/rev_2.4.png",
+      "name": "rev_2.4.png",
+      "ext": "png",
+      "size": 1521193,
+      "mtime": "2026-11-09T15:05:26.693Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/rev_4.0.png",
+      "name": "rev_4.0.png",
+      "ext": "png",
+      "size": 1398362,
+      "mtime": "2026-11-09T15:05:26.431Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/rev_4.95.png",
+      "name": "rev_4.95.png",
+      "ext": "png",
+      "size": 1371466,
+      "mtime": "2026-11-09T15:05:26.747Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/shot01_rev.mp4",
+      "name": "shot01_rev.mp4",
+      "ext": "mp4",
+      "size": 4015631,
+      "mtime": "2026-11-09T15:05:26.470Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/sl_14.20.png",
+      "name": "sl_14.20.png",
+      "ext": "png",
+      "size": 1218536,
+      "mtime": "2026-11-09T15:05:26.571Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/sl_4.80.png",
+      "name": "sl_4.80.png",
+      "ext": "png",
+      "size": 1387210,
+      "mtime": "2026-11-09T15:05:26.484Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/sl_9.10.png",
+      "name": "sl_9.10.png",
+      "ext": "png",
+      "size": 1548864,
+      "mtime": "2026-11-09T15:05:26.566Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/sub01.txt",
+      "name": "sub01.txt",
+      "ext": "txt",
+      "size": 61,
+      "mtime": "2026-11-09T15:05:26.609Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/sub02.txt",
+      "name": "sub02.txt",
+      "ext": "txt",
+      "size": 55,
+      "mtime": "2026-11-09T15:05:26.561Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/sub03.txt",
+      "name": "sub03.txt",
+      "ext": "txt",
+      "size": 54,
+      "mtime": "2026-11-09T15:05:26.506Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/sub04.txt",
+      "name": "sub04.txt",
+      "ext": "txt",
+      "size": 49,
+      "mtime": "2026-11-09T15:05:26.547Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/v01.mp3",
+      "name": "v01.mp3",
+      "ext": "mp3",
+      "size": 51552,
+      "mtime": "2026-11-09T15:05:26.544Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/v02.mp3",
+      "name": "v02.mp3",
+      "ext": "mp3",
+      "size": 46368,
+      "mtime": "2026-11-09T15:05:26.491Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/v03.mp3",
+      "name": "v03.mp3",
+      "ext": "mp3",
+      "size": 56160,
+      "mtime": "2026-11-09T15:05:26.611Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/v04.mp3",
+      "name": "v04.mp3",
+      "ext": "mp3",
+      "size": 40320,
+      "mtime": "2026-11-09T15:05:26.525Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/v2_1.5.png",
+      "name": "v2_1.5.png",
+      "ext": "png",
+      "size": 1525433,
+      "mtime": "2026-11-09T15:05:26.722Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/v2_11.5.png",
+      "name": "v2_11.5.png",
+      "ext": "png",
+      "size": 1489530,
+      "mtime": "2026-11-09T15:05:26.660Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/v2_16.0.png",
+      "name": "v2_16.0.png",
+      "ext": "png",
+      "size": 1789719,
+      "mtime": "2026-11-09T15:05:26.415Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/v2_4.80.png",
+      "name": "v2_4.80.png",
+      "ext": "png",
+      "size": 1352920,
+      "mtime": "2026-11-09T15:05:26.408Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/v2_6.5.png",
+      "name": "v2_6.5.png",
+      "ext": "png",
+      "size": 1422477,
+      "mtime": "2026-11-09T15:05:26.595Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "_build/work/v2_9.10.png",
+      "name": "v2_9.10.png",
+      "ext": "png",
+      "size": 1651631,
+      "mtime": "2026-11-09T15:05:26.601Z",
+      "category": "构建中间物"
+    },
+    {
+      "rel": "分镜01.png",
+      "name": "分镜01.png",
+      "ext": "png",
+      "size": 2183284,
+      "mtime": "2026-11-09T15:05:26.909Z",
+      "category": "分镜图"
+    },
+    {
+      "rel": "分镜01_修订内容.md",
+      "name": "分镜01_修订内容.md",
+      "ext": "md",
+      "size": 5854,
+      "mtime": "2026-11-09T15:07:47.518Z",
+      "category": "分镜图"
+    },
+    {
+      "rel": "分镜01_修订版.mp4",
+      "name": "分镜01_修订版.mp4",
+      "ext": "mp4",
+      "size": 4015631,
+      "mtime": "2026-11-09T15:05:26.870Z",
+      "category": "分镜图"
+    },
+    {
+      "rel": "分镜02.png",
+      "name": "分镜02.png",
+      "ext": "png",
+      "size": 2044143,
+      "mtime": "2026-11-09T15:05:26.923Z",
+      "category": "分镜图"
+    },
+    {
+      "rel": "分镜02_重绘.png",
+      "name": "分镜02_重绘.png",
+      "ext": "png",
+      "size": 1922992,
+      "mtime": "2026-11-09T15:05:26.884Z",
+      "category": "分镜图"
+    },
+    {
+      "rel": "分镜03.png",
+      "name": "分镜03.png",
+      "ext": "png",
+      "size": 2311761,
+      "mtime": "2026-11-09T15:05:26.850Z",
+      "category": "分镜图"
+    },
+    {
+      "rel": "分镜04.png",
+      "name": "分镜04.png",
+      "ext": "png",
+      "size": 2270933,
+      "mtime": "2026-11-09T15:05:26.857Z",
+      "category": "分镜图"
+    },
+    {
+      "rel": "分镜脚本.md",
+      "name": "分镜脚本.md",
+      "ext": "md",
+      "size": 1776,
+      "mtime": "2026-11-09T15:05:26.954Z",
+      "category": "文档"
+    },
+    {
+      "rel": "动态紧凑版说明.md",
+      "name": "动态紧凑版说明.md",
+      "ext": "md",
+      "size": 6694,
+      "mtime": "2026-11-09T15:07:47.535Z",
+      "category": "文档"
+    },
+    {
+      "rel": "字幕01.txt",
+      "name": "字幕01.txt",
+      "ext": "txt",
+      "size": 61,
+      "mtime": "2026-11-09T15:05:26.889Z",
+      "category": "字幕"
+    },
+    {
+      "rel": "字幕02.txt",
+      "name": "字幕02.txt",
+      "ext": "txt",
+      "size": 55,
+      "mtime": "2026-11-09T15:05:26.987Z",
+      "category": "字幕"
+    },
+    {
+      "rel": "字幕03.txt",
+      "name": "字幕03.txt",
+      "ext": "txt",
+      "size": 54,
+      "mtime": "2026-11-09T15:05:26.911Z",
+      "category": "字幕"
+    },
+    {
+      "rel": "字幕04.txt",
+      "name": "字幕04.txt",
+      "ext": "txt",
+      "size": 49,
+      "mtime": "2026-11-09T15:05:26.914Z",
+      "category": "字幕"
+    },
+    {
+      "rel": "实跑复现报告.md",
+      "name": "实跑复现报告.md",
+      "ext": "md",
+      "size": 11753,
+      "mtime": "2026-11-09T15:07:47.533Z",
+      "category": "文档"
+    },
+    {
+      "rel": "成片.mp4",
+      "name": "成片.mp4",
+      "ext": "mp4",
+      "size": 8515597,
+      "mtime": "2026-11-09T15:05:26.968Z",
+      "category": "成片"
+    },
+    {
+      "rel": "成片_人物统一版说明.md",
+      "name": "成片_人物统一版说明.md",
+      "ext": "md",
+      "size": 5369,
+      "mtime": "2026-11-09T15:07:47.528Z",
+      "category": "成片"
+    },
+    {
+      "rel": "成片_动态紧凑版.mp4",
+      "name": "成片_动态紧凑版.mp4",
+      "ext": "mp4",
+      "size": 11879211,
+      "mtime": "2026-11-09T15:05:26.801Z",
+      "category": "成片"
+    },
+    {
+      "rel": "成片_动态紧凑版_滑切.mp4",
+      "name": "成片_动态紧凑版_滑切.mp4",
+      "ext": "mp4",
+      "size": 11476509,
+      "mtime": "2026-11-09T15:05:26.821Z",
+      "category": "成片"
+    },
+    {
+      "rel": "成片_动态紧凑版_滑切_人物统一版.mp4",
+      "name": "成片_动态紧凑版_滑切_人物统一版.mp4",
+      "ext": "mp4",
+      "size": 11729382,
+      "mtime": "2026-11-09T15:05:26.951Z",
+      "category": "成片"
+    },
+    {
+      "rel": "成片镜2人物前后对比.png",
+      "name": "成片镜2人物前后对比.png",
+      "ext": "png",
+      "size": 1129679,
+      "mtime": "2026-11-09T15:05:26.830Z",
+      "category": "成片"
+    },
+    {
+      "rel": "配音清单.json",
+      "name": "配音清单.json",
+      "ext": "json",
+      "size": 1598,
+      "mtime": "2026-11-09T15:07:47.526Z",
+      "category": "清单"
+    },
+    {
+      "rel": "镜2人物对比.png",
+      "name": "镜2人物对比.png",
+      "ext": "png",
+      "size": 1754733,
+      "mtime": "2026-11-09T15:05:26.901Z",
+      "category": "图片"
+    },
+    {
+      "rel": "镜2人物重绘说明.md",
+      "name": "镜2人物重绘说明.md",
+      "ext": "md",
+      "size": 6641,
+      "mtime": "2026-11-09T15:07:47.524Z",
+      "category": "文档"
+    }
+  ]
+}

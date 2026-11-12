@@ -1,0 +1,35 @@
+{
+  "taskId": "TASK_20261111012500_r2",
+  "slot": "r2_delivery",
+  "node": "N10",
+  "projectId": "P_20261110_004",
+  "code": "DJ04",
+  "status": "succeeded",
+  "trigger": "user D1=B / D2-D5 推荐 / D6 整批交付",
+  "tool": "本地 Node + ffmpeg/ffprobe + msedge-tts + Edge headless（零积分）",
+  "billing": "零积分（D 批口型 A/B 另计，见其回执）",
+  "cost": { "estimated": null, "verified": false, "source": "本地工具零成本", "note": "实际扣费未经核实，不自行推断" },
+  "batches": {
+    "A": "R2-01 输出区菜单 + R2-05 文案两态 + R2-06 真实项目并入 + R2-16 安全（后端 30/30、前端 21/21）",
+    "B": "R2-02 逐句同构 A/B + R2-03/10/12/13 时长与字幕窗口 + r02 成片（41/41）",
+    "C": "R2-07 服务端约束声明 + R2-08 delogo 比例化 + N11/N12 + R2-15 成本双字段"
+  },
+  "deliverables": [
+    "v1/04_output/master/DJ04_v1_N10_master_final_r02_20261111012500.mp4",
+    "v1/04_output/master/DJ04_v1_N10_compose-params_final_r02_20261111012500.json",
+    "v1/04_output/audio_v2_trim/*.mp3",
+    "v1/03_asset/audio/trial_v2/*.mp3",
+    "v1/04_output/qc/DJ04_v1_N11_qc-report_final_r01_20261111013500.json",
+    "v1/06_build/DJ04_v1_N12_delivery-manifest_final_r01_20261111014000.json"
+  ],
+  "selfTest": { "verify-r2": "30/30", "R2 frontend": "21/21", "verify-n10-v2": "41/41", "verify-hardrules": "52/52", "verify-n09": "54/54", "verify-n10": "37/37" },
+  "knownIssues": [
+    "AC-58 单句 estSec 最大偏差 59.7%（>20% 目标）：estSec 估算失真，已降级为参考值，时间轴一律用实测",
+    "音色/情感档位最终选择需人工 A/B 试听，本轮保持用户已确认的 M1/X2 不预判",
+    "C03 1.79 倍慢放 + 22% clone：慢放损失动作自然度，待人工复核",
+    "C04 墙面表格纸模糊纹理 / 妈妈未出画：待人工复核",
+    "真实浏览器肉眼播放验证未做",
+    "D 批口型 A/B 结论待单独回执"
+  ],
+  "createdAt": "2026-11-11T02:25:00.000Z"
+}

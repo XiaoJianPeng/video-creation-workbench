@@ -1,0 +1,82 @@
+{
+  "taskId": "TASK_20261111000600_voice",
+  "slot": "tts",
+  "node": "N08",
+  "projectId": "P_20261110_004",
+  "code": "DJ04",
+  "status": "succeeded",
+  "trigger": "user voice decision (妈妈=M1，小宇=X2)",
+  "tool": "msedge-tts（本地免费 TTS）",
+  "billing": "零积分",
+  "voiceDecision": {
+    "mom": "M1 zh-CN-XiaoxiaoNeural -3%",
+    "xiaoyu": "X2 zh-CN-YunxiNeural +0%"
+  },
+  "artifacts": 9,
+  "totalDurationSec": 28.296,
+  "manifest": "v1/04_output/audio/DJ04_v1_N08_voice-manifest_final_r01_20261111000600.json",
+  "note": "实测总时长 28.296s，长于清单估算 21.8s；N10 需按真实时长对齐字幕与画面。L09 沿用妈妈音色。",
+  "createdAt": "2026-11-10T16:07:00.000Z",
+  "artifactsForSync": [
+    {
+      "rel": "v1/04_output/audio/DJ04_v1_N08_voice-L01_final_r01_20261111000600.mp3",
+      "name": "DJ04_v1_N08_voice-L01_final_r01_20261111000600.mp3",
+      "bytes": 36000,
+      "kind": "产物"
+    },
+    {
+      "rel": "v1/04_output/audio/DJ04_v1_N08_voice-L02_final_r01_20261111000600.mp3",
+      "name": "DJ04_v1_N08_voice-L02_final_r01_20261111000600.mp3",
+      "bytes": 22464,
+      "kind": "产物"
+    },
+    {
+      "rel": "v1/04_output/audio/DJ04_v1_N08_voice-L03_final_r01_20261111000600.mp3",
+      "name": "DJ04_v1_N08_voice-L03_final_r01_20261111000600.mp3",
+      "bytes": 26496,
+      "kind": "产物"
+    },
+    {
+      "rel": "v1/04_output/audio/DJ04_v1_N08_voice-L04_final_r01_20261111000600.mp3",
+      "name": "DJ04_v1_N08_voice-L04_final_r01_20261111000600.mp3",
+      "bytes": 27072,
+      "kind": "产物"
+    },
+    {
+      "rel": "v1/04_output/audio/DJ04_v1_N08_voice-L05_final_r01_20261111000600.mp3",
+      "name": "DJ04_v1_N08_voice-L05_final_r01_20261111000600.mp3",
+      "bytes": 87264,
+      "kind": "产物"
+    },
+    {
+      "rel": "v1/04_output/audio/DJ04_v1_N08_voice-L06_final_r01_20261111000600.mp3",
+      "name": "DJ04_v1_N08_voice-L06_final_r01_20261111000600.mp3",
+      "bytes": 44064,
+      "kind": "产物"
+    },
+    {
+      "rel": "v1/04_output/audio/DJ04_v1_N08_voice-L07_final_r01_20261111000600.mp3",
+      "name": "DJ04_v1_N08_voice-L07_final_r01_20261111000600.mp3",
+      "bytes": 30816,
+      "kind": "产物"
+    },
+    {
+      "rel": "v1/04_output/audio/DJ04_v1_N08_voice-L08_final_r01_20261111000600.mp3",
+      "name": "DJ04_v1_N08_voice-L08_final_r01_20261111000600.mp3",
+      "bytes": 42048,
+      "kind": "产物"
+    },
+    {
+      "rel": "v1/04_output/audio/DJ04_v1_N08_voice-L09_final_r01_20261111000600.mp3",
+      "name": "DJ04_v1_N08_voice-L09_final_r01_20261111000600.mp3",
+      "bytes": 23328,
+      "kind": "产物"
+    }
+  ],
+  "cost": {
+    "estimated": null,
+    "verified": false,
+    "source": "本地工具零成本",
+    "note": "实际扣费未经核实，不自行推断"
+  }
+}

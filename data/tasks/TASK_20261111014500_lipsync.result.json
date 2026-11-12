@@ -1,0 +1,36 @@
+{
+  "taskId": "TASK_20261111014500_lipsync",
+  "slot": "video_gen_ab",
+  "node": "N09",
+  "projectId": "P_20261110_004",
+  "code": "DJ04",
+  "status": "succeeded_with_negative_conclusion",
+  "trigger": "user D3（推荐：先做单镜头 A/B 验证再定分支）+ D6 整批",
+  "tool": "VideoGen（minimax-video-h3）",
+  "billing": "4 次调用均在参数校验 / submit 阶段被拒，未产生视频产物；是否扣费未经核实",
+  "cost": {"estimated": null, "verified": false, "source": "工具说明（约 50-100 积分/5s）", "note": "4 次均拒绝，实际扣费未经核实，不自行推断"},
+  "hardRules": ["G1", "G2", "G3"],
+  "g2Processed": true,
+  "experiment": "v1/04_output/clip_ab/DJ04_v1_N09_lipsync-ab-result_final_r01_20261111014500.json",
+  "conclusion": {
+    "verified": true,
+    "lipSyncCapability": "NOT_AVAILABLE_IN_CURRENT_STACK",
+    "attempts": 4,
+    "allRejected": true,
+    "branch": "DEGRADED_SENTENCE_LEVEL_SPEAKING_STATE",
+    "branchName": "句级说话状态对齐",
+    "explicitNonClaim": "不宣称音素级 lip-sync"
+  },
+  "degradedAcceptance": {
+    "D4_applicable": false,
+    "metric": "说话状态一致率",
+    "threshold": ">=90%",
+    "status": "待人工逐帧标注；本轮不编造通过数值"
+  },
+  "g3Landed": [
+    "projects/P_20261110_004_DJ04/v1/02_prompt/video/DJ04_v1_N09_prompt-01_final_r01_20261111000600.md（G3 章节 + 4 镜说话状态表）",
+    "prototype/pc-v1/app.js（PROJECT_HARD_RULES G3、N06/N09 判据、promptFor 注入）"
+  ],
+  "selfTest": {"verify-lipsync": "32/32", "G3 UI smoke": "8/8", "R2 frontend regression": "21/21", "9 verify scripts": "all pass"},
+  "createdAt": "2026-11-11T02:32:00.000Z"
+}

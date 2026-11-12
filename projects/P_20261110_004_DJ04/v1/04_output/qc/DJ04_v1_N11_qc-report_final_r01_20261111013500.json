@@ -1,0 +1,66 @@
+{
+  "reportId": "N11_QC_DJ04_20261111013500",
+  "projectId": "P_20261110_004",
+  "code": "DJ04",
+  "nodeId": "N11",
+  "at": "2026-11-11T02:22:20.720Z",
+  "tool": "本地 ffmpeg / ffprobe（零积分）",
+  "master": "v1/04_output/master/DJ04_v1_N10_master_final_r02_20261111012500.mp4",
+  "checks": {
+    "fullDecodeOK": true,
+    "decodeError": null,
+    "codec": "h264 / 1080x1920 / 30/1",
+    "audio": "aac / 48000Hz / 2ch",
+    "durationSec": 23.433333,
+    "faststart": true,
+    "tailSilenceSec": 0.732,
+    "tailSilenceOK": true
+  },
+  "subtitleQC": {
+    "frames": [
+      {
+        "t": 1,
+        "file": "v1/05_review/frames/DJ04_v1_N10_qc-t1_r02_20261111012500.png",
+        "exists": true,
+        "bytes": 1240712
+      },
+      {
+        "t": 6,
+        "file": "v1/05_review/frames/DJ04_v1_N10_qc-t6_r02_20261111012500.png",
+        "exists": true,
+        "bytes": 1392057
+      },
+      {
+        "t": 12,
+        "file": "v1/05_review/frames/DJ04_v1_N10_qc-t12_r02_20261111012500.png",
+        "exists": true,
+        "bytes": 1252339
+      },
+      {
+        "t": 19,
+        "file": "v1/05_review/frames/DJ04_v1_N10_qc-t19_r02_20261111012500.png",
+        "exists": true,
+        "bytes": 1290348
+      },
+      {
+        "t": 22.5,
+        "file": "v1/05_review/frames/DJ04_v1_N10_qc-t22_5_r02_20261111012500.png",
+        "exists": true,
+        "bytes": 1424938
+      }
+    ],
+    "note": "t=1 硬字幕「考前最该做的，不是再刷一套」、t=6 四词「知识·审题·计算·时间」+「考后第一件事，也不是看分数」、t=22.5「分数是结果，诊断才是收获」均已人工视觉复核：清晰、无「口」方块、无水印、无黑帧（来源：ViewImage 抽检）"
+  },
+  "dynamicObservation": {
+    "method": "连续抽帧字节差异 + 静态视觉抽检（非肉眼播放）",
+    "c03SlowMotionFactor": 1.7859,
+    "note": "C03 采用 1.79 倍慢放 + 22% clone 补帧以满足单镜 clone ≤30%；慢放会损失动作自然度，属待人工复核项"
+  },
+  "unverified": [
+    "真实浏览器肉眼播放验证未做（本轮只做 ffmpeg 解码 + 静态帧 QC）",
+    "C04 墙上表格纸仍有模糊印刷纹理、妈妈未按分镜出画：属模型再演绎，列为待人工复核项",
+    "768x1344 → 1080x1920 属有损上采样，画质上限以源素材为准",
+    "音素级口型同步能力见 D 批 A/B 验证结论，本 N11 报告不宣称已同步"
+  ],
+  "conclusion": "技术验收通过（全片可解码 / 编码可预览 / 片尾静音达标）；观感类项仍待人工复核"
+}

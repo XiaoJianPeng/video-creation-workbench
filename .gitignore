@@ -1,0 +1,28 @@
+# ===== 不纳入版本库的内容 =====
+
+# 原始实测样本媒体（209MB 输入素材，非工作台源码）
+# 如需随仓库分发，建议改用 Git LFS 或外链，不要直接进 Git
+短剧实测/
+
+# 构建临时物
+**/_build/
+node_modules/
+
+# 日志与本地运行数据（含本机绝对路径，非源码）
+*.log
+data/ops.log
+
+# 代理/IDE 内部数据（WorkBuddy 项目记忆，非源码）
+.workbuddy/
+
+# 本地冒烟测试遗留的 headless Edge 浏览器 profile（含 cookie/缓存，隐私+体积）
+data/_edge_smoke_hr/
+
+# 浏览器本地存储导出（测试产物）
+data/localStorage-backup-*.json
+
+# OS / 编辑器 / IDE 临时
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

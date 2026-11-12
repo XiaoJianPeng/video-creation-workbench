@@ -1,0 +1,236 @@
+{
+  "composeId": "COMPOSE_DJ04_N10_V2_20261111012500",
+  "projectId": "P_20261110_004",
+  "code": "DJ04",
+  "nodeId": "N10",
+  "version": "r02",
+  "tool": "本地 ffmpeg 9.0.2（零积分）",
+  "generatedAt": "2026-11-11T02:19:50.714Z",
+  "decision": {
+    "D1": "B（总长由 T_audio_eff + Δ 反推，用户 2026-11-11 明确授权变更 30s 规格目标）",
+    "D2": "Δ 目标 [0.4,1.0]s 取 0.7s，上限 1.5s"
+  },
+  "output": "v1/04_output/master/DJ04_v1_N10_master_final_r02_20261111012500.mp4",
+  "outputBytes": 9681347,
+  "targetSpec": {
+    "resolution": "1080x1920",
+    "fps": 30,
+    "durationSec": 23.402,
+    "video": "H.264/yuv420p",
+    "audio": "AAC 192k 48kHz stereo",
+    "faststart": true
+  },
+  "timeline": {
+    "tAudioEffSec": 22.702,
+    "deltaSec": 0.7,
+    "tVideoSec": 23.402,
+    "arithmeticTailSilenceSec": 0.7,
+    "measuredTailSilenceSec": 0.732,
+    "measuredDurationSec": 23.433333,
+    "basis": "N08 v2 配音 ffprobe 实测 + 句间 0.2s 停顿"
+  },
+  "lines": [
+    {
+      "id": "L01",
+      "shot": "S01",
+      "who": "妈妈",
+      "start": 0,
+      "durationSec": 2.371,
+      "estSec": 2.6,
+      "file": "DJ04_v1_N08_voice-L01_final_r02trim_20261111012000.mp3",
+      "subtitle": "考前最该做的，不是再刷一套"
+    },
+    {
+      "id": "L02",
+      "shot": "S01",
+      "who": "小宇",
+      "start": 2.571,
+      "durationSec": 0.791,
+      "estSec": 1.4,
+      "file": "DJ04_v1_N08_voice-L02_final_r02trim_20261111012000.mp3",
+      "subtitle": "考前最该做的，不是再刷一套"
+    },
+    {
+      "id": "L03",
+      "shot": "S02",
+      "who": "小宇",
+      "start": 3.562,
+      "durationSec": 1.218,
+      "estSec": 1.8,
+      "file": "DJ04_v1_N08_voice-L03_final_r02trim_20261111012000.mp3",
+      "subtitle": "考后第一件事，也不是看分数"
+    },
+    {
+      "id": "L04",
+      "shot": "S02",
+      "who": "妈妈",
+      "start": 4.98,
+      "durationSec": 1.603,
+      "estSec": 2.2,
+      "file": "DJ04_v1_N08_voice-L04_final_r02trim_20261111012000.mp3",
+      "subtitle": "考后第一件事，也不是看分数"
+    },
+    {
+      "id": "L05",
+      "shot": "S03",
+      "who": "妈妈",
+      "start": 6.783,
+      "durationSec": 6.701,
+      "estSec": 4.6,
+      "file": "DJ04_v1_N08_voice-L05_final_r02trim_20261111012000.mp3",
+      "subtitle": "问题常常不是能力，是节奏"
+    },
+    {
+      "id": "L06",
+      "shot": "S03",
+      "who": "小宇",
+      "start": 13.684,
+      "durationSec": 2.604,
+      "estSec": 3,
+      "file": "DJ04_v1_N08_voice-L06_final_r02trim_20261111012000.mp3",
+      "subtitle": "问题常常不是能力，是节奏"
+    },
+    {
+      "id": "L07",
+      "shot": "S03",
+      "who": "妈妈",
+      "start": 16.488,
+      "durationSec": 1.925,
+      "estSec": 1.8,
+      "file": "DJ04_v1_N08_voice-L07_final_r02trim_20261111012000.mp3",
+      "subtitle": "问题常常不是能力，是节奏"
+    },
+    {
+      "id": "L08",
+      "shot": "S04",
+      "who": "小宇",
+      "start": 18.613,
+      "durationSec": 2.582,
+      "estSec": 2.8,
+      "file": "DJ04_v1_N08_voice-L08_final_r02trim_20261111012000.mp3",
+      "subtitle": "分数是结果，诊断才是收获"
+    },
+    {
+      "id": "L09",
+      "shot": "S04",
+      "who": "妈妈（画外）",
+      "start": 21.395,
+      "durationSec": 1.307,
+      "estSec": 1.6,
+      "file": "DJ04_v1_N08_voice-L09_final_r02trim_20261111012000.mp3",
+      "subtitle": "分数是结果，诊断才是收获"
+    }
+  ],
+  "shots": [
+    {
+      "id": "C01",
+      "start": 0,
+      "end": 3.562,
+      "dur": 3.562,
+      "padSec": 0,
+      "cloneRatio": 0,
+      "slowFactor": 1,
+      "slowMotionApplied": false,
+      "sub": "sub01.txt",
+      "subOn": 0.3,
+      "subOff": 3.362,
+      "lines": [
+        "L01",
+        "L02"
+      ],
+      "cloneRatioExceeded": false
+    },
+    {
+      "id": "C02",
+      "start": 3.562,
+      "end": 6.783,
+      "dur": 3.221,
+      "padSec": 0,
+      "cloneRatio": 0,
+      "slowFactor": 1,
+      "slowMotionApplied": false,
+      "sub": "sub02.txt",
+      "subOn": 3.862,
+      "subOff": 6.583,
+      "lines": [
+        "L03",
+        "L04"
+      ],
+      "cloneRatioExceeded": false
+    },
+    {
+      "id": "C03",
+      "start": 6.783,
+      "end": 18.613,
+      "dur": 11.83,
+      "padSec": 2.603,
+      "cloneRatio": 0.22,
+      "slowFactor": 1.7859,
+      "slowMotionApplied": true,
+      "sub": "sub03.txt",
+      "subOn": 7.083,
+      "subOff": 18.413,
+      "lines": [
+        "L05",
+        "L06",
+        "L07"
+      ],
+      "cloneRatioExceeded": false
+    },
+    {
+      "id": "C04",
+      "start": 18.613,
+      "end": 23.402,
+      "dur": 4.789,
+      "padSec": 0,
+      "cloneRatio": 0,
+      "slowFactor": 1,
+      "slowMotionApplied": false,
+      "sub": "sub04.txt",
+      "subOn": 18.913,
+      "subOff": 22.702,
+      "lines": [
+        "L08",
+        "L09"
+      ],
+      "cloneRatioExceeded": false
+    }
+  ],
+  "checks": {
+    "deltaInRange": true,
+    "tailSilenceOK": true,
+    "cloneRatioOK": true,
+    "note": "cloneRatioOK 若为 false，属未达标返工项（R2-12），不编造通过"
+  },
+  "deviationHandling": {
+    "durationMismatch": "D1=B 反推总长；C03/C04 tpad clone + zoompan 缓推",
+    "modelAudioTrack": "只映射 [i:v]，模型音轨全部丢弃",
+    "resolutionUpscale": "768x1344 → 1080x1920 有损上采样（如实标注）",
+    "c04Composition": "墙上表格纸纹理/妈妈未出画不修改，标注待人工复核"
+  },
+  "g1LaterOverlay": "镜2 四词在 N10 用 drawtext 叠加，窗口绑定 C02 时段，不由生图渲染",
+  "subtitleEncoding": "UTF-8 无 BOM、强制 LF",
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1080,
+        "height": 1920,
+        "r_frame_rate": "30/1"
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "format": {
+      "duration": "23.433333",
+      "size": "9681347"
+    }
+  },
+  "note": "未做真实浏览器肉眼播放验证；N11 全片解码 QC 见 verify-n10-v2.js"
+}

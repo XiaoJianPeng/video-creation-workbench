@@ -1,0 +1,91 @@
+{
+  "manifestId": "TRIAL_DJ04_N08_20261110234000",
+  "projectId": "P_20261110_004",
+  "projectCode": "DJ04",
+  "nodeId": "N08",
+  "purpose": "音色试听样本（非最终配音）",
+  "tool": "msedge-tts（本地免费 TTS）",
+  "billing": "零积分",
+  "basedOn": "DJ04_v1_N08_voice-01_final_r01_20261110205600.json",
+  "generatedAt": "2026-11-10T15:41:04.433Z",
+  "items": [
+    {
+      "id": "M1",
+      "role": "妈妈",
+      "voice": "zh-CN-XiaoxiaoNeural",
+      "label": "晓晓 Xiaoxiao（温和中年，推荐）",
+      "rate": "-3%",
+      "pitch": "-2%",
+      "text": "明天就考了，复习得怎么样？先别看分。咱把这三类分开——基础丢的、粗心丢的、没时间写的。",
+      "file": "DJ04_v1_N08_trial-M1_final_r01_20261110234000.mp3",
+      "absPath": "D:\\WorkBuddy_space\\WorkBuddy全流程短视频创作空间\\projects\\P_20261110_004_DJ04\\v1\\03_asset\\audio\\trial\\DJ04_v1_N08_trial-M1_final_r01_20261110234000.mp3",
+      "bytes": 121824,
+      "status": "ok"
+    },
+    {
+      "id": "M2",
+      "role": "妈妈",
+      "voice": "zh-CN-XiaoyiNeural",
+      "label": "晓伊 Xiaoyi（更年轻柔和）",
+      "rate": "-3%",
+      "pitch": "-2%",
+      "text": "明天就考了，复习得怎么样？先别看分。咱把这三类分开——基础丢的、粗心丢的、没时间写的。",
+      "file": "DJ04_v1_N08_trial-M2_final_r01_20261110234000.mp3",
+      "absPath": "D:\\WorkBuddy_space\\WorkBuddy全流程短视频创作空间\\projects\\P_20261110_004_DJ04\\v1\\03_asset\\audio\\trial\\DJ04_v1_N08_trial-M2_final_r01_20261110234000.mp3",
+      "bytes": 119232,
+      "status": "ok"
+    },
+    {
+      "id": "M3",
+      "role": "妈妈",
+      "voice": "zh-CN-XiaoxiaoNeural",
+      "label": "晓晓 · 原速对照",
+      "rate": "+0%",
+      "pitch": "+0%",
+      "text": "明天就考了，复习得怎么样？先别看分。咱把这三类分开——基础丢的、粗心丢的、没时间写的。",
+      "file": "DJ04_v1_N08_trial-M3_final_r01_20261110234000.mp3",
+      "absPath": "D:\\WorkBuddy_space\\WorkBuddy全流程短视频创作空间\\projects\\P_20261110_004_DJ04\\v1\\03_asset\\audio\\trial\\DJ04_v1_N08_trial-M3_final_r01_20261110234000.mp3",
+      "bytes": 118368,
+      "status": "ok"
+    },
+    {
+      "id": "X1",
+      "role": "小宇",
+      "voice": "zh-CN-YunxiaNeural",
+      "label": "云夏 Yunxia（少年男声，推荐）",
+      "rate": "+0%",
+      "pitch": "+0%",
+      "text": "……还行吧。原来不是不会，是会了没时间写。",
+      "file": "DJ04_v1_N08_trial-X1_final_r01_20261110234000.mp3",
+      "absPath": "D:\\WorkBuddy_space\\WorkBuddy全流程短视频创作空间\\projects\\P_20261110_004_DJ04\\v1\\03_asset\\audio\\trial\\DJ04_v1_N08_trial-X1_final_r01_20261110234000.mp3",
+      "bytes": 63936,
+      "status": "ok"
+    },
+    {
+      "id": "X2",
+      "role": "小宇",
+      "voice": "zh-CN-YunxiNeural",
+      "label": "云希 Yunxi（青年男声·口语）",
+      "rate": "+0%",
+      "pitch": "+0%",
+      "text": "……还行吧。原来不是不会，是会了没时间写。",
+      "file": "DJ04_v1_N08_trial-X2_final_r01_20261110234000.mp3",
+      "absPath": "D:\\WorkBuddy_space\\WorkBuddy全流程短视频创作空间\\projects\\P_20261110_004_DJ04\\v1\\03_asset\\audio\\trial\\DJ04_v1_N08_trial-X2_final_r01_20261110234000.mp3",
+      "bytes": 61632,
+      "status": "ok"
+    },
+    {
+      "id": "X3",
+      "role": "小宇",
+      "voice": "zh-CN-YunjianNeural",
+      "label": "云健 Yunjian（低沉·疲惫感）",
+      "rate": "-3%",
+      "pitch": "+0%",
+      "text": "……还行吧。原来不是不会，是会了没时间写。",
+      "file": "DJ04_v1_N08_trial-X3_final_r01_20261110234000.mp3",
+      "absPath": "D:\\WorkBuddy_space\\WorkBuddy全流程短视频创作空间\\projects\\P_20261110_004_DJ04\\v1\\03_asset\\audio\\trial\\DJ04_v1_N08_trial-X3_final_r01_20261110234000.mp3",
+      "bytes": 59904,
+      "status": "ok"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "probeId": "TTS_PROBE_DJ04_20261111010000",
+  "at": "2026-11-11T02:07:29.514Z",
+  "tool": "msedge-tts（本地免费，零积分）",
+  "outputFormats": [
+    "audio-24khz-48kbitrate-mono-mp3",
+    "audio-24khz-96kbitrate-mono-mp3",
+    "webm-24khz-16bit-mono-opus"
+  ],
+  "findings": {
+    "pitchVolumeAccepted": true,
+    "breakSupported": false,
+    "breakDeltaSec": null,
+    "expressAsSupported": false,
+    "expressAsError": "Stream closed before the synthesis completed (no turn.end received). The audio is likely truncated.",
+    "maxBitrateIs96k": false,
+    "fmt48Bytes": 43632,
+    "baseBytes": 87264
+  },
+  "cases": [
+    {
+      "id": "base",
+      "label": "基线（rate -3%）",
+      "status": "ok",
+      "bytes": 87264,
+      "durationSec": 7.272
+    },
+    {
+      "id": "pitch_low",
+      "label": "pitch -2st + volume +0%",
+      "status": "ok",
+      "bytes": 86976,
+      "durationSec": 7.248
+    },
+    {
+      "id": "pitch_high",
+      "label": "pitch +2st",
+      "status": "ok",
+      "bytes": 87264,
+      "durationSec": 7.272
+    },
+    {
+      "id": "break",
+      "label": "内嵌 <break time=\"400ms\"/>",
+      "status": "failed",
+      "error": "Stream closed before the synthesis completed (no turn.end received). The audio is likely truncated."
+    },
+    {
+      "id": "express",
+      "label": "mstts:express-as style=\"gentle\"",
+      "status": "failed",
+      "error": "Stream closed before the synthesis completed (no turn.end received). The audio is likely truncated."
+    },
+    {
+      "id": "fmt48",
+      "label": "48kbps 对照",
+      "status": "ok",
+      "bytes": 43632,
+      "durationSec": 7.272
+    }
+  ]
+}

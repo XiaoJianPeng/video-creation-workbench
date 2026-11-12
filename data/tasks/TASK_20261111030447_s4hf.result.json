@@ -1,0 +1,28 @@
+{
+  "taskId": "TASK_20261111030447_s4hf",
+  "projectId": "P_20261110_RCPT",
+  "nodeId": "N06",
+  "slot": "image",
+  "status": "succeeded",
+  "completedAt": "2026-11-11T03:04:47.855Z",
+  "elapsed": "42s",
+  "note": "验收用：模拟 WorkBuddy 会话生成后回写",
+  "artifacts": [
+    {
+      "rel": "v1/03_asset/image/RT01_v1_N06_image-01_final_r01_20261111030447.png",
+      "name": "分镜01.png",
+      "kind": "图片",
+      "bytes": 22,
+      "meta": {
+        "size": "1024x1536"
+      }
+    }
+  ],
+  "permissionLevel": 1,
+  "hardRules": [],
+  "hardRulesWarning": [
+    "MISSING_G1",
+    "MISSING_G2"
+  ],
+  "g2Processed": false
+}

@@ -1,0 +1,27 @@
+{
+  "voiceListId": "VL_DJ04_N08_20261110205600",
+  "projectId": "P_20261110_004",
+  "projectCode": "DJ04",
+  "version": "v1",
+  "nodeId": "N08",
+  "basedOn": "DJ04_v1_N02_script-02_final_r01_20261110205600.md",
+  "voiceConfig": {
+    "xiaoyu": { "timbre": "中文少年男声，偏自然口语，略低、带疲惫感", "rate": "+0%", "pitch": "+0%" },
+    "mom": { "timbre": "中文温和女声，中年，语速偏慢，不夸张", "rate": "-3%", "pitch": "-2%" },
+    "note": "音色为建议值，需试听后确认；本地 TTS 可用 msedge-tts（晓晓 +8%）或同类免费能力"
+  },
+  "lines": [
+    { "id": "L01", "shot": "S01", "who": "妈妈", "text": "明天就考了，复习得怎么样？", "estSec": 2.6, "subtitle": "考前最该做的，不是再刷一套" },
+    { "id": "L02", "shot": "S01", "who": "小宇", "text": "……还行吧。", "estSec": 1.4, "subtitle": "考前最该做的，不是再刷一套" },
+    { "id": "L03", "shot": "S02", "who": "小宇", "text": "数学又没考好。", "estSec": 1.8, "subtitle": "考后第一件事，也不是看分数" },
+    { "id": "L04", "shot": "S02", "who": "妈妈", "text": "……这背面写的是什么？", "estSec": 2.2, "subtitle": "考后第一件事，也不是看分数" },
+    { "id": "L05", "shot": "S03", "who": "妈妈", "text": "先别看分。咱把这三类分开——基础丢的、粗心丢的、没时间写的。", "estSec": 4.6, "subtitle": "问题常常不是能力，是节奏" },
+    { "id": "L06", "shot": "S03", "who": "小宇", "text": "……原来不是不会，是会了没时间写。", "estSec": 3.0, "subtitle": "问题常常不是能力，是节奏" },
+    { "id": "L07", "shot": "S03", "who": "妈妈", "text": "那下周就只练一件事。", "estSec": 1.8, "subtitle": "问题常常不是能力，是节奏" },
+    { "id": "L08", "shot": "S04", "who": "小宇", "text": "初三第一次期中考，考的不是分。", "estSec": 2.8, "subtitle": "分数是结果，诊断才是收获" },
+    { "id": "L09", "shot": "S04", "who": "妈妈（画外）", "text": "是找到下一步。", "estSec": 1.6, "subtitle": "分数是结果，诊断才是收获" }
+  ],
+  "totalEstSec": 21.8,
+  "note": "台词总时长约 21.8s，成片 30s，余量留给翻纸声、停顿、特写与黑屏字幕；断句以最终配音时长微调。本文件仅为清单，未生成音频。",
+  "generatedBy": "WorkBuddy 会话内文本能力（零积分）"
+}

@@ -1,0 +1,16 @@
+{
+  "projectId": "P_20261110_TEST01",
+  "code": "TS01",
+  "name": "数据接入试跑项目",
+  "type": "带货短视频",
+  "titleMode": "suggest",
+  "description": "（试跑）验证本地 Node 服务的真实目录创建与权限矩阵。",
+  "permissionLevel": 2,
+  "permissionName": "仅读写（禁删除）",
+  "version": "v1",
+  "status": "待确认",
+  "workDir": "D:\\WorkBuddy_space\\WorkBuddy全流程短视频创作空间\\projects\\P_20261110_TEST01_TS01",
+  "createdAt": "2026-11-11T03:03:43.197Z",
+  "updatedAt": "2026-11-11T03:03:43.360Z",
+  "source": "PC 网页工作台 · 本地 Node 服务"
+}

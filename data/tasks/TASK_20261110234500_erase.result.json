@@ -1,0 +1,25 @@
+{
+  "taskId": "TASK_20261110234500_erase",
+  "slot": "image_erase",
+  "node": "N06",
+  "projectId": "P_20261110_004",
+  "code": "DJ04",
+  "status": "succeeded",
+  "trigger": "user-approved (G1/G2)",
+  "tool": "buddy-image-processing / erase",
+  "billing": "零积分（图像处理，非生图）",
+  "source": "DJ04_v1_N06_image-01~04_final_r01_20261110231013.png",
+  "hardRules": [
+    "G1",
+    "G2"
+  ],
+  "artifacts": 4,
+  "note": "结果另存 r02，原始 r01 4 张全部保留；镜2 补边 8px 至 1072x1920，原始擦除结果留档 v1/06_build/。",
+  "createdAt": "2026-11-10T15:49:00.000Z",
+  "cost": {
+    "estimated": null,
+    "verified": false,
+    "source": "本地工具零成本",
+    "note": "实际扣费未经核实，不自行推断"
+  }
+}

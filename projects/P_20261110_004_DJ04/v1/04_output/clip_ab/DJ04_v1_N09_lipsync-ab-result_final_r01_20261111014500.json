@@ -1,0 +1,71 @@
+{
+  "experimentId": "LIPSYNC_AB_DJ04_20261111014500",
+  "projectId": "P_20261110_004",
+  "code": "DJ04",
+  "nodeId": "N09",
+  "purpose": "D3 单镜头 A/B 能力验证：VideoGen 能否由音频驱动口型同步",
+  "tool": "VideoGen（image-to-video，模型 minimax-video-h3）",
+  "billing": {
+    "estimated": {
+      "min": 0,
+      "max": 0,
+      "unit": "credits"
+    },
+    "verified": false,
+    "note": "4 次调用均在参数校验 / submit 阶段被拒，未产生视频产物；是否扣费未经核实，不自行推断"
+  },
+  "groupA": {
+    "file": "DJ04_v1_N09_lipsync-A_base_r01_20261111014500.mp4",
+    "source": "既有 N09 C01 r02 片段（零计费复用）",
+    "promptSpeechConstraint": "无（本轮 N09 提示词未描述说话/口型）",
+    "qcFrames": [
+      "DJ04_v1_N09_lipsync-A_t0_5_r01_20261111014500.png",
+      "DJ04_v1_N09_lipsync-A_t1_5_r01_20261111014500.png",
+      "DJ04_v1_N09_lipsync-A_t2_5_r01_20261111014500.png",
+      "DJ04_v1_N09_lipsync-A_t3_5_r01_20261111014500.png"
+    ]
+  },
+  "groupBAttempts": [
+    {
+      "n": 1,
+      "params": "image(首帧) + reference_audios + enable_audio",
+      "status": "rejected",
+      "error": "model minimax-video-h3 does not allow first/last frames together with reference materials"
+    },
+    {
+      "n": 2,
+      "params": "prompt + reference_audios + enable_audio（无首帧）",
+      "status": "rejected",
+      "error": "model minimax-video-h3 requires visual material when reference audio is provided"
+    },
+    {
+      "n": 3,
+      "params": "reference_images + reference_audios(本地文件) + enable_audio",
+      "status": "rejected",
+      "error": "reference_audios[0]: base64 audio is not supported, please provide an accessible URL (HTTP 400 code 10001)"
+    },
+    {
+      "n": 4,
+      "params": "reference_images + reference_audios(http://127.0.0.1:8791/_lipsync_ref.mp3) + enable_audio",
+      "status": "rejected",
+      "error": "Input AudioUrl domain may be contain innerip, index:1 (HTTP 400 code 14407 / InvalidParameterValue)"
+    }
+  ],
+  "conclusion": {
+    "verified": true,
+    "lipSyncCapability": "NOT_AVAILABLE_IN_CURRENT_STACK",
+    "detail": "同一工具的 4 种合理参数组合全部被模型层拒绝：首帧与参考素材互斥、参考音频必须有视觉素材、本地音频需可访问 URL、内网 URL 被拒。在「不引入未提及技术栈」约束下，音频驱动口型路径不可达。",
+    "branch": "DEGRADED_SENTENCE_LEVEL_SPEAKING_STATE",
+    "branchName": "句级说话状态对齐",
+    "explicitNonClaim": "不宣称音素级 lip-sync，不编造已同步"
+  },
+  "degradedAcceptance": {
+    "D4_applicable": false,
+    "reason": "D4 的 max(δ_in,δ_out)≤120ms 为真同步分支口径；降级分支不考核音素级偏差",
+    "metric": "说话状态一致率 = 该句区间内人物唇动状态与「应说话/应静默」一致的抽帧数 / 总抽帧数",
+    "threshold": "≥90%",
+    "sampling": "每句至少 4 帧，抽帧点与 adelay 起点联动",
+    "status": "待人工逐帧标注；本轮不编造通过数值"
+  },
+  "createdAt": "2026-11-11T02:30:00.000Z"
+}

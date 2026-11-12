@@ -1,0 +1,75 @@
+{
+  "taskId": "TASK_20261110130525_04tu",
+  "projectId": "P_20261110_004",
+  "nodeId": "N02",
+  "slot": "llm",
+  "status": "succeeded",
+  "completedAt": "2026-11-10T13:05:25.799Z",
+  "elapsed": "约 6 分钟（会话内文本生成）",
+  "note": "由 WorkBuddy 会话内 LLM 产出并回写项目目录；未调用外部模型 API、未消耗积分；生图/生视频未执行",
+  "artifacts": [
+    {
+      "rel": "v1/01_input/spec/DJ04_v1_N02_spec-01_final_r01_20261110205600.json",
+      "name": "输入快照_N02.json",
+      "kind": "输入快照",
+      "bytes": 2237,
+      "meta": {
+        "node": "N02",
+        "role": "输入依据"
+      }
+    },
+    {
+      "rel": "v1/02_prompt/script/DJ04_v1_N02_script-01_final_r01_20261110205600.md",
+      "name": "考前考后重点_内容要点.md",
+      "kind": "内容要点",
+      "bytes": 6000,
+      "meta": {
+        "node": "N02",
+        "role": "脚本素材"
+      }
+    },
+    {
+      "rel": "v1/02_prompt/script/DJ04_v1_N02_script-02_final_r01_20261110205600.md",
+      "name": "初三第一次期中考_4镜短剧脚本.md",
+      "kind": "短剧脚本",
+      "bytes": 4353,
+      "meta": {
+        "node": "N02",
+        "shots": 4,
+        "durationSec": 30
+      }
+    },
+    {
+      "rel": "v1/04_output/storyboard/DJ04_v1_N02_storyboard-01_final_r01_20261110205600.json",
+      "name": "分镜表_4镜.json",
+      "kind": "分镜表",
+      "bytes": 4026,
+      "meta": {
+        "node": "N02",
+        "format": "9:16 / 1080x1920 / 30fps"
+      }
+    },
+    {
+      "rel": "v1/02_prompt/image/DJ04_v1_N06_prompt-01_final_r01_20261110205600.md",
+      "name": "N06生图提示词_4张.md",
+      "kind": "生图提示词",
+      "bytes": 3958,
+      "meta": {
+        "node": "N06",
+        "status": "待生成，未消耗积分"
+      }
+    },
+    {
+      "rel": "v1/04_output/subtitle/DJ04_v1_N08_voice-01_final_r01_20261110205600.json",
+      "name": "配音与字幕清单_9句.json",
+      "kind": "配音清单",
+      "bytes": 2451,
+      "meta": {
+        "node": "N08",
+        "lines": 9,
+        "status": "待配音"
+      }
+    }
+  ],
+  "permissionLevel": 1
+}

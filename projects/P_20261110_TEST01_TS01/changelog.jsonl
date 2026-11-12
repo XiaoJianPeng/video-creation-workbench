@@ -1,0 +1,2 @@
+{"seq":1,"ts":"2026-11-11T03:03:43.201Z","action":"create","node":"N00","summary":"创建项目（权限档 2）","actor":"user"}
+{"seq":2,"ts":"2026-11-11T03:04:17.222Z","action":"update","node":"N01","summary":"验收脚本追加一条变更","actor":"user"}

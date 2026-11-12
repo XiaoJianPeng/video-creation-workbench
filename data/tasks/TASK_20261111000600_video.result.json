@@ -1,0 +1,85 @@
+{
+  "taskId": "TASK_20261111000600_video",
+  "slot": "video_gen",
+  "node": "N09",
+  "projectId": "P_20261110_004",
+  "code": "DJ04",
+  "status": "succeeded",
+  "trigger": "user-approved (执行图生视频)",
+  "tool": "VideoGen（image-to-video，串行 4 段）+ 本地 ffmpeg delogo",
+  "billing": "约 200-400 积分（工具说明约 50-100 积分/5 秒，实际扣费未经核实）；delogo 与 QC 为零积分",
+  "input": "4 张 r02 分镜图（G1/G2 已处理）",
+  "hardRules": [
+    "G1",
+    "G2"
+  ],
+  "clips": [
+    {
+      "shot": "C01",
+      "r01": "DJ04_v1_N09_clip-01_final_r01_20261111000600.mp4",
+      "r02": "DJ04_v1_N09_clip-01_final_r02_20261111000600.mp4"
+    },
+    {
+      "shot": "C02",
+      "r01": "DJ04_v1_N09_clip-02_final_r01_20261111000600.mp4",
+      "r02": "DJ04_v1_N09_clip-02_final_r02_20261111000600.mp4"
+    },
+    {
+      "shot": "C03",
+      "r01": "DJ04_v1_N09_clip-03_final_r01_20261111000600.mp4",
+      "r02": "DJ04_v1_N09_clip-03_final_r02_20261111000600.mp4"
+    },
+    {
+      "shot": "C04",
+      "r01": "DJ04_v1_N09_clip-04_final_r01_20261111000600.mp4",
+      "r02": "DJ04_v1_N09_clip-04_final_r02_20261111000600.mp4"
+    }
+  ],
+  "artifacts": 4,
+  "deliverable": "r02 四段（r01 留档不交付）",
+  "spec": "H.264 / AAC / 768x1344 / 24fps / 5.166667s each",
+  "g2Note": "视频生成工具在左上角新加「AI生成」水印（非首帧带入）。逐帧 AI 擦除约 500 帧不可行，改用本地 ffmpeg delogo x=8:y=10:w=150:h=80 插值擦除，r02 QC 帧复核通过、无可见涂抹痕迹。",
+  "knownIssues": [
+    "C04 墙上表格纸仍有模糊纹理（非可读文字），按 G1 严格口径建议 N10 后期规避或人工复核",
+    "C04 妈妈未按分镜要求出画、仍在画面内，属模型对首帧的再演绎，人物一致性可但构图与分镜有偏差",
+    "4 段均带模型自动生成音轨，N10 必须静音后叠加 N08 正式配音",
+    "实测分辨率 768x1344，非规格包 1080x1920；N10 合成需上采样或统一调整（未经核实是否可无损）"
+  ],
+  "createdAt": "2026-11-10T16:20:00.000Z",
+  "artifactsForSync": [
+    {
+      "rel": "v1/04_output/clip/DJ04_v1_N09_clip-01_final_r02_20261111000600.mp4",
+      "name": "DJ04_v1_N09_clip-01_final_r02_20261111000600.mp4",
+      "bytes": 1288131,
+      "kind": "产物"
+    },
+    {
+      "rel": "v1/04_output/clip/DJ04_v1_N09_clip-02_final_r02_20261111000600.mp4",
+      "name": "DJ04_v1_N09_clip-02_final_r02_20261111000600.mp4",
+      "bytes": 1120306,
+      "kind": "产物"
+    },
+    {
+      "rel": "v1/04_output/clip/DJ04_v1_N09_clip-03_final_r02_20261111000600.mp4",
+      "name": "DJ04_v1_N09_clip-03_final_r02_20261111000600.mp4",
+      "bytes": 1548037,
+      "kind": "产物"
+    },
+    {
+      "rel": "v1/04_output/clip/DJ04_v1_N09_clip-04_final_r02_20261111000600.mp4",
+      "name": "DJ04_v1_N09_clip-04_final_r02_20261111000600.mp4",
+      "bytes": 1354169,
+      "kind": "产物"
+    }
+  ],
+  "cost": {
+    "estimated": {
+      "min": 200,
+      "max": 400,
+      "unit": "credits"
+    },
+    "verified": false,
+    "source": "工具说明估算",
+    "note": "实际扣费未经核实，不自行推断"
+  }
+}

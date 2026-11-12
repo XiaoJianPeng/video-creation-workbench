@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>通用视频创作项目管理工作台 · PC v1</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">VC</div>
+        <div class="brand-text">
+          <strong>视频创作工作台</strong>
+          <span>PC v1 · 需求验证原型</span>
+        </div>
+      </div>
+
+      <nav class="nav" id="nav">
+        <div class="nav-group">项目</div>
+        <button class="nav-item active" data-view="projects"><i class="ico ico-grid"></i>项目列表<span class="nav-hint">P1</span></button>
+        <button class="nav-item" data-view="overview"><i class="ico ico-home"></i>项目总览<span class="nav-hint">P2</span></button>
+        <button class="nav-item" data-view="flow"><i class="ico ico-flow"></i>流程视图<span class="nav-hint">P3</span></button>
+        <button class="nav-item" data-view="node"><i class="ico ico-node"></i>节点详情<span class="nav-hint">P4 / P5</span></button>
+
+        <div class="nav-group">资产与记录</div>
+        <button class="nav-item" data-view="assets"><i class="ico ico-image"></i>资产库<span class="nav-hint">P6 / P7</span></button>
+        <button class="nav-item" data-view="changelog"><i class="ico ico-list"></i>变更记录<span class="nav-hint">P8</span></button>
+        <button class="nav-item" data-view="calls"><i class="ico ico-cpu"></i>调用配置与记录<span class="nav-hint">P9</span></button>
+
+        <div class="nav-group">配置</div>
+        <button class="nav-item" data-view="settings"><i class="ico ico-gear"></i>项目设置<span class="nav-hint">P10</span></button>
+        <button class="nav-item" data-view="dict"><i class="ico ico-book"></i>枚举字典<span class="nav-hint">Q09</span></button>
+        <button class="nav-item" data-view="models"><i class="ico ico-cpu"></i>模型与协作<span class="nav-hint">R3</span></button>
+      </nav>
+
+      <div class="sidebar-foot">
+        <span class="dot dot-ok" id="svcDot"></span><span id="svcLabel">本地数据服务 · 检测中</span>
+        <div class="sidebar-foot-sub">本地文件可落盘 · 未直连真实模型</div>
+      </div>
+    </aside>
+
+    <div class="workspace">
+      <header class="topbar">
+        <div class="topbar-left">
+          <label class="tb-label" for="projectSelect">当前项目</label>
+          <select id="projectSelect" class="tb-select" aria-label="切换项目"></select>
+          <span id="projectStatus" class="badge"></span>
+          <span id="projectVersion" class="tb-meta"></span>
+        </div>
+        <div class="topbar-right">
+          <button class="btn btn-ghost mode-badge" id="btnMode" title="点击查看当前运行模式说明">演示模式</button>
+          <button class="btn btn-ghost" id="btnHelp">范围说明</button>
+          <button class="btn btn-ghost" id="btnExport">导出任务包</button>
+          <button class="btn btn-primary" id="btnNewProject">+ 新建项目</button>
+        </div>
+      </header>
+
+      <main class="main" id="main">
+        <section class="view" id="view-projects"></section>
+        <section class="view" id="view-overview" hidden></section>
+        <section class="view" id="view-flow" hidden></section>
+        <section class="view" id="view-node" hidden></section>
+        <section class="view" id="view-assets" hidden></section>
+        <section class="view" id="view-changelog" hidden></section>
+        <section class="view" id="view-calls" hidden></section>
+        <section class="view" id="view-settings" hidden></section>
+        <section class="view" id="view-dict" hidden></section>
+        <section class="view" id="view-models" hidden></section>
+      </main>
+    </div>
+  </div>
+
+  <div id="modalRoot"></div>
+  <div id="toastRoot" class="toast-root"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

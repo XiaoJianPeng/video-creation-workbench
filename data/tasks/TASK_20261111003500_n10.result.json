@@ -1,0 +1,159 @@
+{
+  "taskId": "TASK_20261111003500_n10",
+  "slot": "video_compose",
+  "node": "N10",
+  "projectId": "P_20261110_004",
+  "code": "DJ04",
+  "status": "succeeded",
+  "trigger": "user (做N10)",
+  "tool": "本地 ffmpeg 9.0.2",
+  "billing": "零积分",
+  "output": "v1/04_output/master/DJ04_v1_N10_master_final_r01_20261111003500.mp4",
+  "outputBytes": 10379880,
+  "spec": {
+    "resolution": "1080x1920",
+    "fps": 30,
+    "durationSec": 30,
+    "video": "H.264/yuv420p",
+    "audio": "AAC 192k 48kHz stereo",
+    "faststart": true
+  },
+  "timelineBasis": "N08 配音真实时长（manifest ffprobe 实测 28.296s），非清单估算 21.8s",
+  "segments": [
+    {
+      "id": "C01",
+      "start": 0,
+      "durationSec": 4.872,
+      "source": "DJ04_v1_N09_clip-01_final_r02_20261111000600.mp4",
+      "upscale": "768x1344 → 1080x1920 (scale cover + crop + fps 30)",
+      "padSec": 0,
+      "subtitle": "sub01.txt",
+      "subtitleWindow": [
+        0.3,
+        4.7
+      ]
+    },
+    {
+      "id": "C02",
+      "start": 4.872,
+      "durationSec": 4.464,
+      "source": "DJ04_v1_N09_clip-02_final_r02_20261111000600.mp4",
+      "upscale": "768x1344 → 1080x1920 (scale cover + crop + fps 30)",
+      "padSec": 0,
+      "subtitle": "sub02.txt",
+      "subtitleWindow": [
+        5.1,
+        9.2
+      ]
+    },
+    {
+      "id": "C03",
+      "start": 9.336,
+      "durationSec": 13.512,
+      "source": "DJ04_v1_N09_clip-03_final_r02_20261111000600.mp4",
+      "upscale": "768x1344 → 1080x1920 (scale cover + crop + fps 30)",
+      "padSec": 8.345,
+      "subtitle": "sub03.txt",
+      "subtitleWindow": [
+        9.6,
+        22.7
+      ]
+    },
+    {
+      "id": "C04",
+      "start": 22.848,
+      "durationSec": 7.152,
+      "source": "DJ04_v1_N09_clip-04_final_r02_20261111000600.mp4",
+      "upscale": "768x1344 → 1080x1920 (scale cover + crop + fps 30)",
+      "padSec": 1.985,
+      "subtitle": "sub04.txt",
+      "subtitleWindow": [
+        23,
+        29.9
+      ]
+    }
+  ],
+  "audioLines": [
+    {
+      "id": "L01",
+      "startSec": 0,
+      "adelayMs": 0
+    },
+    {
+      "id": "L02",
+      "startSec": 3,
+      "adelayMs": 3000
+    },
+    {
+      "id": "L03",
+      "startSec": 4.872,
+      "adelayMs": 4872
+    },
+    {
+      "id": "L04",
+      "startSec": 7.08,
+      "adelayMs": 7080
+    },
+    {
+      "id": "L05",
+      "startSec": 9.336,
+      "adelayMs": 9336
+    },
+    {
+      "id": "L06",
+      "startSec": 16.608,
+      "adelayMs": 16608
+    },
+    {
+      "id": "L07",
+      "startSec": 20.28,
+      "adelayMs": 20280
+    },
+    {
+      "id": "L08",
+      "startSec": 22.848,
+      "adelayMs": 22848
+    },
+    {
+      "id": "L09",
+      "startSec": 26.352,
+      "adelayMs": 26352
+    }
+  ],
+  "g1LaterOverlay": "镜2 四词「知识 审题 计算 时间」在 N10 以 drawtext 叠加（5.60–9.20s），未由生图渲染",
+  "deviationHandling": {
+    "durationMismatch": "镜头时段按配音累计起点切分；C03/C04 用 tpad=stop_mode=clone 补帧到 13.512s / 7.152s；尾部 1.704s 留白给结尾字幕",
+    "modelAudioTrack": "只映射 [i:v]，4 段模型音轨全部丢弃；成片音轨由 9 句 N08 配音 amix 生成",
+    "resolutionUpscale": "768x1344 上采样并轻微裁切到规格包 1080x1920；属有损放大，已在验收记录",
+    "c04Composition": "墙上表格纸模糊纹理 / 妈妈未出画属模型再演绎，本轮未修改画面，标注为待人工复核项"
+  },
+  "subtitleEncoding": "UTF-8 无 BOM、强制 LF（规避 drawtext 把 CR 渲染成「口」方块）",
+  "qcFrames": [
+    "v1/05_review/frames/DJ04_v1_N10_qc-t2_r01_20261111003500.png",
+    "v1/05_review/frames/DJ04_v1_N10_qc-t7_r01_20261111003500.png",
+    "v1/05_review/frames/DJ04_v1_N10_qc-t15_r01_20261111003500.png",
+    "v1/05_review/frames/DJ04_v1_N10_qc-t26_r01_20261111003500.png",
+    "v1/05_review/frames/DJ04_v1_N10_qc-t29_5_r01_20261111003500.png"
+  ],
+  "qcVisual": "5 帧复核通过：4 条硬字幕 + 镜2 四词清晰无乱码/无口方块/无水印/无黑帧",
+  "knownIssues": [
+    "C04 墙上表格纸仍有模糊纹理、妈妈未按分镜出画：本轮未修改画面，待人工复核",
+    "768x1344 → 1080x1920 属有损上采样",
+    "未做真实浏览器肉眼播放验证；N11 全片解码与编码可预览检查待执行"
+  ],
+  "createdAt": "2026-11-10T16:40:00.000Z",
+  "artifactsForSync": [
+    {
+      "rel": "v1/04_output/master/DJ04_v1_N10_master_final_r01_20261111003500.mp4",
+      "name": "DJ04_v1_N10_master_final_r01_20261111003500.mp4",
+      "bytes": 10379880,
+      "kind": "产物"
+    }
+  ],
+  "cost": {
+    "estimated": null,
+    "verified": false,
+    "source": "本地工具零成本",
+    "note": "实际扣费未经核实，不自行推断"
+  }
+}

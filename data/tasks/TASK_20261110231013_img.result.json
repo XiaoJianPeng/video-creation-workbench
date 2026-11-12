@@ -1,0 +1,23 @@
+{
+  "taskId": "TASK_20261110231013_img",
+  "slot": "image",
+  "node": "N06",
+  "projectId": "P_20261110_004",
+  "code": "DJ04",
+  "status": "succeeded",
+  "trigger": "user-approved (放行生图)",
+  "model": "WorkBuddy ImageGen (Hunyuan)",
+  "credits": "est. 5-10 per image, ~20-40 total",
+  "artifacts": 4,
+  "images": [
+    {"shot": "P01", "file": "DJ04_v1_N06_image-01_final_r01_20261110231013.png", "bytes": 2822424, "dim": "1080x1920"},
+    {"shot": "P02", "file": "DJ04_v1_N06_image-02_final_r01_20261110231013.png", "bytes": 2846397, "dim": "1080x1920"},
+    {"shot": "P03", "file": "DJ04_v1_N06_image-03_final_r01_20261110231013.png", "bytes": 2759497, "dim": "1080x1920"},
+    {"shot": "P04", "file": "DJ04_v1_N06_image-04_final_r01_20261110231013.png", "bytes": 2892334, "dim": "1080x1920"}
+  ],
+  "knownIssues": [
+    "P02 中文四词(知识 审题 计算 时间)AI 渲染乱码，建议后期字幕/标题叠层，不依赖生图文字",
+    "四张均带工具水印 'AI生成 WORKBUDDY'，与 N06 提示词'不要文字水印'冲突，属生成工具固有标记"
+  ],
+  "createdAt": "2026-11-10T15:12:00.000Z"
+}
