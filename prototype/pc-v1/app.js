@@ -105,6 +105,11 @@
   };
   var SLOT_KEYS = ['llm', 'image', 'video', 'voice'];
   var SLOT_LABEL = { llm: 'LLM', image: '生图', video: '视频', voice: 'TTS' };
+  /* 推荐标签与档位（与后端白名单一致；用于卡片徽章、下拉与弹层） */
+  var TAG_VALUES = ['性价比最高', '最便宜', '效果最佳'];
+  var TIER_VALUES = ['首选', '备选'];
+  var TAG_CLASS = { '性价比最高': 't-perf', '最便宜': 't-cheap', '效果最佳': 't-best' };
+  var TIER_CLASS = { '首选': 'tier tier-first', '备选': 'tier tier-alt' };
   var PROVIDER_DEFAULT_MODELS = {
     'openai-compatible': 'gpt-4o-mini, gpt-4o',
     'custom-http': '',
@@ -150,40 +155,33 @@
     '4K': { '9:16': '2160×3840', '16:9': '3840×2160', '1:1': '2160×2160', '4:3': '2880×2160', '3:4': '2160×2880', '21:9': '3840×1646' }
   };
 
+  /* 精简合并视图（v1.1 §4.1.1，12→8 主节点；旧 N03/N05/N07/N11/N12 降级为随附子步骤 subSteps） */
   var NODE_DEFS = [
-    ['N01', '主题与规格确认', '人工 + 枚举输入'],
-    ['N02', '项目大纲 / 分镜脚本', '生成 + 人工确认'],
-    ['N03', '能力与资源盘点', '只读探测'],
-    ['N04', '资产准备', '上传 / 引用'],
-    ['N05', '提示词生成与查看', '生成 + 只读/可编辑'],
-    ['N06', '分镜图 / 素材生成', '生成（计费需确认）'],
-    ['N07', '画面质检', '人工 + 自动项'],
-    ['N08', '配音 / 字幕 / 音色', '生成 + 人工确认'],
-    ['N09', '片段生成（图生视频）', '生成（计费需确认）'],
-    ['N10', '剪辑合成', '生成 + 人工确认'],
-    ['N11', '成片质检与验收', '人工 + 自动项'],
-    ['N12', '归档交付', '人工确认']
+    ['N01', '项目初始化（规格 + 能力盘点）', '人工 + 只读探测', ['N03']],
+    ['N02', '大纲 / 分镜脚本（含 G4）', '生成 + 人工确认', []],
+    ['N03', '资产准备', '上传 / 引用', []],
+    ['N04', '分镜生图与画面质检', '生成（计费）+ 质检绑定', ['N05', 'N07']],
+    ['N05', '配音与字幕', '生成 + 人工确认', []],
+    ['N06', '图生视频', '生成（计费）', []],
+    ['N07', '剪辑合成与成片验收', '生成 + 验收', ['N11']],
+    ['N08', '归档交付（人工确认）', '人工确认', ['N12']]
   ];
   var NODE_META = {
-    N01: { cls: 'theme', capability: 'text_generation', tool: 'LLM（文本模型）', free: true, billable: false },
+    N01: { cls: 'theme', capability: 'text_generation', tool: 'LLM（文本模型）+ 本地只读探测', free: true, billable: false },
     N02: { cls: 'script', capability: 'text_generation', tool: 'LLM（文本模型）', free: true, billable: false },
-    N03: { cls: 'spec', capability: 'env_probe', tool: '本地只读探测', free: true, billable: false },
-    N04: { cls: 'image', capability: 'asset_ingest', tool: '本地文件 + 资产库', free: true, billable: false },
-    N05: { cls: 'prompt', capability: 'prompt_render', tool: '枚举模板渲染（本地）', free: true, billable: false },
-    N06: { cls: 'image', capability: 'image_gen', tool: 'ImageGen（多参考图）', free: false, billable: true },
-    N07: { cls: 'qcframe', capability: 'qc_visual', tool: '人工逐帧 + 本地抽帧', free: true, billable: false },
-    N08: { cls: 'voice', capability: 'tts', tool: 'Node msedge-tts（晓晓 +8%）', free: true, billable: false },
-    N09: { cls: 'clip', capability: 'video_gen', tool: 'VideoGen（串行）', free: false, billable: true },
-    N10: { cls: 'master', capability: 'video_compose', tool: '本地 ffmpeg（xfade/drawtext）', free: true, billable: false },
-    N11: { cls: 'qcframe', capability: 'qc_media', tool: 'ffprobe + 全片解码', free: true, billable: false },
-    N12: { cls: 'report', capability: 'archive', tool: '本地文件操作', free: true, billable: false }
+    N03: { cls: 'image', capability: 'asset_ingest', tool: '本地文件 + 资产库', free: true, billable: false },
+    N04: { cls: 'image', capability: 'image_gen', tool: 'ImageGen / 通义万相（多参考图）', free: false, billable: true },
+    N05: { cls: 'voice', capability: 'tts', tool: 'CosyVoice 克隆 / Edge TTS', free: true, billable: false },
+    N06: { cls: 'clip', capability: 'video_gen', tool: 'VideoGen（串行）', free: false, billable: true },
+    N07: { cls: 'master', capability: 'video_compose', tool: '本地 ffmpeg（xfade/drawtext）', free: true, billable: false },
+    N08: { cls: 'report', capability: 'archive', tool: '本地文件操作（人工确认）', free: true, billable: false }
   };
   /* ============ 项目强约束（2026-11-10 用户放行，全局生效、不可关闭） ============ */
   /* G1：生图不带文字；G2：生图工具水印擦除后再交付。作用于所有画面生成类节点。 */
   var PROJECT_HARD_RULES = [
     {
-      id: 'G1', name: '生图不带文字', scope: 'N06 / N09 及所有画面生成类节点',
-      rule: '提示词与画面中禁止出现任何文字、字符、字幕、笔迹、logo、水印。所需文案一律走 N10 后期字幕/标题叠层，不由生图渲染（AI 渲染中文易乱码）。',
+      id: 'G1', name: '生图不带文字', scope: 'N04 / N06 及所有画面生成类节点',
+      rule: '提示词与画面中禁止出现任何文字、字符、字幕、笔迹、logo、水印。所需文案一律走 N07 后期字幕/标题叠层，不由生图渲染（AI 渲染中文易乱码）。',
       enforce: '提示词模板强制注入；完成判据改为「画面无任何文字」；不再尝试让模型写中文。'
     },
     {
@@ -192,88 +190,64 @@
       enforce: '完成判据新增「工具水印已擦除」；擦除动作写变更记录与任务包回执。'
     },
     {
-      id: 'G3', name: '句级说话状态对齐（降级）', scope: 'N06 / N09 画面生成类节点',
+      id: 'G3', name: '句级说话状态对齐（降级）', scope: 'N04 / N06 画面生成类节点',
       rule: 'D3 A/B 验证结论：当前 VideoGen 无法由音频驱动音素级口型。提示词必须显式写明「谁在说话、何时开口/闭口」，使句级说话状态与台词组匹配；禁止正面口部特写；无法保证口型的近景改用侧脸、过肩、背影或画外音。不宣称音素级 lip-sync。',
-      enforce: '写入 N06/N09 提示词模板；完成判据新增「句级说话状态已声明」；验收用说话状态一致率 ≥90%（待人工逐帧标注），不考核音素级偏差。'
+      enforce: '写入 N04/N06 提示词模板；完成判据新增「句级说话状态已声明」；验收用说话状态一致率 ≥90%（待人工逐帧标注），不考核音素级偏差。'
     }
   ];
-  /* 画面生成类节点：强约束作用域 */
-  var IMAGE_NODE_IDS = { N06: 1, N09: 1 };
+  /* 画面生成类节点：强约束作用域（精简后：N04 分镜生图 / N06 图生视频） */
+  var IMAGE_NODE_IDS = { N04: 1, N06: 1 };
 
   /* P1-4：节点专属说明。内容取自 v1.1 §4.2 状态机与蓝本流程归纳，非平台能力声明 */
   var NODE_BRIEF = {
     N01: {
-      goal: '冻结主题与交付规格，后续节点共用同一份输入快照',
-      inputs: ['主题标签组合（题材 / 场景 / 卖点 / 情绪 / 人群）', '规格包（分辨率 / 比例 / 风格 / 帧率 / 平台）', '创作描述 ≤1000 字'],
-      outputs: ['主题 ID', '3 个候选标题（单选采纳）', '枚举输入快照'],
-      criteria: ['主题标签已选且未超上限', '规格包无「待核实」项', '标题已采纳']
+      goal: '冻结主题与交付规格，并顺带完成本机能力/资源只读盘点（旧 N03 随附）',
+      inputs: ['主题标签组合（题材 / 场景 / 卖点 / 情绪 / 人群）', '规格包（分辨率 / 比例 / 风格 / 帧率 / 平台）', '创作描述 ≤1000 字', '（随附）工作目录 / 字体 / 音色 / 参考图清单'],
+      outputs: ['主题 ID', '3 个候选标题（单选采纳）', '枚举输入快照', '（随附）能力清单 + 缺失项提示'],
+      criteria: ['主题标签已选且未超上限', '规格包无「待核实」项', '标题已采纳', '（随附）探测全程只读、未产生写操作']
     },
     N02: {
-      goal: '把创作描述拆成可执行的大纲与分镜清单',
+      goal: '把创作描述拆成可执行的大纲与分镜清单（含 G4 对话强约束）',
       inputs: ['主题 ID', '创作描述', '成片时长档', '镜头数'],
-      outputs: ['项目大纲 outline.md', '分镜脚本', '台词清单'],
-      criteria: ['镜头数与时长档匹配', '台词齐全', '脚本保留版本号']
+      outputs: ['项目大纲 outline.md', '分镜脚本', '台词清单（含 inner_state / subtext / action_beat）'],
+      criteria: ['镜头数与时长档匹配', '台词齐全且符合 G4', '脚本保留版本号']
     },
     N03: {
-      goal: '只读探测本机可用工具与素材，标定能力边界',
-      inputs: ['工作目录', '字体 / 音色 / 参考图清单'],
-      outputs: ['能力清单', '缺失项提示', '降级方案'],
-      criteria: ['探测全程只读', '缺失项已标注', '未产生写操作']
-    },
-    N04: {
       goal: '登记本节点所需素材，按 §6.3 生成统一 ASCII 命名',
       inputs: ['本地文件', '资产库只读引用', '角色参考图'],
       outputs: ['资产元数据', '本节点产物登记', 'ASCII 磁盘名'],
       criteria: ['每条就地可见且可移除', '命名序号连续', '跨项目为只读引用']
     },
+    N04: {
+      goal: '按分镜生成统一风格画面（计费能力需人工确认），生成后即刻绑定画面质检（旧 N07 随附）',
+      inputs: ['分镜脚本', '角色参考图', '风格 / 比例 / 分辨率', '（随附）提示词预览'],
+      outputs: ['分镜图', '重绘图', '质检结论'],
+      criteria: ['人物一致性已检查', '画面无任何文字（G1 强约束）', '工具水印已擦除（G2 强约束）', '句级说话状态已声明（G3）', '计费动作已确认', '（随附）画面质检逐项有结论']
+    },
     N05: {
-      goal: '由枚举组合渲染提示词，保留逐字版本差异',
-      inputs: ['主题标签', '规格包', '创作描述', '参数快照'],
-      outputs: ['提示词版本', '版本逐字 diff', '输入快照'],
-      criteria: ['与输入快照一致', '可一键复制', '编辑须另存新版本']
-    },
-    N06: {
-      goal: '按分镜生成统一风格画面（计费能力需人工确认）',
-      inputs: ['分镜脚本', '角色参考图', '风格 / 比例 / 分辨率'],
-      outputs: ['分镜图', '重绘图', '质检帧'],
-      criteria: ['人物一致性已检查', '画面无任何文字（G1 强约束）', '工具水印已擦除（G2 强约束）', '句级说话状态已声明（G3）', '计费动作已确认']
-    },
-    N07: {
-      goal: '逐帧检查画面，拦截缺陷进入下游',
-      inputs: ['分镜图', '质检项集', '参考图'],
-      outputs: ['质检帧', '缺陷清单', '返工原因码'],
-      criteria: ['逐项有结论', '缺陷有原因码', '旧文件不删除']
-    },
-    N08: {
-      goal: '生成台词配音与对齐字幕',
+      goal: '生成台词配音与对齐字幕（CosyVoice 克隆 / Edge TTS）',
       inputs: ['台词清单', '音色 / 语速', '字幕位置'],
       outputs: ['配音音频', '字幕文件', '配音清单.json'],
       criteria: ['时长对齐', 'UTF-8 LF 编码', '音色参数留痕']
     },
-    N09: {
+    N06: {
       goal: '把静态分镜转成动态片段（计费能力需确认）',
       inputs: ['分镜图', '片段时长', '转场 / 运动参数'],
       outputs: ['片段 mp4', '生成参数记录'],
       criteria: ['串行执行不并发', '输入图无文字无水印（G1/G2）', '句级说话状态已声明（G3）', '失败有降级方案', '计费动作已确认']
     },
-    N10: {
-      goal: '拼接片段、配音与字幕，输出成片',
+    N07: {
+      /* 旧 N11 的「中文渲染正常」检查对象是本节点（新 N07）后期字幕层，与 G1「生图画面不带文字」不冲突 */
+      goal: '拼接片段、配音与字幕输出成片，并合成后直接验收（旧 N11 随附）',
       inputs: ['片段', '配音', '字幕', '转场', '字体'],
-      outputs: ['成片 mp4', '合成参数', '新版本文件'],
-      criteria: ['H.264 / AAC + faststart', '成片时长正确', '新版本不覆盖旧片']
+      outputs: ['成片 mp4', '合成参数', '新版本文件', '（随附）验收记录'],
+      criteria: ['H.264 / AAC + faststart', '成片时长正确', '新版本不覆盖旧片', '（随附）全片可解码、中文渲染正常']
     },
-    N11: {
-      goal: '全片解码与编码可预览检查，确认可交付',
-      inputs: ['成片', '质检项集', '交付规格'],
-      outputs: ['质检结论', '验收记录', '问题清单'],
-      /* N11 的「中文渲染正常」检查对象是 N10 后期字幕层，与 G1「生图画面不带文字」不冲突，勿合并 */
-      criteria: ['全片可解码', '中文渲染正常', '无 CRLF 问题']
-    },
-    N12: {
-      goal: '按三层目录归位产物，补齐变更记录与索引',
+    N08: {
+      goal: '按三层目录归位产物，补齐变更记录与索引（人工确认归档，旧 N12 随附）',
       inputs: ['成片', '全部中间产物', 'changelog'],
       outputs: ['交付包', '目录索引', '任务包 JSON'],
-      criteria: ['路径全相对', '命名符合 §6.3', '变更链可反查']
+      criteria: ['路径全相对', '命名符合 §6.3', '变更链可反查', '（随附）需人工点选「确认归档」']
     }
   };
   var STATUS_CLASS = {
@@ -297,20 +271,20 @@
       created: '2026-11-09 13:57', updated: '2026-11-09 17:26',
       spec: { resolution: '1080P', aspectRatio: '9:16', styleFlat: '3D 动画 / 皮克斯式卡通', styleAux: '暖调', fps: '24', durationBand: '15–30s', clipSeconds: '5s', platform: ['抖音', '微信视频号'], renderTier: '正式(1080P)', transition: '左滑(slideleft)', subtitlePos: '底部居中+半透明条', voice: 'zh-CN-XiaoxiaoNeural（晓晓）', voiceRate: '+8%', watermark: '保留工具自带水印' },
       theme: { genre: ['带货种草', '剧情反转'], scene: ['厨房'], selling: ['省时省力', '健康低脂'], mood: '戏剧张力', audience: ['上班族'], narrative: '冲突-转折-解决' },
-      nodes: makeNodes(['已通过', '已通过', '已通过', '待确认', '未开始', '未开始', '未开始', '未开始', '未开始', '未开始', '未开始', '未开始']),
+      nodes: makeNodes(['已通过', '已通过', '已通过', '待确认', '已通过', '已通过', '待确认', '未开始']),
       currentNode: 'N04',
       changelog: [
         mkChange('create', 'N00', '创建项目', '需求变更', 'user'),
         mkChange('confirm', 'N01', '主题与规格确认通过：30s / 9:16 / 4 镜 / 3D 皮克斯', '需求变更', 'user'),
         mkChange('create', 'N02', '生成分镜脚本《11.11 前夜，厨房大战》', '需求变更', 'workbuddy'),
-        mkChange('create', 'N04', '归档 4 张分镜图（1024×1536）与 font.ttf', '参数调整', 'workbuddy'),
-        mkChange('create', 'N08', '生成 4 句配音（16.2s）与 UTF-8 LF 字幕', '参数调整', 'workbuddy'),
-        mkChange('create', 'N10', '新增成片 v4 人物统一版（18.208s / 437 帧）', '人物一致性', 'user')
+        mkChange('create', 'N03', '归档 4 张分镜图（1024×1536）与 font.ttf', '参数调整', 'workbuddy'),
+        mkChange('create', 'N05', '生成 4 句配音（16.2s）与 UTF-8 LF 字幕', '参数调整', 'workbuddy'),
+        mkChange('create', 'N07', '新增成片 v4 人物统一版（18.208s / 437 帧）', '人物一致性', 'user')
       ],
       callRecords: [
-        mkCall('N06', 'image_gen', 'ImageGen（多参考图）', 'succeeded', false),
-        mkCall('N09', 'video_gen', 'VideoGen（串行）', 'succeeded', true),
-        mkCall('N10', 'video_compose', '本地 ffmpeg', 'succeeded', false)
+        mkCall('N04', 'image_gen', 'ImageGen / 通义万相（多参考图）', 'succeeded', false),
+        mkCall('N06', 'video_gen', 'VideoGen（串行）', 'succeeded', true),
+        mkCall('N07', 'video_compose', '本地 ffmpeg', 'succeeded', false)
       ],
       assets: [
         mkAsset('AST_0001', '分镜01（夜晚厨房）', '图片', '分镜图', 'final', '1024×1536', 'P_20261109_001'),
@@ -330,7 +304,7 @@
       created: '2026-11-09 20:10', updated: '2026-11-09 20:24',
       spec: { resolution: '1080P', aspectRatio: '16:9', styleFlat: '写实摄影 / 电影感', styleAux: '无', fps: '30', durationBand: '1–3min', clipSeconds: '10s', platform: ['B站', '自有渠道'], renderTier: '标准(720P)', transition: '硬切', subtitlePos: '底部居中', voice: 'zh-CN-YunxiNeural（云希）', voiceRate: '0%', watermark: '不主动添加（默认，Q10）' },
       theme: { genre: ['知识科普', '教程演示'], scene: ['办公室'], selling: [], mood: '宁静舒缓', audience: ['泛人群', '小微商家'], narrative: '问题-方案-证据' },
-      nodes: makeNodes(['已通过', '待输入']), currentNode: 'N02',
+      nodes: makeNodes(['已通过', '待输入', '未开始', '未开始', '未开始', '未开始', '未开始', '未开始']), currentNode: 'N02',
       changelog: [mkChange('create', 'N00', '创建项目（口播科普模板）', '需求变更', 'user'), mkChange('confirm', 'N01', '主题与规格确认通过', '需求变更', 'user')],
       callRecords: [], assets: [], promptVersions: {}, config: null
     };
@@ -343,9 +317,9 @@
       created: '2026-11-08 10:02', updated: '2026-11-09 09:40',
       spec: { resolution: '4K', aspectRatio: '16:9', styleFlat: '商业产品写实', styleAux: '高反差', fps: '30', durationBand: '30–60s', clipSeconds: '5s', platform: ['微博', '自有渠道'], renderTier: '高清(4K)', transition: '淡入淡出', subtitlePos: '顶部', voice: 'zh-CN-YunjianNeural（云健）', voiceRate: '0%', watermark: '不主动添加（默认，Q10）' },
       theme: { genre: ['品牌宣传', '产品测评'], scene: ['摄影棚纯色'], selling: ['品质质感', '智能便捷'], mood: '高级冷调', audience: ['泛人群'], narrative: '前后对比' },
-      nodes: makeNodes(Array(12).fill('已通过')), currentNode: 'N12',
-      changelog: [mkChange('create', 'N00', '创建项目（产品宣传片模板）', '需求变更', 'user'), mkChange('confirm', 'N12', '归档交付 v2 成片', '需求变更', 'user')],
-      callRecords: [mkCall('N10', 'video_compose', '本地 ffmpeg', 'succeeded', false)],
+      nodes: makeNodes(Array(8).fill('已通过')), currentNode: 'N08',
+      changelog: [mkChange('create', 'N00', '创建项目（产品宣传片模板）', '需求变更', 'user'), mkChange('confirm', 'N08', '归档交付 v2 成片', '需求变更', 'user')],
+      callRecords: [mkCall('N07', 'video_compose', '本地 ffmpeg', 'succeeded', false)],
       assets: [mkAsset('AST_0006', '产品白底主视觉', '图片', '产品特写', 'final', '3840×2160', 'P_20261109_003')],
       promptVersions: {}, config: null
     };
@@ -697,7 +671,7 @@
     return c;
   }
   function promptFor(p, nodeId) {
-    var m = NODE_META[nodeId] || NODE_META.N05;
+    var m = NODE_META[nodeId] || NODE_META.N01;
     var s = p.spec, t = p.theme;
     return [
       '【节点】' + nodeId + ' / ' + (NODE_DEFS.filter(function (d) { return d[0] === nodeId; })[0] || ['', ''])[1],
@@ -711,7 +685,7 @@
       '【音色】' + s.voice + '，语速 ' + s.voiceRate,
       '【匹配能力】' + m.capability + ' → ' + m.tool + (m.billable ? '（计费，需用户选择或确认）' : '（免费优先）'),
       '',
-      '【项目强约束 G1 · 生图不带文字】画面生成类节点（N06/N09）的提示词与画面禁止出现任何文字、字符、字幕、笔迹、logo、水印；所需文案一律走 N10 后期字幕/标题叠层，不由生图渲染（AI 渲染中文易乱码）。',
+      '【项目强约束 G1 · 生图不带文字】画面生成类节点（N04/N06）的提示词与画面禁止出现任何文字、字符、字幕、笔迹、logo、水印；所需文案一律走 N07 后期字幕/标题叠层，不由生图渲染（AI 渲染中文易乱码）。',
       '【项目强约束 G2 · 水印擦除后交付】生图工具自带水印必须在交付前用图像擦除工具去除；擦除结果另存新版本（rev 递增），原始文件保留、不覆盖。',
       '【项目强约束 G3 · 句级说话状态对齐（降级）】当前视频模型无法由音频驱动音素级口型；提示词须写明「谁在说话、何时开口/闭口」使句级状态与台词匹配，禁止正面口部特写，近景改用侧脸/过肩/背影/画外音；不宣称音素级 lip-sync。',
       '约束：人物身份与服装全程一致；「中文渲染清晰无缺字方块」仅指 N10 后期字幕层，不适用于生图画面；输出 H.264/yuv420p + faststart 保证浏览器可预览。'
@@ -823,7 +797,7 @@
       '<div class="field-label">三层目录规范</div><div class="enum-out">版本 / 文件类型 / 内容分类<br>' + esc(p.version) + ' / 03_asset / image、character、voice、font<br>' + esc(p.version) + ' / 04_output / storyboard、clip、master、qc<br>' + esc(p.version) + ' / 06_build（纯 ASCII 中间物）</div>' +
       '<div class="field-label" style="margin-top:14px">统一命名示例（Q17/Q06：新版本不覆盖）</div>' +
       '<div class="path-line">' + esc(fileName(p, 'N04', 'shot', 2, 'png', 1)) + '</div>' +
-      '<div class="path-line" style="margin-top:6px">' + esc(fileName(p, 'N10', 'master', 1, 'mp4', 2)) + '</div>' +
+      '<div class="path-line" style="margin-top:6px">' + esc(fileName(p, 'N07', 'master', 1, 'mp4', 2)) + '</div>' +
       '<div class="notice notice-info mt-12">磁盘名全 ASCII，中文展示名存元数据；同一路径重名自动升修订号，系统不覆盖已有文件。</div>' +
       '</div></div></div>' +
       '<div class="card"><div class="card-head"><h2>最近变更</h2><button class="btn btn-sm" data-act="goto" data-view="changelog">查看全部</button></div>' +
@@ -851,11 +825,12 @@
       '<div class="card" style="margin-bottom:16px"><div class="card-head"><h2>端到端进度</h2><span class="sub">' + esc(p.name) + ' · ' + esc(p.version) + '</span></div><div class="card-body">' + strip + '</div></div>' +
       '<div class="card"><div class="card-head"><h2>节点状态</h2><span class="sub">点击卡片进入节点详情</span></div><div class="card-body"><div class="flow-grid">' +
       NODE_DEFS.map(function (d) {
-        var n = p.nodes[d[0]], m = NODE_META[d[0]];
+        var n = p.nodes[d[0]], m = NODE_META[d[0]], subs = d[3] || [];
         return '<div class="node-card' + (p.currentNode === d[0] ? ' on' : '') + '" data-act="open-node" data-node="' + d[0] + '">' +
           '<div class="nc-top"><span class="nc-code">' + d[0] + '</span>' + badge(n.status) + '</div>' +
           '<div class="nc-name">' + esc(d[1]) + '</div>' +
           '<div class="small muted">' + esc(d[2]) + '</div>' +
+          (subs.length ? '<div class="nc-sub">随附 ' + subs.map(function (s) { return '<span class="tag tag-soft">' + esc(s) + '</span>'; }).join(' ') + '</div>' : '') +
           '<div class="nc-foot"><span>' + esc(m.tool) + '</span><span>' + (m.billable ? '计费需确认' : '免费优先') + '</span></div>' +
           (n.runs > 1 ? '<div style="margin-top:8px"><span class="tag">返工来源 · 第 ' + n.runs + ' 次</span></div>' : '') +
           '</div>';
@@ -964,7 +939,7 @@
 
     /* 计费动作：生成 WorkBuddy 桥接任务包（真实落盘，但本接口不调用模型、不消耗积分） */
     if (rs.kind === 'billable' && serviceOnline) {
-      var slot = rs.nodeId === 'N09' ? 'video' : 'image';
+      var slot = rs.nodeId === 'N06' ? 'video' : 'image';
       var route = (p.config && p.config.modelRoute && p.config.modelRoute[slot]) || {};
       var pvs = promptVersions(p, rs.nodeId), pvLast = pvs[pvs.length - 1];
       p.nodes[rs.nodeId].lastRun.taskPending = true;
@@ -1197,6 +1172,26 @@
         '切换节点会丢失未保存的编辑。建议先点「另存为新版本」。确认放弃并切换？', apply, true);
     } else apply();
   }
+  /* 精简合并视图：随附子步骤（旧 N03/N05/N07/N11/N12）内嵌主节点执行区（v1.1 §4.1.1 §6） */
+  function subStepInlineHtml(p, id) {
+    var map = {
+      N01: { title: '随附子步骤：能力盘点（旧 N03）', items: ['只读探测本机工具与素材', '产出能力清单 + 缺失项提示', '不改变任何文件'] },
+      N04: { title: '随附子步骤', items: ['提示词预览（随附旧 N05，见本区提示词编辑器）', '生成后自动画面质检（旧 N07，生完即检·默认开启）'] },
+      N05: { title: '随附子步骤：提示词预览（旧 N05）', items: ['本节点提示词由执行区编辑器渲染', '可另存为新版本'] },
+      N06: { title: '随附子步骤：提示词预览（旧 N05）', items: ['本节点提示词由执行区编辑器渲染'] },
+      N07: { title: '随附子步骤', items: ['合成后自动成片验收（旧 N11，合成后即验·默认开启）'] },
+      N08: { title: '随附子步骤：归档（旧 N12，人工确认）', items: ['需人工点选「确认归档」', '不自动归档'] }
+    };
+    var cfg = map[id]; if (!cfg) return '';
+    var html = '<div class="substep-box"><div class="ss-title">' + esc(cfg.title) + '</div><ul class="ss-list">';
+    cfg.items.forEach(function (t) { html += '<li>' + esc(t) + '</li>'; });
+    html += '</ul>';
+    if (id === 'N08') html += '<button class="btn btn-sm btn-primary" data-act="confirm-archive" title="人工确认归档（旧 N12 随附，不自动）">确认归档（N12）</button>';
+    if (id === 'N04') html += '<label class="ss-switch"><input type="checkbox" checked disabled> 生成后自动画面质检（旧 N07·生完即检）</label>';
+    if (id === 'N07') html += '<label class="ss-switch"><input type="checkbox" checked disabled> 合成后自动成片验收（旧 N11）</label>';
+    html += '</div>';
+    return html;
+  }
   function renderNode() {
     var p = P(), id = p.currentNode, def = NODE_DEFS.filter(function (d) { return d[0] === id; })[0], m = NODE_META[id];
     var busy = !!runState && runState.nodeId === id && runState.projectId === p.id;
@@ -1251,7 +1246,7 @@
       '</div></div>' +
       /* 执行区 */
       '<div class="card zone"><div class="zone-head"><h3>② 执行区</h3><span class="zone-tag">EXECUTE</span></div><div class="zone-body">' +
-      (IMAGE_NODE_IDS[id] ? hardRulesHtml() : '') +
+      (IMAGE_NODE_IDS[id] ? hardRulesHtml() : '') + subStepInlineHtml(p, id) +
       '<div class="row" style="margin-bottom:10px"><span class="tag">' + esc(m.capability) + '</span>' +
       '<span class="tag">' + esc(m.tool) + '</span>' + (m.billable ? '<span class="badge s-warn">计费能力·需确认</span>' : '<span class="badge s-ok">免费优先</span>') + '</div>' +
       '<div class="small muted" style="margin-bottom:12px">匹配规则（v1.1 §7.2）：免费能力优先 → 优先级 → 成本估算 → 历史成功率；命中计费能力需用户主动选择或单独确认。</div>' +
@@ -1268,6 +1263,7 @@
       '<div class="divider-label">执行动作</div>' +
       '<div class="row row-wrap"><button class="btn btn-sm" data-act="run-free"' + (busy ? ' disabled' : '') + ' title="进入执行中状态并展示逐步日志，完成后登记 1 条调用记录 + 1 条变更；不调模型、不生成文件">执行（免费/本地）</button>' +
       '<button class="btn btn-sm" data-act="run-billable"' + (busy ? ' disabled' : '') + ' title="先弹人工确认（成本估算未经核实）；确认后进入执行中流程，同样不发起真实请求、不扣费">执行计费能力</button>' +
+      (directAvailableFor(p, id) ? '<button class="btn btn-sm btn-primary" data-act="invoke-wanx" title="走通义万相真实生图：消耗阿里云额度，产物落地项目目录 v1/03_asset/image/">直连通义万相生图（真实·消耗额度）</button>' : '') +
       '<button class="btn btn-sm" data-act="export-node"' + (busy ? ' disabled' : '') + ' title="下载当前节点 JSON；不含调用记录（整项目包请用顶栏「导出任务包」）">导出节点任务包</button>' +
       '<button class="btn btn-sm" data-act="write-workdir"' + (busy ? ' disabled' : '') + ' title="把当前提示词与输入快照按 §6.2 写入项目真实目录，不覆盖任何既有文件">写入工作目录</button></div>' +
       '<div class="exec-notes">' +
@@ -1630,12 +1626,53 @@
           var v = x.id + '::' + m;
           return '<option value="' + esc(v) + '"' + (v === selected ? ' selected' : '') + '>' + esc(m) + '</option>';
         }).join('');
-        return '<optgroup label="' + esc(x.name) + '">' + inner + '</optgroup>';
+        var label = x.name + ((x.tags && x.tags.length) ? ' · ' + x.tags.join('·') : '');
+        return '<optgroup label="' + esc(label) + '">' + inner + '</optgroup>';
       }).join('');
     }
     /* 桥接 / 本地通道：沿用内置字典选项 */
     var slot = MODEL_SLOTS.filter(function (s) { return s.key === slotKey; })[0];
     return opts(dict(slot.dict), selected);
+  }
+
+  /* N06 直连：通义万相真实生图可用性判定（通道=自定义 HTTP 且选中 mp_wanx） */
+  function directAvailableFor(p, id) {
+    if (id !== 'N04') return false;
+    var rt = (p.config && p.config.modelRoute && p.config.modelRoute.image) || {};
+    if (rt.channel !== DICT.modelChannel[1]) return false;
+    return (rt.model || '').indexOf('mp_wanx') === 0;
+  }
+  /* 由规格 aspectRatio 推导通义万相 size 参数 */
+  function sizeForSpec(spec) {
+    var r = (spec && spec.aspectRatio) || '9:16';
+    if (r === '1:1') return '1024*1024';
+    if (r === '16:9') return '1536*1024';
+    if (r === '4:3') return '1024*768';
+    if (r === '3:4') return '768*1024';
+    return '1024*1536'; /* 默认 9:16 竖屏 */
+  }
+  /* N04 直连通义万相：调用后端真实执行器并登记产物 */
+  function invokeWanxDirect(p, id, model, size, prompt) {
+    toast('正在真实调用通义万相生成…（通常 10–40s）', 'ok');
+    api('POST', '/api/model/providers/invoke', {
+      providerId: 'mp_wanx', projectId: p.id, nodeId: 'N04', slot: 'image',
+      model: model, prompt: prompt, size: size, confirmed: true
+    }).then(function (r) {
+      if (r.status === 200 && r.body && r.body.ok) {
+        var a = (r.body.artifacts || [])[0];
+        if (a) {
+          p.nodes[id].outputs.push({ name: a.name, kind: '分镜图', ext: 'png', diskName: a.name, realRel: a.rel, realBytes: a.bytes, size: a.bytes });
+          addChange(p, 'create', id, '真实调用通义万相生成分镜图（消耗额度，已落盘）：' + a.rel, '参数调整', 'workbuddy');
+          p.callRecords.push(mkCall(id, 'image_gen', '通义万相·真实', 'succeeded', true));
+        }
+        save(); renderNode();
+        toast('通义万相生图完成，产物已落地：' + (a ? a.rel : '(无产物)'), 'ok');
+      } else {
+        toast('调用失败：' + ((r.body && (r.body.error || r.body.detail)) || ('HTTP ' + r.status)), 'err');
+      }
+    }).catch(function (e) {
+      toast('请求未响应：' + ((e && e.message) || ''), 'err');
+    });
   }
 
   /* 「模型提供商（自定义配置）」卡片：列表 + 新增入口，参考 WorkBuddy 模型自定义配置 */
@@ -1648,15 +1685,19 @@
       return ok ? '<span class="badge s-ok">Key 已配置</span>' : '<span class="badge s-warn">Key 未配置</span>';
     }
     var body = provs.length ? (
-      '<table class="tbl"><thead><tr><th>名称</th><th>类型</th><th>Base URL</th><th>能力</th><th>模型数</th><th>Key</th><th>操作</th></tr></thead><tbody>' +
+      '<table class="tbl"><thead><tr><th>名称</th><th>类型</th><th>Base URL</th><th>能力</th><th>模型数</th><th>推荐 / 标签</th><th>Key</th><th>操作</th></tr></thead><tbody>' +
       provs.map(function (x) {
         var caps = (x.capabilities || []).map(function (c) { return '<span class="chip">' + esc(SLOT_LABEL[c] || c) + '</span>'; }).join('');
+        var tierBadge = (x.tier && TIER_VALUES.indexOf(x.tier) >= 0) ? '<span class="' + (TIER_CLASS[x.tier] || 'tier') + '">' + esc(x.tier) + '</span> ' : '';
+        var tagChips = (x.tags || []).filter(function (t) { return TAG_VALUES.indexOf(t) >= 0; })
+          .map(function (t) { return '<span class="tag ' + (TAG_CLASS[t] || '') + '">' + esc(t) + '</span>'; }).join(' ');
         return '<tr>' +
           '<td>' + esc(x.name) + '</td>' +
           '<td>' + esc(PROVIDER_TYPE_LABEL[x.type] || x.type) + '</td>' +
           '<td class="mono small">' + (x.baseUrl ? esc(x.baseUrl) : '<span class="muted">—</span>') + '</td>' +
           '<td>' + (caps || '<span class="muted">—</span>') + '</td>' +
           '<td>' + (x.models ? x.models.length : 0) + '</td>' +
+          '<td class="tag-cell">' + tierBadge + (tagChips || '<span class="muted">—</span>') + '</td>' +
           '<td>' + keyBadge(x.apiKeyEnv) + '</td>' +
           '<td class="row">' +
             '<button class="btn btn-sm" data-act="provider-edit" data-id="' + esc(x.id) + '">编辑</button>' +
@@ -1685,6 +1726,8 @@
       '<div class="field"><label>Base URL（可选）</label><input class="ctl" id="provBase" value="' + esc(x ? (x.baseUrl || '') : '') + '" placeholder="https://api.xxx.com/v1"></div>' +
       '<div class="field"><label>API Key 环境变量名</label><input class="ctl" id="provKeyEnv" value="' + esc(x ? (x.apiKeyEnv || '') : '') + '" placeholder="如 MINIMAX_API_KEY（仅填变量名，不存 key 值）"><div class="small muted">凭据只从本地环境变量读取；不落地、不回显、不进入项目文件。</div></div>' +
       '<div class="field"><label>能力标签（可多选）</label><div class="chk-row">' + capOpts + '</div></div>' +
+      '<div class="field"><label>推荐档位</label><select class="ctl" id="provTier">' + TIER_VALUES.map(function (t) { return '<option value="' + t + '"' + (x && x.tier === t ? ' selected' : '') + '>' + esc(t) + '</option>'; }).join('') + '</select></div>' +
+      '<div class="field"><label>推荐标签（可多选）</label><div class="chk-row">' + TAG_VALUES.map(function (t) { var on = x && (x.tags || []).indexOf(t) >= 0; return '<label class="chk"><input type="checkbox" name="provTag" value="' + t + '"' + (on ? ' checked' : '') + '> ' + esc(t) + '</label>'; }).join('') + '</div></div>' +
       '<div class="field"><label>模型名清单（每行一个）</label><textarea class="ctl" id="provModels" rows="4" placeholder="deepseek-chat\ndeepseek-reasoner">' + esc(x ? (x.models || []).join('\n') : PROVIDER_DEFAULT_MODELS['openai-compatible']) + '</textarea></div>' +
       '<div class="field"><label>备注</label><input class="ctl" id="provNote" value="' + esc(x ? (x.note || '') : '') + '" placeholder="可选"></div>';
     var foot = '<button class="btn" data-act="close-modal">取消</button><button class="btn btn-primary" data-act="provider-save" data-id="' + (editId || '') + '">保存</button>';
@@ -2287,6 +2330,27 @@
         }
         break;
       }
+      case 'invoke-wanx': {
+        var rt = (p.config && p.config.modelRoute && p.config.modelRoute.image) || {};
+        var directPid = (rt.model || '').split('::')[0];
+        if (directPid !== 'mp_wanx') { toast('直连仅支持通义万相（mp_wanx）；请在左侧「模型与协作」先选择通义万相模型', 'err'); break; }
+        var dmodel = (rt.model || '').split('::')[1] || 'wanx2.6-image';
+        var dprompt = (($('#promptEditor') || {}).value) || '';
+        var dsize = sizeForSpec(p.spec);
+        confirmModal('确认真实调用通义万相生图（消耗额度）',
+          '<b>节点 N04</b> 将<b>真实调用</b>通义万相 API 生成 1 张分镜图，<b>消耗阿里云额度（按张计费，约 ¥0.20/张）</b>。<br>' +
+          '产物以 PNG 落地到项目目录 <span class="mono">v1/03_asset/image/</span>。<br>' +
+          '模型：<span class="mono">' + esc(dmodel) + '</span> · 尺寸：<span class="mono">' + esc(dsize) + '</span><br>' +
+          '<b>可逆性：</b>生成扣费不可逆；落盘文件可删。',
+          function () { invokeWanxDirect(p, id, dmodel, dsize, dprompt); }, true);
+        break;
+      }
+      case 'confirm-archive': {
+        p.nodes[id].status = '已通过';
+        addChange(p, 'confirm', id, '人工确认归档（随附旧 N12）：交付包已归位', '需求变更', 'user');
+        if (id === 'N08') p.currentNode = 'N08';
+        save(); renderNode(); toast('已确认归档（旧 N12 随附，人工确认）', 'ok'); break;
+      }
       case 'export-node': exportBundle(true); break;
       case 'confirm-pass': {
         var nd = p.nodes[id];
@@ -2598,6 +2662,8 @@
         if (!caps.length) { toast('请至少选择一个能力标签', 'err'); break; }
         var models = ($('#provModels') || {}).value.split('\n').map(function (s) { return s.trim(); }).filter(Boolean);
         if (!models.length) { toast('请至少填写一个模型名', 'err'); break; }
+        var tags = Array.prototype.slice.call(document.querySelectorAll('input[name="provTag"]:checked')).map(function (c) { return c.value; });
+        var tier = ($('#provTier') || {}).value;
         var rec = {
           id: editId || ('mp_' + Date.now().toString(36) + Math.random().toString(36).slice(2, 5)),
           name: name.trim(),
@@ -2606,6 +2672,8 @@
           apiKeyEnv: ($('#provKeyEnv') || {}).value.trim(),
           capabilities: caps,
           models: models,
+          tier: tier,
+          tags: tags,
           note: ($('#provNote') || {}).value.trim()
         };
         if (editId) modelProviders = (modelProviders || []).map(function (x) { return x.id === editId ? rec : x; });

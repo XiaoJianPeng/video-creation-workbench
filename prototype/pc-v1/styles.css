@@ -164,6 +164,16 @@ button { cursor: pointer; }
   display: inline-block; padding: 3px 9px; border-radius: 5px; font-size: 11px;
   background: var(--panel-2); border: 1px solid var(--line); color: var(--ink-2);
 }
+.tag.t-perf { background: var(--accent-soft); border-color: #c9d8ff; color: var(--accent); }
+.tag.t-cheap { background: var(--ok-soft); border-color: #bfe9d3; color: var(--ok); }
+.tag.t-best { background: #f1e9ff; border-color: #d8c4ff; color: #7c3aed; }
+
+/* 推荐档位徽章（首选 / 备选） */
+.badge.tier { border-radius: 20px; padding: 2px 9px; font-size: 10.5px; font-weight: 700; }
+.badge.tier::before { content: none; }
+.badge.tier-first { background: #fff1e6; color: #d97706; border: 1px solid #ffd9b0; }
+.badge.tier-alt { background: var(--idle-soft); color: var(--idle); border: 1px solid var(--line); }
+.tag-cell { line-height: 1.9; }
 
 /* 选择控件：全枚举字段只允许这些，禁止自由文本框 */
 .field { margin-bottom: 14px; }
@@ -276,6 +286,12 @@ table.tbl tr:hover td { background: #fbfcfe; }
 .node-card .nc-code { font-family: var(--mono); font-size: 11px; color: var(--muted); }
 .node-card .nc-name { font-size: 13px; font-weight: 620; margin-bottom: 8px; }
 .node-card .nc-foot { display: flex; align-items: center; justify-content: space-between; font-size: 10.5px; color: var(--muted); margin-top: 10px; }
+.node-card .nc-sub { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 8px; align-items: center; font-size: 10px; color: var(--muted); }
+.tag-soft { display: inline-block; padding: 1px 7px; border-radius: 5px; font-size: 10px; background: #eef2fb; border: 1px solid #dde5f5; color: #5b6b8c; }
+.substep-box { margin: 0 0 14px; padding: 12px 14px; border: 1px dashed var(--line); border-radius: var(--radius); background: var(--panel-2); }
+.substep-box .ss-title { font-size: 12px; font-weight: 620; color: var(--ink-2); margin-bottom: 7px; }
+.substep-box .ss-list { margin: 0 0 10px; padding-left: 18px; font-size: 12px; color: var(--muted); line-height: 1.7; }
+.substep-box .ss-switch { display: inline-flex; align-items: center; gap: 6px; font-size: 11.5px; color: var(--muted); margin-top: 4px; }
 
 /* ---------- 节点详情三区（PC 三栏） ---------- */
 .three-zone { display: grid; grid-template-columns: minmax(240px, 1fr) minmax(320px, 1.35fr) minmax(260px, 1fr); gap: 14px; align-items: start; }

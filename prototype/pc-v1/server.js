@@ -43,6 +43,9 @@ const ENDPOINT_ENV = ['MODEL_API_BASE_URL', 'LLM_ENDPOINT', 'IMAGE_ENDPOINT', 'V
 const PROVIDERS_FILE = path.join(DATA_DIR, 'model-providers.json');
 const PROVIDER_TYPES = ['openai-compatible', 'custom-http', 'local'];
 const SLOT_KEYS = ['llm', 'image', 'video', 'voice'];
+/* 推荐标签与档位白名单（前端标签/下拉共用，服务端强制校验） */
+const TAG_VALUES = ['性价比最高', '最便宜', '效果最佳'];
+const TIER_VALUES = ['首选', '备选'];
 
 /* ---------- 通用工具 ---------- */
 function ensureDirs() {
@@ -633,6 +636,13 @@ async function handleAPI(req, res, u) {
       if (caps.some(function (c) { return SLOT_KEYS.indexOf(c) < 0; }))
         return send(res, 400, { ok: false, error: '第 ' + (i + 1) + ' 项能力标签含非法槽位' });
       if (!Array.isArray(x.models)) return send(res, 400, { ok: false, error: '第 ' + (i + 1) + ' 项 models 必须是数组' });
+      /* 推荐标签（性价比最高 / 最便宜 / 效果最佳）与档位（首选 / 备选）为可选字段，存在时必须合法 */
+      if (x.tags !== undefined) {
+        if (!Array.isArray(x.tags) || x.tags.some(function (t) { return TAG_VALUES.indexOf(t) < 0; }))
+          return send(res, 400, { ok: false, error: '第 ' + (i + 1) + ' 项标签含非法值（仅允许：' + TAG_VALUES.join(' / ') + '）' });
+      }
+      if (x.tier !== undefined && TIER_VALUES.indexOf(x.tier) < 0)
+        return send(res, 400, { ok: false, error: '第 ' + (i + 1) + ' 项档位非法（仅允许：' + TIER_VALUES.join(' / ') + '）' });
     }
     /* 权限确认：全局配置写入同样走确认门槛（默认最严，需 confirmed） */
     const perm = checkPermission({ permissionLevel: 3 }, 'create', body.confirmed === true);
@@ -665,6 +675,201 @@ async function handleAPI(req, res, u) {
     } else if (baseUrl) { reachError = 'baseUrl 格式非法（需 http/https）'; }
     else { reachError = '未填写 baseUrl（本地能力无需探测）'; }
     return send(res, 200, { ok: true, keyConfigured: keyConfigured, reachable: reachable, reachError: reachError, sentKey: false });
+  }
+
+  /* ===== 真实执行器：调用已登记提供商（本期接通：通义万相·阿里云 DashScope 生图） ===== */
+  function sleep(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
+
+  /**
+   * 阿里云 DashScope 通义万相文生图（wanx 系列，异步任务制）。
+   * 安全：key 仅运行时从 process.env 读取，请求头携带，不回显、不写日志、不落盘。
+   * @returns {Promise<{ok:boolean, reason?:string, imageUrl?:string, model?:string, taskId?:string, message?:string}>}
+   */
+  async function invokeDashScopeImage(provider, payload) {
+    const key = process.env[provider.apiKeyEnv];
+    if (!key) return { ok: false, reason: 'KEY_NOT_CONFIGURED', env: provider.apiKeyEnv };
+    const createUrl = 'https://dashscope.aliyuncs.com/api/v1/services/aigc/text2image/image-synthesis';
+    const model = String(payload.model || (provider.models && provider.models[0]) || 'wanx2.6-t2i');
+    const reqBody = {
+      model: model,
+      input: { prompt: String(payload.prompt || '') },
+      parameters: { size: String(payload.size || '1024*1536'), n: 1, prompt_extend: true }
+    };
+    let j1;
+    try {
+      const r1 = await fetch(createUrl, {
+        method: 'POST',
+        headers: { Authorization: 'Bearer ' + key, 'Content-Type': 'application/json', 'X-DashScope-Async': 'enable' },
+        body: JSON.stringify(reqBody)
+      });
+      j1 = await r1.json().catch(function () { return {}; });
+    } catch (e) { return { ok: false, reason: 'CREATE_HTTP_ERROR', message: e.message }; }
+    if (!j1.output || !j1.output.task_id) return { ok: false, reason: 'CREATE_FAILED', code: j1.code, message: j1.message };
+    const taskId = j1.output.task_id;
+    const qUrl = 'https://dashscope.aliyuncs.com/api/v1/tasks/' + taskId;
+    let tries = 0;
+    while (tries < 40) {
+      await sleep(3000);
+      let j2;
+      try {
+        const r2 = await fetch(qUrl, { headers: { Authorization: 'Bearer ' + key } });
+        j2 = await r2.json().catch(function () { return {}; });
+      } catch (e) { tries++; continue; }
+      const s = j2.output && j2.output.task_status;
+      if (s === 'SUCCEEDED') {
+        const url = j2.output.results && j2.output.results[0] && j2.output.results[0].url;
+        if (!url) return { ok: false, reason: 'NO_RESULT_URL' };
+        return { ok: true, imageUrl: url, model: model, taskId: taskId };
+      }
+      if (s === 'FAILED') return { ok: false, reason: 'TASK_FAILED', message: j2.output && j2.output.message };
+      tries++;
+    }
+    return { ok: false, reason: 'POLL_TIMEOUT' };
+  }
+
+  /* CosyVoice 声音复刻 + 合成（两步：注册音色 create_voice -> 轮询就绪 -> SpeechSynthesizer 合成 -> 下载音频）。
+     参考音频支持 Base64 Data URI 内联（无需公网托管）。副作用：会在用户 DashScope 账户创建一个持久音色 voice_id。 */
+  async function invokeCosyVoice(provider, payload) {
+    const key = process.env[provider.apiKeyEnv];
+    if (!key) return { ok: false, reason: 'KEY_NOT_CONFIGURED', env: provider.apiKeyEnv };
+    const model = String(payload.model || (provider.models && provider.models[0]) || 'cosyvoice-v3-flash');
+    const text = String(payload.text || '').trim();
+    if (!text) return { ok: false, reason: 'EMPTY_TEXT' };
+    const refPath = String(payload.refAudioPath || '');
+    const refText = String(payload.refText || '').trim();
+    if (!refPath || !refText) return { ok: false, reason: 'NEED_REF_AUDIO_AND_TEXT' };
+    if (!fs.existsSync(refPath)) return { ok: false, reason: 'REF_AUDIO_NOT_FOUND', path: refPath };
+    const audioBuf = fs.readFileSync(refPath);
+    const dataUri = 'data:audio/mpeg;base64,' + audioBuf.toString('base64');
+    const cosyBase = 'https://dashscope.aliyuncs.com/api/v1/services/audio/tts';
+    const auth = { Authorization: 'Bearer ' + key, 'Content-Type': 'application/json' };
+    // 1) 注册音色（创建持久 voice_id）
+    let enroll;
+    try {
+      const r = await fetch(cosyBase + '/customization', {
+        method: 'POST', headers: auth,
+        body: JSON.stringify({ model: 'voice-enrollment', input: { action: 'create_voice', target_model: model, prefix: 'dj04mom', audio: dataUri, text: refText } })
+      });
+      enroll = await r.json().catch(function () { return {}; });
+    } catch (e) { return { ok: false, reason: 'ENROLL_HTTP_ERROR', message: e.message }; }
+    const voiceId = enroll.output && enroll.output.voice_id;
+    if (!voiceId) return { ok: false, reason: 'ENROLL_FAILED', code: enroll.code, message: enroll.message };
+    // 2) 轮询直到就绪
+    let status = '';
+    for (let i = 0; i < 40; i++) {
+      await sleep(1000);
+      let q;
+      try {
+        const r = await fetch(cosyBase + '/customization', {
+          method: 'POST', headers: auth,
+          body: JSON.stringify({ model: 'voice-enrollment', input: { action: 'query_voice', voice_id: voiceId } })
+        });
+        q = await r.json().catch(function () { return {}; });
+      } catch (e) { continue; }
+      status = (q.output && q.output.status) || '';
+      if (status === 'OK') break;
+      if (status && status !== 'DEPLOYING') return { ok: false, reason: 'VOICE_STATUS', status: status, message: q.output && q.output.message, voiceId: voiceId };
+    }
+    if (status !== 'OK') return { ok: false, reason: 'VOICE_DEPLOY_TIMEOUT', voiceId: voiceId };
+    // 3) 合成
+    let synth;
+    try {
+      const r = await fetch(cosyBase + '/SpeechSynthesizer', {
+        method: 'POST', headers: auth,
+        body: JSON.stringify({ model: model, input: { text: text, voice: voiceId, format: 'mp3', sample_rate: 22050 } })
+      });
+      synth = await r.json().catch(function () { return {}; });
+    } catch (e) { return { ok: false, reason: 'SYNTH_HTTP_ERROR', message: e.message, voiceId: voiceId }; }
+    const audioUrl = synth.output && synth.output.audio && synth.output.audio.url;
+    if (!audioUrl) return { ok: false, reason: 'SYNTH_NO_URL', code: synth.code, message: synth.message, voiceId: voiceId };
+    // 4) 下载音频
+    let buf;
+    try {
+      const ar = await fetch(audioUrl);
+      buf = Buffer.from(await ar.arrayBuffer());
+    } catch (e) { return { ok: false, reason: 'AUDIO_DOWNLOAD_FAILED', message: e.message, voiceId: voiceId }; }
+    if (!buf.length) return { ok: false, reason: 'AUDIO_EMPTY', voiceId: voiceId };
+    return { ok: true, audioBuffer: buf, model: model, voiceId: voiceId, audioUrl: audioUrl };
+  }
+
+  /* 写：真实调用已登记提供商执行生成（消耗第三方额度，需 confirmed + 项目级权限） */
+  if (p === '/api/model/providers/invoke' && method === 'POST') {
+    const body = await readBody(req);
+    const providerId = String(body.providerId || '');
+    const slot = String(body.slot || '');
+    const proj = loadProject(String(body.projectId || ''));
+    if (!proj) return send(res, 404, { ok: false, error: '项目不存在或无真实目录' });
+    /* 双重确认：消耗第三方额度必须 confirmed；同时项目内写文件需权限档确认 */
+    const perm = checkPermission(proj.meta, 'create', body.confirmed === true);
+    if (!perm.ok) return send(res, 403, { ok: false, error: perm.reason, needConfirm: !!perm.needConfirm, permissionLevel: perm.level });
+    if (body.confirmed !== true) return send(res, 403, { ok: false, error: '调用第三方模型会消耗额度，需 confirmed:true', needConfirm: true });
+    const prov = loadProviders().filter(function (x) { return x.id === providerId; })[0];
+    if (!prov) return send(res, 404, { ok: false, error: '提供商未登记：' + providerId });
+    if (prov.capabilities.indexOf(slot) < 0) return send(res, 400, { ok: false, error: '提供商 ' + prov.name + ' 不具备 ' + slot + ' 能力' });
+    const keyConfigured = !!process.env[prov.apiKeyEnv];
+    if (!keyConfigured) return send(res, 400, { ok: false, error: '环境变量未配置：' + prov.apiKeyEnv + '（请在运行环境配置后重试）', keyConfigured: false });
+
+    /* 本期适配器：通义万相 / 阿里云 DashScope 生图（异步任务制） */
+    let result;
+    if (prov.type === 'custom-http' && /wanx|万相|dashscope|cosyvoice|aliyun/i.test(prov.id + prov.name + (prov.baseUrl || ''))) {
+      if (slot === 'image') {
+        result = await invokeDashScopeImage(prov, { model: String(body.model || ''), prompt: String(body.prompt || ''), size: String(body.size || '1024*1536') });
+      } else if (slot === 'voice') {
+        result = await invokeCosyVoice(prov, {
+          model: String(body.model || ''),
+          text: String(body.text || ''),
+          refAudioPath: String(body.refAudioPath || ''),
+          refText: String(body.refText || '')
+        });
+      } else {
+        return send(res, 400, { ok: false, error: '本期仅接通通义万相生图（slot=image）与 CosyVoice 配音（slot=voice），' + slot + ' 暂未实现真实执行器' });
+      }
+    } else {
+      return send(res, 400, { ok: false, error: '本期仅接通通义万相生图执行器；其他提供商仍走 WorkBuddy 桥接任务包' });
+    }
+    if (!result.ok) {
+      audit('invoke-fail', { providerId: providerId, slot: slot, projectId: proj.meta.projectId, reason: result.reason });
+      return send(res, 502, { ok: false, error: '调用失败：' + (result.reason || ''), detail: result.message || '', keyConfigured: true });
+    }
+
+    /* 下载/落地产物到项目目录（按 slot 区分目录与类型，不覆盖，权限档强制） */
+    let buf, targetDir, base, ext, node, kind, category;
+    if (slot === 'image') {
+      try {
+        const imgRes = await fetch(result.imageUrl);
+        buf = Buffer.from(await imgRes.arrayBuffer());
+      } catch (e) { return send(res, 502, { ok: false, error: '结果图下载失败：' + e.message }); }
+      targetDir = safeResolve(proj.dir, path.join(String(proj.meta.version || 'v1'), '03_asset/image'));
+      node = 'N06'; kind = '分镜图'; ext = 'png'; category = 'image';
+    } else if (slot === 'voice') {
+      buf = result.audioBuffer;
+      targetDir = safeResolve(proj.dir, path.join(String(proj.meta.version || 'v1'), '03_asset/audio'));
+      node = 'N08'; kind = '配音(CosyVoice克隆)'; ext = 'mp3'; category = 'audio';
+    } else {
+      return send(res, 400, { ok: false, error: '未知 slot：' + slot });
+    }
+    if (!buf || !buf.length) return send(res, 502, { ok: false, error: '产物为空' });
+    fs.mkdirSync(targetDir, { recursive: true });
+    const seq = countIndexLines(proj.dir, 'uploads.index.jsonl') + 1;
+    base = [proj.meta.code, String(proj.meta.version || 'v1'), node, (slot === 'image' ? 'image-' : 'voice-') + pad2(seq), 'final', 'r01', stampName()].join('_');
+    let target;
+    try { target = uniquePath(targetDir, base, ext); } catch (e) { return send(res, 400, { ok: false, error: e.message }); }
+    fs.writeFileSync(target, buf);
+    const rel = path.relative(proj.dir, target).split(path.sep).join('/');
+    appendIndex(proj.dir, 'uploads.index.jsonl', {
+      ts: nowISO(), node: node, originalName: path.basename(target), diskName: path.basename(target),
+      rel: rel, bytes: buf.length, category: category, permissionLevel: perm.level
+    });
+    audit('invoke-success', { providerId: providerId, model: result.model, slot: slot, voiceId: result.voiceId, projectId: proj.meta.projectId, rel: rel, bytes: buf.length, permissionLevel: perm.level });
+    return send(res, 200, {
+      ok: true, provider: prov.name, model: result.model, slot: slot,
+      voiceId: result.voiceId,
+      artifacts: [{ rel: rel, name: path.basename(target), kind: kind, bytes: buf.length }],
+      consumedCredits: true,
+      note: slot === 'image'
+        ? '已真实调用通义万相生成并落地项目目录；消耗阿里云额度（按张计费）。'
+        : '已真实调用 CosyVoice 声音复刻+合成并落地项目目录；消耗阿里云额度（按字符/时长计费）。在你的 DashScope 账户创建了一个持久音色 voice_id=' + (result.voiceId || '-') + '（可在控制台删除）。'
+    });
   }
 
   /* 写：生成 WorkBuddy 桥接任务包（半自动；本接口本身不调用模型、不消耗积分） */
